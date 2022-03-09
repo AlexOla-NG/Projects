@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tipCalculator2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="body-container">
+        <div class="logo-header">
+            <img src="./images/logo.svg" alt="Splitter logo">
+        </div>
+        <div id="main-body">
+            <form onsubmit="event.preventDefault()">
+                <div id="bill" class="input-field">
+                    <label for="userInpBill">Bill
+                        <input type="number" name="bill" id="userInpBill">
+                    </label>
+                </div>
+                <div id="select-tip" class="input-field">
+                    <label>Select Tip %</label>
+                    <table>
+                        <tbody id="tip-percentage">
+                            <tr>
+                                <td>
+                                    <button name="5%" class="btn" value="5">5%</button>
+                                </td>
+                                <td>
+                                    <button name="10%" class="btn" value="10">10%</button>
+                                </td>
+                                <td>
+                                    <button name="15%" class="btn" value="15">15%</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button name="25%" class="btn" value="25">25%</button>
+                                </td>
+                                <td>
+                                    <button name="50%" class="btn" value="50">50%</button>
+                                </td>
+                                <td>
+                                    <label for="customInp">
+                                        <input type="number" name="customInp" id="custom-inp" placeholder="Custom">
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="people" class="input-field">
+                    <label for="number-of-people">Number of People
+                        <input type="number" name="numberOfPeople" id="number-of-people" min="1">
+                    </label>
+                </div>
+            </form>
+            <div class="output">
+                <div class="line-wrapper">
+                    <div class="line-output">
+                        <div class="title-wrapper">
+                            <div class="Title">Tip Amount</div>
+                            <div class="desc">/ person</div>
+                        </div>
+                        <div class="value" id="tipAmount">$4.27</div>
+                    </div>
+
+                    <div class="line-output">
+                        <div class="title-wrapper">
+                            <div class="Title">Total Amount</div>
+                            <div class="desc">/ person</div>
+                        </div>
+                        <div class="value" id="totalAmount">$16.27</div>
+                    </div>
+                </div>
+
+                <button type="reset" class="btn" id="reset-btn">RESET</button>
+            </div>
+        </div>
+    </div>
+<script src="tipCalculator2.1.js"></script>
+</body>
+</html>
