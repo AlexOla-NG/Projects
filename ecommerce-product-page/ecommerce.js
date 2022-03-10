@@ -13,8 +13,6 @@ const cartBody = document.querySelector(".cart-body")
 const checkoutBtn = document.querySelector(".checkout-btn")
 const smallThumbnails = document.querySelectorAll(".small-size")
 const bigImg = document.querySelector(".big-img")
-console.log(smallThumbnails)
-console.log(bigImg)
 
 
 
@@ -130,8 +128,16 @@ function cartStatus() {
 
 //function to update bigImage with active smallImage
 function imageUpdate(event) {
-    console.log(event.target.attributes.src.textContent)
+    //get small img src and format to match big img src
     smallSource = event.target.attributes.src.textContent
-    bigSource = smallSource.split("-")
-    console.log(bigSource)
+    smallSourceArr = smallSource.split("-")
+    smallSourceArr.pop()
+    joinedSmallSource = smallSourceArr.join("-")
+    formattedSmallSource = `${joinedSmallSource}.jpg`
+
+    bigImgSource = bigImg.attributes.src.textContent
+    
+    if(formattedSmallSource != bigImgSource) {
+        bigImg.attributes.src.textContent = formattedSmallSource
+    }
 }
