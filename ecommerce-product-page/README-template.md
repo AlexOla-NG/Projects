@@ -120,3 +120,6 @@ I need to understand responsiveness better. I think I need to work on making all
 - [css resource 1](https://www.youtube.com/watch?v=H1-rmg1Fj3E) - This is an amazing video which helped me finally understand the difference between the active and focus pseudoclass. I'd recommend it to anyone still learning this concept.
 
 - [css resource 2](https://www.youtube.com/watch?v=sjY2B_R4L1c) - This helped me change the shopping cart color from grey to white. I really liked this pattern and will use it going forward.
+
+- [css resource 3] (https://www.youtube.com/watch?v=wARbgs5Fmuw)
+- This 
