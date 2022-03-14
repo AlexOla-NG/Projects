@@ -166,7 +166,7 @@ body {
     text-align: center;
 }
 
-.cart-popup {/*stopped here*/
+.cart-popup {
     color: var(--very-dark-blue);
     font-size: var(--fs-400);
     font-weight: var(--fw-100);
@@ -180,7 +180,7 @@ body {
     border: transparent;
     border-radius: var(--curvy-border);
     background-color: var(--white);
-    box-shadow: 0.1em 0.3em 2em -1em var(--transparent-black), 0.1em 0.3em 2em -1em var(--transparent-black);
+    box-shadow: 0 0.5em 1.6em -0.3em rgba(0, 0, 0, 0.5);
 }
 
 .cart-holder .show {
@@ -197,11 +197,10 @@ body {
     }
 }
 
-.cart-header { 
+.cart-header {/*stopped here*/
     position: relative;
     top: 2%;
     left: 6%;
-    padding: 0.1em 0.2em;
     margin: 1em 1em 1.5em 0em;
     font-weight: var(--fw-800);
     width: 85%
