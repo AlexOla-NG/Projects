@@ -172,7 +172,7 @@ body {
     font-weight: var(--fw-100);
     display: grid;
     align-items: center;
-    grid-template-rows: 1.5fr auto 4fr;
+    grid-template-rows: 1.5fr auto 4.5fr;
     grid-gap: 0.25%;
     grid-template-areas: 
     "header"
@@ -182,7 +182,7 @@ body {
     position: absolute;
     margin-top: 1.7em;
     margin-left: -8em;
-    width: 22em; /* or 1000%; */
+    width: 23em; /* or 1000%; */
     height: 14em; /* or 900%; */
     z-index: 2;
     border: transparent;
@@ -205,7 +205,7 @@ body {
     }
 }
 
-.cart-header {/*stopped here*/
+.cart-header {
     /* border: solid pink; */
     grid-area: header;
     padding: 0.4em 1.4em;
@@ -220,12 +220,18 @@ body {
 }
 
 .cart-body-wrapper {
-    border: solid purple;
+    border: solid pink;
     grid-area: cart-details;
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: space-around; */
     /* align-items: center; */
+    display: grid;
+    grid-template-rows: repeat(2, 2fr);
+    align-items: center;
+    grid-template-areas: 
+    "cart-body"
+    "checkout-btn";
     max-width: 100%;
     height: 80%;
     padding: 0 1.4em;
@@ -233,22 +239,36 @@ body {
 }
 
 .cart-body {
-    width: 90%;
+    border: solid purple;
+    grid-area: cart-body;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-areas: 
+    "item-thumbnail"
+    "cart-details"
+    "delete-icon";
+    grid-gap: 1.5%; */
 }
 
 .item-thumbnail {
+    /* border: solid pink; */
+    /* grid-area: item-thumbnail; */
     max-width: 100%;
     width: 15%;
     height: auto;
-    border-radius: 0.2em;
+    /* border-radius: 0.2em; */
 }
 
 .cart-details {
+    /* border: solid pink; */
+    /* grid-area: cart-details; */
     color: var(--dark-grayish-blue);
     line-height: 1.8;
+    width: 70%;
 }
 
 .checkout-wrapper {
@@ -262,17 +282,22 @@ body {
 }
 
 .delete-icon {
-    width: 4%;
+    /* border: solid pink; */
+    /* grid-area: delete-icon; */
+    width: 5%;
+    border-radius: 0;
     cursor: pointer;
 }
 
-.checkout-btn {
+.checkout-btn {/*stopped here*/
+    /* border: solid black; */
+    grid-area: checkout-btn;
     background-color: var(--orange);
     color: var(--white);
     border: none;
     border-radius: var(--curvy-border);
     max-width: 100%;
-    width: 90%;
+    width: 100%;
     height: 35%;
     font-size: inherit;
     font-weight: 700;
