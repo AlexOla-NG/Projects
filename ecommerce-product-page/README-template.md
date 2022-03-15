@@ -117,6 +117,8 @@ I need to understand responsiveness better. I think I need to work on making all
 
 - [html resource 1](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex) - This made it easier to apply the focus pseudoclass on the thumbnails of the gallery. I almost went mad trying to figure out why the focus selector was not working before I saw this (lol). I really liked this pattern and will use it going forward.
 
+-[html resource 2] (https://www.w3schools.com/howto/howto_css_style_hr.asp) - I found this useful in changing the color of the hr tag
+
 - [css resource 1](https://www.youtube.com/watch?v=H1-rmg1Fj3E) - This is an amazing video which helped me finally understand the difference between the active and focus pseudoclass. I'd recommend it to anyone still learning this concept.
 
 - [css resource 2](https://www.youtube.com/watch?v=sjY2B_R4L1c) - This helped me change the shopping cart color from grey to white. I really liked this pattern and will use it going forward.
