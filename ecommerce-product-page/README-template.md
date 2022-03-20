@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://alexola-ng.github.io/Projects/ecommerce-product-page/ecommerce.html)
-- Live Site URL: [Add live site URL here](https://alexola-ng.github.io/Projects/ecommerce-product-page/ecommerce.html)
+- Solution URL: [https://alexola-ng.github.io/Projects/ecommerce-product-page/ecommerce.html]
+- Live Site URL: [https://alexola-ng.github.io/Projects/ecommerce-product-page/ecommerce.html]
 
 ## My process
 
@@ -44,6 +44,8 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- Grid
+- Responsive typography
 
 
 ### What I learned
@@ -56,20 +58,43 @@ I used this to change the color of the shopping cart (a svg in an img tag) from 
 ```
 I was able to declare 90% of the values I used as css variables
 ```css
-body {
-  --orange: hsl(26, 100%, 55%);
-  --pale-orange: hsl(25, 100%, 94%);
-  --black: hsl(0, 0%, 0%);
-  --light-black: hsl(0, 0%, 0%, 0.75);
-  --very-dark-blue: hsl(220, 13%, 13%);
-  --dark-grayish-blue: hsl(219, 9%, 45%);
-  --grayish-blue: hsl(220, 14%, 75%);
-  --light-grayish-blue: hsl(223, 64%, 98%);
-  --transparent-black: rgba(0, 0, 0, 0.1);
-  --white: hsl(0, 100%, 100%);
-  --curvy-border: 0.5em;
-  --circle: 50%;
-  --small-font: 0.7em;
+:root {
+    --orange: hsl(26, 100%, 55%);
+    --pale-orange: hsl(25, 100%, 94%);
+    --black: hsl(0, 0%, 0%);
+    --light-black: hsl(0, 0%, 0%, 0.75);
+    --very-dark-blue: hsl(220, 13%, 13%);
+    --dark-grayish-blue: hsl(219, 9%, 45%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --light-grayish-blue: hsl(223, 64%, 98%);
+    --transparent-black: rgba(0, 0, 0, 0.1);
+    --white: hsl(0, 100%, 100%);
+
+    --curvy-border: 0.5em;
+    --circle: 50%;
+
+    --fs-600: 1.2rem;
+    /* --fs-600: clamp(1.5rem, 12vw + 1rem, 12rem); */
+    --fs-500: 0.85rem;
+    --fs-400: 0.6rem;
+    --fs-300: 0.5rem;
+    --fs-200: 0.3rem;
+
+    --fw-900: 900;
+    --fw-800: 800;
+    --fw-700: 700;
+    --fw-600: 600;
+    --fw-400: 400;
+}
+
+@media (min-width: 40em) {/*screen size is at least 40em wide*/
+    :root {
+        --fs-600: 1.7rem;
+        --fs-500: 1.2rem;
+        --fs-400: 0.7rem;
+        --fs-300: 0.65rem;
+        --fs-200: 0.4rem;
+    }
 }
 ```
 For the js, I was able to use the class constructor for the first time. I think it would be handy if I need to add another footwear brand to the mix.
@@ -108,9 +133,9 @@ class Footwear {
 ```
 
 ### Continued development
-I would like to do more things with css. This project really challenged my understanding of how css works. Particularly the display attribute. I mostly used flex for this project
+I would like to do more things with css. This project really challenged my understanding of how some concepts in css work: the display property, responsive typography.
 
-I need to understand responsiveness better. I think I need to work on making all my content resize responsively to different viewports.
+I need to understand responsiveness better. I think the next milestone for me will be to make content resize responsively on different viewports.
 
 
 ### Useful resources
@@ -124,4 +149,4 @@ I need to understand responsiveness better. I think I need to work on making all
 - [css resource 2](https://www.youtube.com/watch?v=sjY2B_R4L1c) - This helped me change the shopping cart color from grey to white. I really liked this pattern and will use it going forward.
 
 - [css resource 3] (https://www.youtube.com/watch?v=wARbgs5Fmuw)
-- This 
+- This helped me understand responsive typography better.
