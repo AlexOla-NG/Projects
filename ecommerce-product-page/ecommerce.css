@@ -299,7 +299,6 @@ hr {
 
 .body-content {
     grid-area: body-content;
-    justify-self: center;
     height: 90%;
     width: 80%;
     display: flex;
@@ -315,11 +314,11 @@ img {
 .light-box {
     display: grid;
     grid-template-rows: 50% 30%;
-    grid-gap: 20%;
+    grid-gap: 8%;
     grid-template-areas:
     "big-image"
     "gallery";
-    width: 100%;
+    width: 90%;
     height: 100%
 }
 
@@ -331,8 +330,9 @@ img {
 
 .big-img {
     max-width: 100%;
-    min-height: 70%;
+    min-height: 40vh;
     height: auto;
+    object-fit:contain;
 }
 
 .gallery {
@@ -347,8 +347,10 @@ img {
 
 .small-size {
     max-width: 100%;
+    min-height: 15vh;
     width: 17%;
     height: auto;
+    object-fit: contain;
     border: 2px solid transparent;
 }
 
@@ -374,7 +376,7 @@ img {
     font-size: var(--fs-300);
     font-weight: var(--fw-100);
     color: var(--dark-grayish-blue);
-    margin-left: -5em;
+    /* margin-left: -5em; */
 }
 
 .content-header {
