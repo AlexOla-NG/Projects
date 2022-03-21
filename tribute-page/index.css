@@ -41,10 +41,11 @@ header {
     font-size: var(--fs-xl);
 }
 
-#sub-head {
+#sub-head {/*change color to blood red, confirm contrast*/
     /* border: solid pink; */
     margin-top: -1.5em;
     text-transform: uppercase;
+    color: red;
 }
 
 #img-div {
@@ -90,4 +91,12 @@ header {
 
 #tribute-info { /*stopped here*/
     text-align: center;
+}
+
+#timeline { /*stopped here*/
+    text-align: justify;
+}
+
+#list-timeline {
+    list-style-position: inside;
 }
