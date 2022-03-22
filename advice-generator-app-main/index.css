@@ -1,0 +1,76 @@
+/* CSS
+1. Style bg as black color; advice text + dice container bg color as green color
+2. Main container will hold every item in desktop mode @ 60% screen width, same for mobile view, but container size @ ~90% screen width. Set main container display: grid + 4 rows */
+
+:root {
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+
+    font-family: 'Manrope', sans-serif;
+
+    --fw-800: 800;
+    --fw-400: 400;
+    --fw-200: 200;
+
+    --fs-600: 1.25rem;
+    --fs-400: 0.725rem;
+
+    --curvy-border: 0.5em;
+    --circle: 50%;
+}
+
+@media (max-width: 375px) {
+    :root {
+        --fs-600: 1.5rem;
+        --fs-400: 0.5rem;
+    }
+}
+
+body {
+    background-color: var(--dark-blue);
+    font-size: var(--fs-600);
+    font-weight: var(--fw-800);
+}
+
+.main-container {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+    "header"
+    "content"
+    "line"
+    "dice-circle";
+    justify-items: center;
+    max-width: 40%;
+    margin: 15% auto;
+    padding: 1em;
+    border-radius: var(--curvy-border);
+    background-color: var(--dark-grayish-blue);
+}
+
+/* .content-wrapper {
+    width: 50%;
+    border-radius: var(--curvy-border);
+    background-color: var(--dark-grayish-blue);
+} */
+
+@media (max-width: 375px) {
+    .main-container {
+        max-width: 90%;
+    }
+    /* .content-wrapper {
+        width: 90%;
+    } */
+}
+
+.advice-label { /*stopped here*/
+    grid-area: header;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-400);
+    color: var(--neon-green);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+}

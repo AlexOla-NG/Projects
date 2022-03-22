@@ -1,28 +1,45 @@
+<!-- JavaScript
+1. Clicking the dice controls the call to the API.
+2. Put a fuction @ onclick dice. Function sends a call to API.
+3. The call returns an object (in JSON format). Isolate & return desired response using either dot/bracket notation.
+4. Use returned result as parameter for another function. This function will return formatted (clean up) the string.
+5. Use returned result as parameter for another function. This function will parse (return) result as textContent on HTML element.-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Advice generator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Advice Generator</title>
 </head>
 <body>
+    <main class="main-container">
+        <div class="advice-label">
+            advice #117
+        </div>
+        <div class="advice-content">"It is easy to sit up and take notice, what's difficult is getting up and taking action"</div>
+        <img src="./images/pattern-divider-desktop.svg" alt="pattern-divider-icon">
+        <div class="dice-wrapper">
+            <img src="./images/icon-dice.svg" alt="dice-icon">
+        </div>
+    </main>
 
-  Advice #<!-- Advice ID goes here -->
 
-  "<!-- Advice text goes here -->"
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <!-- <main class="main-container">
+        <section class="content-wrapper">
+            <div class="advice-label">
+                advice #117
+            </div>
+            <div class="advice-content">"It is easy to sit up and take notice, what's difficult is getting up and taking action"</div>
+            <img src="./images/pattern-divider-desktop.svg" alt="pattern-divider-icon">
+            <div class="dice-wrapper">
+                <img src="./images/icon-dice.svg" alt="dice-icon">
+            </div>
+        </section>
+    </main> -->
+    <script src="index.js"></script>
 </body>
 </html>
