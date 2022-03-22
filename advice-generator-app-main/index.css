@@ -15,8 +15,8 @@
     --fw-400: 400;
     --fw-200: 200;
 
-    --fs-600: 1.25rem;
-    --fs-400: 0.725rem;
+    --fs-600: 1.1rem;
+    --fs-400: 0.6rem;
 
     --curvy-border: 0.5em;
     --circle: 50%;
@@ -38,15 +38,17 @@ body {
 .main-container {
     display: grid;
     grid-template-rows: repeat(4, auto);
+    grid-auto-flow: rows;
+    gap: 10%;
     grid-template-areas: 
     "header"
-    "content"
-    "line"
+    "main-content"
+    "divider"
     "dice-circle";
     justify-items: center;
-    max-width: 40%;
+    max-width: 25%;
     margin: 15% auto;
-    padding: 1em;
+    padding: 2em;
     border-radius: var(--curvy-border);
     background-color: var(--dark-grayish-blue);
 }
@@ -66,11 +68,50 @@ body {
     } */
 }
 
-.advice-label { /*stopped here*/
+.advice-header { 
     grid-area: header;
     font-size: var(--fs-400);
     font-weight: var(--fw-400);
     color: var(--neon-green);
     text-transform: uppercase;
     letter-spacing: 0.3em;
+}
+
+.advice-content {
+    grid-area: main-content;
+    color: var(--light-cyan);
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+}
+
+.divider-wrapper {
+    grid-area: divider;
+    max-width: 100%;
+}
+
+.divider-wrapper img {
+    max-width: 100%;
+}
+
+.dice-wrapper {
+    grid-area: dice-circle;
+    border-radius: var(--circle);
+    background-color: var(--neon-green);
+    /* margin-top: 2em; */
+    padding: 0.6em;
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dice-wrapper img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.dice-wrapper:focus { /*stopped here*/
+    box-shadow: 0px 0px 20px 8px #00A854;
 }
