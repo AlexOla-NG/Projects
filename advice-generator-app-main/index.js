@@ -18,6 +18,7 @@ async function callAPI() {
         adviceNumber.textContent = id
         adviceContent.textContent = `"${advice}"`
     }
+    
     updateAdvice()
 }
 
