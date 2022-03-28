@@ -47,7 +47,7 @@ body {
     "divider";
     justify-items: center;
     width: 80%;
-    margin: 30% auto;
+    margin: 35% auto;
     padding: 1.7em 1em 3em;
     border-radius: var(--curvy-border);
     background-color: var(--dark-grayish-blue);
@@ -96,12 +96,10 @@ body {
 }
 
 .dice-wrapper {
-    /* grid-area: dice-circle; */
     position: absolute;
     bottom: -1.3em;
     border-radius: var(--circle);
     background-color: var(--neon-green);
-    /* margin-top: 2em; */
     padding: 0.8em;
     width: 7%;
     display: flex;
