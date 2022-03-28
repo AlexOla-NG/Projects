@@ -47,7 +47,7 @@ body {
     "divider";
     justify-items: center;
     width: 80%;
-    margin: 35% auto;
+    margin: 50% auto 30%;
     padding: 1.7em 1em 3em;
     border-radius: var(--curvy-border);
     background-color: var(--dark-grayish-blue);
