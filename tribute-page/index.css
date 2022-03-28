@@ -21,8 +21,6 @@
 }
 
 #main {
-    /* font-family: 'JetBrains Mono', monospace; */
-    /* font-family: 'Barlow Condensed', sans-serif; */
     font-family: 'Source Sans Pro', sans-serif;
     font-size: var(--fs-400);
     font-weight: var(--fw-100);
@@ -36,14 +34,12 @@ header {
 }
 
 #title { 
-    /* border: solid blue; */
     color: var(--green);
     max-width: 100%;
     font-size: var(--fs-xl);
 }
 
-.sub-head {/*change color to blood red, confirm contrast*/
-    /* border: solid pink; */
+.sub-head {
     font-family: 'Nosifer', cursive;
     margin-top: -1.5em;
     text-transform: uppercase;
@@ -51,22 +47,13 @@ header {
 }
 
 #img-div {
-    /* border: solid pink; */
     background-color: var(--white);
     max-width: 100%;
     height: auto;
     padding-bottom: 1em;
-    /* display: grid;
-    grid-template-rows: repeat(2, auto);
-    justify-items: center; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center; */
 }
 
 #image {
-    /* border: solid purple; */
     max-width: 100%;
     height: auto;
     margin: 2em auto;
@@ -97,18 +84,11 @@ header {
     font-weight: var(--fw-100);
 }
 
-#tribute-info { /*stopped here*/
-    /* border: solid purple; */
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
-    /* text-align: center; */
+#tribute-info {
     min-width: 60%;
 }
 
-#timeline { /*stopped here*/
-    /* border: solid pink; */
-    /* min-width: 60%; */
+#timeline {
     margin: auto;
 }
 
@@ -119,19 +99,16 @@ header {
 }
 
 .list-timeline {
-    /* border: solid red; */
     list-style-position: inside;
     text-align: left;
 }
 
 .list-timeline li {
-    /* border: solid pink; */
     margin: 0 auto 0.7em;
     line-height: 1.7;
 }
 
 blockquote {
-    /* border: solid pink; */
     text-align: left;
     font-style: italic;
     margin: 2em 0;
