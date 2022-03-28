@@ -1,29 +1,24 @@
 const diceWrapper = document.querySelector(".dice-wrapper")
+const adviceNumber = document.querySelector("#advice-number")
+const adviceContent = document.querySelector(".advice-content")
 const api_url = "https://api.adviceslip.com/advice"
-
-let adviceSlipObject;
-let adviceCall;
-console.log(adviceSlipObject)
 
 diceWrapper.addEventListener("click", callAPI)
 
-async function callAPI() { //stopped here
+async function callAPI() {
+    //call API, save response as id, advice
+    //create function to parse advice to HTML
+
     const response = await fetch(api_url)
-    // console.log(response)
     const data = await response.json()
     const slip = data.slip
-    // console.log(data)
-    // adviceSlipObject = data.slip
-    // console.log(adviceSlipObject)
     const {id, advice} = slip
-    console.log(id, advice)
-
-    return id, advice
+    
+    function updateAdvice() {
+        adviceNumber.textContent = id
+        adviceContent.textContent = `"${advice}"`
+    }
+    updateAdvice()
 }
 
-// function updateAdvice() {
-//     console.log()
-// }
-
-// console.log(updateAdvice()) //stopped here
 callAPI()
