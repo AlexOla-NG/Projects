@@ -58,6 +58,9 @@ header {
     height: auto;
     margin: 2em auto;
     filter: grayscale(50%);
+    cursor: pointer;
+    transition-duration: 500ms;
+    transition-property: transform, filter;
 }
 
 @media (min-width: 40em) {
@@ -66,17 +69,9 @@ header {
     }
 }
 
-#img-div img:hover {
-    animation: expand .9s;
-    animation-fill-mode: both;
-    cursor: pointer;    
-}
-
-@keyframes expand {
-    100% {
-        filter: grayscale(0);
-        transform: scale(1.1);
-    }
+#image:hover {
+    transform: scale(1.05);
+    filter: grayscale(0);
 }
 
 #img-caption {
