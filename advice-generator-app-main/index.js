@@ -1,9 +1,9 @@
-const diceWrapper = document.querySelector(".dice-wrapper")
+const diceIcon = document.querySelector("#dice-icon")
 const adviceNumber = document.querySelector("#advice-number")
 const adviceContent = document.querySelector(".advice-content")
 const api_url = "https://api.adviceslip.com/advice"
 
-diceWrapper.addEventListener("click", callAPI)
+diceIcon.addEventListener("click", callAPI)
 
 async function callAPI() {
     //call API, save response as id, advice
