@@ -1,0 +1,44 @@
+:root {
+    --dark-blue: hsl(233, 26%, 24%);
+    --lime-green: hsl(136, 65%, 51%);
+    --bright-cyan: hsl(192, 70%, 51%);
+    --grayish-blue: hsl(233, 8%, 62%);
+    --light-grayish-blue: hsl(220, 16%, 96%);
+    --very-light-gray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+
+    --fs-300: 0.5rem;
+    --fs-400: 0.75rem;
+    --fs-xl: 4rem;
+
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-700: 700;
+}
+
+body { /*stopped here*/
+    font-family: 'Public Sans', sans-serif;
+    font-size: var(--fs-400);
+    color: var(--grayish-blue);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 1em;
+}
