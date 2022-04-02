@@ -1,10 +1,19 @@
 const hamburger = document.querySelector("#hamburger")
 const navList = document.querySelector(".nav-list")
 
-console.log(navList.classList)
+let menuOpen = false
 
-hamburger.addEventListener("click", displayMenu)
+console.dir(hamburger)
 
-function displayMenu() { //stopped here
-    navList.classList.toggle(".show")
-}
+//use anonymus function to avoid hoisting
+hamburger.addEventListener("click", () => { 
+    if (!menuOpen) {
+        hamburger.setAttribute("src", "./images/icon-close.svg")
+        navList.classList.toggle("show")
+        menuOpen = true
+    } else {
+        hamburger.setAttribute("src", "./images/icon-hamburger.svg")
+        navList.classList.toggle("show")
+        menuOpen = false
+    }
+}) //stopped here

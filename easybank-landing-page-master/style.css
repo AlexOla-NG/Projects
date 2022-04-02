@@ -29,7 +29,7 @@ nav {
     position: relative;
     width: 90%;
     height: 2em;
-    margin: 2em auto auto;
+    margin: 1em auto auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
@@ -46,7 +46,7 @@ nav {
     display: none;
 }
 
-.nav-list .show { /*stopped here*/
+nav .show { /*stopped here*/
     list-style-type: none;
     display: inline-block;
     position: absolute;
