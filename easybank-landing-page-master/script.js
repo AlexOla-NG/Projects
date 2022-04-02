@@ -5,7 +5,7 @@ let menuOpen = false
 
 console.dir(hamburger)
 
-//use anonymus function to avoid hoisting
+//use anonymous function to avoid hoisting
 hamburger.addEventListener("click", () => { 
     if (!menuOpen) {
         hamburger.setAttribute("src", "./images/icon-close.svg")
@@ -16,4 +16,4 @@ hamburger.addEventListener("click", () => {
         navList.classList.toggle("show")
         menuOpen = false
     }
-}) //stopped here
+})
