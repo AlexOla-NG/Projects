@@ -167,8 +167,32 @@ nav {
         transition: opacity ease 300ms;
     }
 
-    .request-invite:hover { /*stopped here*/
+    .request-invite:hover { 
         opacity: 0.75;
         cursor: pointer;
     }
+}
+
+main {
+    /* border: solid purple; */
+}
+
+.segment {
+    width: 90%;
+    margin: auto;
+}
+
+#top-segment { /*stopped here*/
+    background: linear-gradient(var(--very-light-gray), var(--white));
+    background-image: url(./images/image-mockups.png),url(./images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1em;
+    /* width: 100%; */
+    background-color: transparent;
+}
+
+#top-segment h1 {
+    margin-top: 5em;
 }
