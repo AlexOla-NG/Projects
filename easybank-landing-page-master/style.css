@@ -9,7 +9,7 @@
 
     --fs-300: 0.5rem;
     --fs-400: 1rem;
-    --fs-xl: 4rem;
+    --fs-xl: 2rem;
 
     --fw-300: 300;
     --fw-400: 400;
@@ -32,6 +32,8 @@ body {
     font-family: 'Public Sans', sans-serif;
     font-size: var(--fs-400);
     color: var(--grayish-blue);
+    margin: 0;
+
 }
 
 nav {
@@ -39,7 +41,7 @@ nav {
     position: relative;
     width: 90%;
     height: 2em;
-    margin: 1em auto auto;
+    margin: 1em auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 
@@ -175,24 +177,33 @@ nav {
 
 main {
     /* border: solid purple; */
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "top-segment"
+    "middle-segment"
+    "bottom-segment";
+    width: 100%;
 }
 
 .segment {
-    width: 90%;
+    /* width: 90%; */
     margin: auto;
 }
 
 #top-segment { /*stopped here*/
-    background: linear-gradient(var(--very-light-gray), var(--white));
-    background-image: url(./images/image-mockups.png),url(./images/bg-intro-mobile.svg);
+    grid-area: top-segment;
+    background-image: url(./images/image-mockups.png),url(./images/bg-intro-mobile.svg), linear-gradient(var(--very-light-gray), var(--white));
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: bottom -55% center, center;
     padding: 1em;
-    /* width: 100%; */
     background-color: transparent;
 }
 
 #top-segment h1 {
-    margin-top: 5em;
+    padding-top: 5em;
+    color: var(--dark-blue);
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-300);
 }
