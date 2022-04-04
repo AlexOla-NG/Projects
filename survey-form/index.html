@@ -33,8 +33,57 @@ https://codepen.io/freeCodeCamp/full/VPaoNP
                 <input type="email" name="userEmail" id="email"  placeholder="Enter your Email" required>
             </label>
             <label for="age" id="number-label">Age (optional)
-                <input type="number" min="18" max="65" name="userAge" id="age" placeholder="Enter your age" required>
+                <input type="number" min="18" max="65" name="userAge" id="age" placeholder="Enter your age">
             </label>
+            <label for="dropdown" id="dropdown-label">What is your favorite feature of the website
+                <input list="features" name="dropdown" id="dropdown" required>
+            </label>
+            <datalist id="features">
+                <option value="Ease of payment"></option>
+                <option value="Choice"></option>
+                <option value="Unbeatable price"></option>
+                <option value="Good support"></option>
+            </datalist>
+            <fieldset>
+                <legend>Please select your preferred choice of communication:</legend>
+                <div>
+                    <label for="email" id="email-communication-label">
+                        <input type="radio" name="contact" id="email" value="email" checked>Email
+                    </label>
+                    <label for="phone" id="phone-communication-label">
+                        <input type="radio" name="contact" id="phone" value="phone">Phone
+                    </label>
+                    <label for="sms" id="sms-communication-label">
+                        <input type="radio" name="contact" id="sms" value="sms">SMS
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>What do you do?</legend>
+                <div>
+                    <label for="student" id="student-label">
+                        <input type="checkbox" name="occupation" id="student" value="student">Student
+                    </label>
+                    <label for="freelancer" id="freelancer-label">
+                        <input type="checkbox" name="occupation" id="freelancer" value="freelancer">Freelancer
+                    </label>
+                    <label for="job-holder" id="job-holder-label">
+                        <input type="checkbox" name="occupation" id="job-holder" value="job-holder">Job Holder
+                    </label>
+                    <label for="business-person" id="business-person-label">
+                        <input type="checkbox" name="occupation" id="business-person" value="business-person">Businessman/Business woman
+                    </label>
+                    <label for="other" id="other-label">
+                        <input type="checkbox" name="occupation" id="other" value="other">Other
+                        <input type="text" name="other" id="other-value">
+                    </label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Do you have any other additional feedback</legend>
+                <textarea name="add-comments" id="add-comments" cols="30" rows="10"></textarea>
+            </fieldset>
+            <button id="submit" type="submit">Submit</button>
         </form>
     </main>
 
