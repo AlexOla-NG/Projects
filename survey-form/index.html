@@ -20,10 +20,12 @@ https://codepen.io/freeCodeCamp/full/VPaoNP
 </head>
 <body>
     <main>
-        <header>
+        <section>
             <h1 id="title">Online Shopping Store</h1>
             <p id="description">You are one of just a few people we are asking, so your answers are very important to us. Please be as honest as possible as the result are anonymous. For most, you need only check a box or enter a line for your answer. The survey will prompt you to complete all questions. Overall, it will take about 10 minutes of your time.</p>
-        </header>
+        </section>
+
+        <hr>
 
         <form action="#" id="survey-form">
             <label for="name" id="name-label">Name
@@ -32,18 +34,20 @@ https://codepen.io/freeCodeCamp/full/VPaoNP
             <label for="email" id="email-label">Email
                 <input type="email" name="userEmail" id="email"  placeholder="Enter your Email" required>
             </label>
-            <label for="age" id="number-label">Age (optional)
-                <input type="number" min="18" max="65" name="userAge" id="age" placeholder="Enter your age">
+            <label for="number" id="number-label">Age (optional)
+                <input type="number" min="18" max="65" name="userAge" id="number" placeholder="Enter your age">
             </label>
-            <label for="dropdown" id="dropdown-label">What is your favorite feature of the website
-                <input list="features" name="dropdown" id="dropdown" required>
-            </label>
-            <datalist id="features">
-                <option value="Ease of payment"></option>
-                <option value="Choice"></option>
-                <option value="Unbeatable price"></option>
-                <option value="Good support"></option>
-            </datalist>
+            <fieldset>
+                <legend id="dropdown-label">What is your favorite feature of the website
+                </legend>
+                <select id="dropdown" name="features" required>
+                    <option value="none">None</option>
+                    <option value="ease of payment">Ease of payment</option>
+                    <option value="choice">Choice</option>
+                    <option value="unbeatable price">Unbeatable price</option>
+                    <option value="good support">Good support</option>
+                </select>
+            </fieldset>
             <fieldset>
                 <legend>Please select your preferred choice of communication:</legend>
                 <div>
@@ -59,7 +63,7 @@ https://codepen.io/freeCodeCamp/full/VPaoNP
                 </div>
             </fieldset>
             <fieldset>
-                <legend>What do you do?</legend>
+                <legend>What is your occupation?</legend>
                 <div>
                     <label for="student" id="student-label">
                         <input type="checkbox" name="occupation" id="student" value="student">Student
@@ -81,7 +85,7 @@ https://codepen.io/freeCodeCamp/full/VPaoNP
             </fieldset>
             <fieldset>
                 <legend>Do you have any other additional feedback</legend>
-                <textarea name="add-comments" id="add-comments" cols="30" rows="10"></textarea>
+                <textarea name="add-comment" id="add-comment" cols="30" rows="10"></textarea>
             </fieldset>
             <button id="submit" type="submit">Submit</button>
         </form>
