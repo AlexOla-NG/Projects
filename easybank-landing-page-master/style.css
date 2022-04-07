@@ -24,7 +24,7 @@
     :root {
         --fs-300: 0.75rem;
         --fs-400: 0.8rem;
-        --fs-xl: 4rem;
+        --fs-xl: 2.7rem;
     }
 
 }
@@ -128,6 +128,7 @@ nav {
 
 @media (min-width: 40em) {
     header {
+        margin: auto 5em;
         display: flex;
         justify-content: space-between;
     }
@@ -188,31 +189,26 @@ main {
     width: 100%;
 }
 
-.segment {
-    /* width: 90%; */
-    margin: auto;
-}
-
 #top-segment { 
     /* border: solid purple; */
     grid-area: top-segment;
     background-image: url(./images/image-mockups.png),url(./images/bg-intro-mobile.svg), linear-gradient(var(--very-light-gray), var(--white));
     background-repeat: no-repeat;
     background-size: 100%, 100%, cover;
-    background-position: top -73% center, top -40% center, center;
-    padding: 1em;
+    background-position: top -67% center, top -40% center, center;
+    padding: 0 auto 1em;
     margin: 0 auto 2em;
     background-color: transparent;
     /* height: 15em; */
+}
+
+.content-wrapper {
     text-align: center;
+    margin: 20em auto auto;
 }
 
 #top-segment h1 {
-    /* border: solid pink; */
-    box-sizing: border-box;
-    padding: 8em 0.2em 0;
-    margin: 0 auto;
-    /* width: 95%; */
+    margin: 1em auto 0.5em;
     color: var(--dark-blue);
     font-size: var(--fs-xl);
     font-weight: var(--fw-200);
@@ -222,11 +218,33 @@ main {
     /* border: solid pink; */
     line-height: 1.8;
     font-size: var(--fs-300);
-    margin: 2em auto;
+    /* margin: 2em auto; */
 }
 
-#top-request { /*stopped here*/
+#top-request-btn { 
     width: 50%;
     font-weight: var(--fw-700);
     margin: 0.5em auto;
+}
+
+@media (min-width: 40em) {
+    .segment {
+        margin: auto 10em; /*does not affect anything*/
+    }
+
+    #top-segment { /*stopped here*/
+        border: solid pink;
+        margin: 0 0 20em;
+        padding: auto 5em 15em;
+        background-image: url(./images/image-mockups.png),url(./images/bg-intro-desktop.svg), linear-gradient(var(--very-light-gray), var(--white));
+        background-repeat: no-repeat;
+        background-size: 38%, contain, cover;
+        background-position: bottom 40% right -5%, top right -10%;
+    }
+
+    .content-wrapper {
+        width: 25%;
+        text-align: left;
+        margin: 10em 10em auto;
+    }
 }
