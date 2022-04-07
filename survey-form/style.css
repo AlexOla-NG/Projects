@@ -31,10 +31,14 @@ body {
     line-height: 1.7;
 }
 
-main { /*stopped here*/
+main { 
     background-color: var(--white);
     margin: 1em 1em auto;
     padding: 1em;
+}
+
+.header {
+    margin: 2em auto;
 }
 
 #title {
@@ -46,17 +50,26 @@ main { /*stopped here*/
     line-height: 0.9;
 }
 
+hr {
+    opacity: 0.4;
+}
+
 #survey-form {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    justify-content: space-evenly;
+    margin: 2em auto;
     /* padding: 1em; */
+}
+
+/*stopped here*/
+input [type=text], input [type="email"], input [type="number"] {
+    width: 100%;
 }
 
 input {
     accent-color: var(--green);
-    width: 100%;
 }
 
 ::placeholder {
