@@ -1,6 +1,7 @@
 :root {
     --black: hsl(0, 0%, 0%);
     --light-black: hsl(0, 0%, 30%);
+    --light-opacity-black: hsla(0, 0%, 0%, 0.1);
     --green: hsl(145, 50%, 50%);
     --white: hsl(0, 100%, 100%);
     
@@ -20,6 +21,10 @@
         --fs-400: 1.4rem;
         --fs-600: 2.5rem;
     }
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -56,16 +61,41 @@ hr {
 
 #survey-form {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     margin: 2em auto;
-    /* padding: 1em; */
+    background: linear-gradient(90deg, var(--white), var(--light-opacity-black));
 }
 
-/*stopped here*/
-input [type=text], input [type="email"], input [type="number"] {
+.col25 {
     width: 100%;
+    margin: 0.5em auto auto;
+}
+
+.col75 {
+    width: 100%;
+    margin: 0.5em auto;
+}
+
+@media (min-width: 40em) {
+    main {
+        width: 80%;
+        margin: 2em auto;
+    }
+
+    #title {
+        text-align: center;
+    }
+
+    #survey-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
+
+input[type=text], input[type=email], input[type=number], select, #submit{
+    width: 100%;
+    padding: 0.5em 0.4em;
+    outline: none;
 }
 
 input {
@@ -73,6 +103,63 @@ input {
 }
 
 ::placeholder {
-    color: var(--green);
-    opacity: 0.75;
+    color: var(--light-black);
+    opacity: 0.5;
+}
+
+.radioCheck {
+    margin: 0.5em auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+fieldset label {
+    float: left;
+    margin: 0.5em;
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+#submit {
+    cursor: pointer;
+    background-color: var(--green);
+    color: var(--white);
+    margin: 0.5em auto;
+    padding: 1em 0.5em;
+    transition: 300ms opacity ease-in-out;
+}
+
+#submit:hover {
+    opacity: 0.8;
+}
+
+input[type=text], input[type=email], input[type=number], textarea, #submit {
+    border-radius: 0.2em;
+    border: transparent;
+}
+
+@media (min-width: 40em) {
+
+    .radioCheck {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    input[type=text], input[type=email], input[type=number], textarea{
+        border: 0.01em solid;
+    }
+
+    #submit {
+        width: 20%;
+    }
+
+    textarea {
+        width: 100%;
+        resize: horizontal;
+    }
 }

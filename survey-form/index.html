@@ -1,12 +1,3 @@
-<!-- 1. online shopping survey
-https://www.jotform.com/form-templates/survey-for-online-shopping
-
-https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form
-
-https://codepen.io/freeCodeCamp/full/VPaoNP
-
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,14 +19,14 @@ https://codepen.io/freeCodeCamp/full/VPaoNP
         <hr>
 
         <form action="#" id="survey-form">
-            <label for="name" id="name-label">Name
-                <input type="text" name="userName" id="name" placeholder="Please enter your name" required>
+            <label for="name" class="col25" id="name-label">Name
+                <input type="text" name="userName" class="col75" id="name" placeholder="Please enter your name" required>
             </label>
-            <label for="email" id="email-label">Email
-                <input type="email" name="userEmail" id="email"  placeholder="Please enter your email" required>
+            <label for="email" class="col25" id="email-label">Email
+                <input type="email" name="userEmail" class="col75" id="email"  placeholder="Please enter your email" required>
             </label>
-            <label for="number" id="number-label">Age (optional)
-                <input type="number" min="18" max="65" name="userAge" id="number" placeholder="Please enter your age">
+            <label for="number" class="col25" id="number-label">Age (optional)
+                <input type="number" min="18" max="65" name="userAge" class="col75" id="number" placeholder="Please enter your age">
             </label>
 
             <fieldset>
@@ -50,44 +41,44 @@ https://codepen.io/freeCodeCamp/full/VPaoNP
                 </select>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="radioCheck">
                 <legend>Please select your preferred choice of communication:</legend>
                 <div>
-                    <label for="emailBox" id="email-communication-label">
-                        <input type="radio" name="contact" id="emailBox" value="email" checked>Email
+                    <label for="emailBox" id="email-communication-label">Email
+                        <input type="radio" name="contact" id="emailBox" value="email" checked>
                     </label>
-                    <label for="phone" id="phone-communication-label">
-                        <input type="radio" name="contact" id="phone" value="phone">Phone
+                    <label for="phone" id="phone-communication-label">Phone
+                        <input type="radio" name="contact" id="phone" value="phone">
                     </label>
-                    <label for="sms" id="sms-communication-label">
-                        <input type="radio" name="contact" id="sms" value="sms">SMS
+                    <label for="sms" id="sms-communication-label">SMS
+                        <input type="radio" name="contact" id="sms" value="sms">
                     </label>
                 </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="radioCheck">
                 <legend>What is your occupation?</legend>
                 <div>
-                    <label for="student" id="student-label">
-                        <input type="checkbox" name="occupation" id="student" value="student">Student
+                    <label for="student" id="student-label">Student
+                        <input type="checkbox" name="occupation" id="student" value="student">
                     </label>
-                    <label for="freelancer" id="freelancer-label">
-                        <input type="checkbox" name="occupation" id="freelancer" value="freelancer">Freelancer
+                    <label for="freelancer" id="freelancer-label">Freelancer
+                        <input type="checkbox" name="occupation" id="freelancer" value="freelancer">
                     </label>
-                    <label for="job-holder" id="job-holder-label">
-                        <input type="checkbox" name="occupation" id="job-holder" value="job-holder">Job Holder
+                    <label for="job-holder" id="job-holder-label">Job Holder
+                        <input type="checkbox" name="occupation" id="job-holder" value="job-holder">
                     </label>
-                    <label for="business-person" id="business-person-label">
-                        <input type="checkbox" name="occupation" id="business-person" value="business-person">Businessman/Business woman
+                    <label for="business-person" id="business-person-label">Businessman/Business woman
+                        <input type="checkbox" name="occupation" id="business-person" value="business-person">
                     </label>
-                    <label for="other" id="other-label">
-                        <input type="checkbox" name="occupation" id="other" value="other">Other
+                    <label for="other" id="other-label">Other
+                        <input type="checkbox" name="occupation" id="other" value="other">
                         <input type="text" name="other" id="other-value">
                     </label>
                 </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="textarea">
                 <legend>Do you have any other additional feedback</legend>
                 <textarea name="add-comment" id="add-comment" cols="30" rows="10"></textarea>
             </fieldset>
