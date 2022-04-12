@@ -152,6 +152,7 @@ nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin: 0;
     }
 
     #hamburger {
@@ -167,6 +168,7 @@ nav {
     .nav-list {
         display: flex;
         list-style: none;
+        margin: 0;
     }
 
     .nav-list li {
@@ -200,18 +202,18 @@ main {
     grid-area: 2/1/2/-1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    /* grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
     "top-segment"
     "middle-segment"
-    "bottom-segment"; */
+    "bottom-segment";
     width: 100%;
 }
 
 #top-segment { 
     /* border: solid purple; */
-    /* grid-area: top-segment; */
-    grid-area: 1/1/1/-1;
+    grid-area: top-segment;
+    grid-column: 1 / -1;
     background-image: url(./images/image-mockups.png),url(./images/bg-intro-mobile.svg), linear-gradient(var(--very-light-gray), var(--white));
     background-repeat: no-repeat;
     background-size: 92% auto, 100%, cover;
@@ -248,31 +250,45 @@ main {
 }
 
 @media (min-width: 40em) {
-    #top-segment { /*stopped here*/
+    #top-segment { 
         /* border: solid pink; */
+        grid-row-end: middle-segment start;
         margin: 0;
         padding: auto 5em 15em;
-        background-image: url(./images/image-mockups.png), url(./images/bg-intro-desktop.svg), linear-gradient(var(--very-light-gray), var(--white));
+        background-image: url(./images/image-mockups.png), url(./images/bg-intro-desktop.svg), linear-gradient(var(--very-light-gray) 80%, var(--white));
         background-repeat: no-repeat;
         background-size: 42% auto, 63% auto, cover;
-        background-position: top 30% right -12%, bottom 30% right -21%; 
+        background-position: top 30% right -12%, bottom 30% right -21%, center; 
         /* z-index: 1; */
     }
 
-    .content-wrapper { /*stopped here*/
+    .content-wrapper { 
         /* width: 25%; */
         text-align: left;
         margin: 8em 12em;
     }
 
+    #top-segment h1 {
+        margin: auto 0;
+    }
+
+    .content {
+        width: 30%;
+    }
+
     #top-request-btn {
-        width: 35%;
+        width: 13%;
     }
 }
 
-#middle-segment {
-    grid-area: 2/1/2/-1;
+#middle-segment { /*stopped here*/
+    grid-area: middle-segment;
+    grid-column: 1 / -1;
     margin: 0;
+    background-image: url(./images/image-mockups.png), var(--very-light-gray); /*stopped here*/
+    background-repeat: no-repeat;
+    background-size: 42% auto, cover;
+    background-position: top 30% right -12%, center;
 }
 
 footer {
