@@ -211,8 +211,9 @@ main {
     width: 100%;
 }
 
+/* mobileview - set margin, color & thickness of header elements */
 h1, h2, h3 {
-    margin: 1em 1.2em 0.5em;
+    margin: 1em 0.7em 0.5em;
     color: var(--dark-blue);
     font-weight: var(--fw-200);
 }
@@ -235,26 +236,30 @@ p {
     /* height: 15em; */
 }
 
+/* mobile & web view - set content-wrapper to grid */
 .content-wrapper {
-    text-align: center;
     margin: 18em auto 3em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: baseline;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
 }
 
+/* set font-size of h1 element */
 #top-segment h1 {
     font-size: var(--fs-xl);
 }
 
-#top-request-btn { 
-    width: 50%;
+#top-request-btn { /*stopped here*/
+    grid-column: 4 / 10; 
     font-weight: var(--fw-700);
-    margin: 0.5em auto;
+    /* margin: 0.5em auto; */
 }
 
 @media (min-width: 40em) {
+/* webview - set margin of header elements */
+    h1, h2, h3 {
+        margin: 1em 0;
+    }
+
     #top-segment { 
         /* border: solid pink; */
         grid-row-end: middle-segment start;
@@ -267,22 +272,20 @@ p {
         /* z-index: 1; */
     }
 
+/* webview - set content-wrapper margin */
     .content-wrapper { 
-        /* width: 25%; */
-        text-align: left;
         margin: 8em 12em;
     }
 
-    #top-segment h1 {
-        margin: auto 0;
+    .narrative-wrapper {
+        margin: auto 2em auto 0;
+        text-align: left;
+        grid-column: 1 / span 3;
     }
-
-    .content {
-        width: 30%;
-    }
-
+    
     #top-request-btn {
-        width: 13%;
+        grid-column: 1 / span 3;
+        /* width: 13%; */
     }
 }
 
@@ -298,6 +301,7 @@ p {
     margin: 3em auto;
 }
 
+/* set font-size on h2 of benefit segment */
 #middle-segment h2 {
     font-size: var(--fs-600);
 }
@@ -311,12 +315,34 @@ p {
     grid-column: 6 / span 2;
 }
 
-.narrative-wrapper { /*stopped here*/
+.narrative-wrapper { 
     grid-column: 1 / -1;
     text-align: center;
     margin: auto 1em 1em;
 }
 
+@media (min-width: 40em) {
+    #middle-segment .content-wrapper {
+        margin: auto 12em;
+    }
+
+    .benefits-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto 12em;
+    }
+
+    .icon-wrapper {
+        grid-column: span 2;
+    }
+
+    .narrative-wrapper {
+        margin: auto 2em auto 0;
+        text-align: left;
+        grid-column: 1 / span 2;
+    }
+    
+}
 
 /* #middle-segment { 
     border: solid pink;
