@@ -260,6 +260,11 @@ p {
         margin: 1em 0;
     }
 
+    .segment {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
     #top-segment { 
         /* border: solid pink; */
         grid-row-end: middle-segment start;
@@ -273,14 +278,23 @@ p {
     }
 
 /* webview - set content-wrapper margin */
-    .content-wrapper { 
-        margin: 8em 12em;
+    .content-wrapper {
+        grid-column: 1 / 7; 
+        margin: 8em 0 auto 12em;
+        
     }
 
     .narrative-wrapper {
+        /* width: 100%; */
         margin: auto 2em auto 0;
-        text-align: left;
-        grid-column: 1 / span 3;
+        /* text-align: left; */
+        /* grid-column: 1 / -1; */
+        display: grid;
+        grid-template-columns: repeat(12, 1fr)
+    }
+
+    .narrative-wrapper * {
+        grid-column: 1 / -1;
     }
     
     #top-request-btn {
