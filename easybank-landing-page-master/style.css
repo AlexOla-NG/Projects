@@ -244,22 +244,24 @@ p {
 }
 
 /* set font-size of h1 element */
-#top-segment h1 {
+h1 {
     font-size: var(--fs-xl);
 }
 
-#top-request-btn { /*stopped here*/
+#top-request-btn { 
     grid-column: 4 / 10; 
     font-weight: var(--fw-700);
     /* margin: 0.5em auto; */
 }
 
+/* for webview */
 @media (min-width: 40em) {
-/* webview - set margin of header elements */
+/*set margin of header elements */
     h1, h2, h3 {
         margin: 1em 0;
     }
 
+/* create grid in segment class */
     .segment {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -277,28 +279,33 @@ p {
         /* z-index: 1; */
     }
 
-/* webview - set content-wrapper margin */
+/* set content-wrapper margin */
     .content-wrapper {
-        grid-column: 1 / 7; 
-        margin: 8em 0 auto 12em;
-        
+        grid-column: 1 / 9; 
+        margin: 8em 0 auto 12em;   
     }
 
+/* set margin & create grids in .narrative-wrapper */
     .narrative-wrapper {
         /* width: 100%; */
         margin: auto 2em auto 0;
         /* text-align: left; */
-        /* grid-column: 1 / -1; */
         display: grid;
-        grid-template-columns: repeat(12, 1fr)
+        grid-template-columns: repeat(12, 1fr);
     }
 
-    .narrative-wrapper * {
-        grid-column: 1 / -1;
+    /* .content {
+        grid-column: span 5;
+    } */
+
+/* make all items in .narrative-wrapper of #top-segment span 8 columns */
+    #top-segment .narrative-wrapper * { /*stopped here*/
+        grid-column: 1 / span 6;
     }
-    
+
+/* make all #top-request-btn span 3 columns */
     #top-request-btn {
-        grid-column: 1 / span 3;
+        grid-column: 1 / span 2;
         /* width: 13%; */
     }
 }
@@ -341,9 +348,14 @@ p {
     }
 
     .benefits-wrapper {
+        grid-column: 1 / -1;
         display: flex;
         justify-content: space-evenly;
         margin: auto 12em;
+    }
+
+    .benefits {
+        margin: auto 1em auto 0;
     }
 
     .icon-wrapper {
@@ -353,7 +365,11 @@ p {
     .narrative-wrapper {
         margin: auto 2em auto 0;
         text-align: left;
-        grid-column: 1 / span 2;
+        /* grid-column: 1 / span 2; */
+    }
+
+    #middle-segment .narrative-wrapper * {
+        grid-column: 1 / span 12;
     }
     
 }
