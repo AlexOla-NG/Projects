@@ -312,6 +312,7 @@ h1 {
     }
 }
 
+/* mobileview - set layout for middle-segment */
 #middle-segment { 
     /* border: solid pink; */
     grid-area: middle-segment;
@@ -322,11 +323,17 @@ h1 {
 
 #middle-segment .content-wrapper {
     margin: 3em auto;
+    gap: 1.5em;
 }
 
 /* set font-size on h2 of benefit segment */
 #middle-segment h2 {
     font-size: var(--fs-600);
+}
+
+.benefits-wrapper {
+    grid-column: 1 / -1;
+    margin: auto 1em;
 }
 
 .benefits {
@@ -349,32 +356,39 @@ h1 {
         background-image: url(./images/image-mockups.png);
         background-repeat: no-repeat;
         background-size: 42% auto;
-        background-position: bottom -44% right -12%;
+        background-position: bottom -52% right -12%;
+        margin: auto auto 3em;
     }
 
     #middle-segment .content-wrapper {
         margin: 3em 12em;
-        text-align: left;
+        /* text-align: left; */
     }
 
-    #middle-segment .narrative-wrapper { /*stopped here*/
-        text-align: left;
+    #middle-segment .narrative-wrapper { 
+        /* text-align: left; */
         margin: auto 2em auto 0;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5em;
     }
 
     #middle-segment .content * {
         grid-column: 1 / span 8;
+        text-align: left;
     }
 
     .benefits-wrapper {
-        grid-column: 1 / -1;
+        /* grid-column: 1 / -1; */
         display: flex;
         justify-content: space-evenly;
         margin: auto 12em;
+        gap: 1em;
     }
 
     .benefits {
-        margin: auto 1em auto 0;
+        /* margin: auto 1em auto 0; */
+        /* grid-column: span 3; */
         gap: 1.5em;
     }
 
@@ -383,26 +397,14 @@ h1 {
     }
 
     .benefits .narrative-wrapper {
-        margin: auto 2em auto 0;
+        margin: auto 0;
         text-align: left;
     }
 
-    .benefits .narrative-wrapper * {
-        grid-column: 1 / span 9;
+    .benefits .narrative-wrapper * { /*stopped here*/
+        grid-column: 1 / span 10;
     }
-    
 }
-
-/* #middle-segment { 
-    border: solid pink;
-    grid-area: middle-segment;
-    grid-column: 1 / -1;
-    margin: 0;
-    background-image: url(./images/image-mockups.png), linear-gradient(var(--very-light-gray)); 
-    background-repeat: no-repeat;
-    background-size: 42% auto, cover;
-    background-position: top 30% right -12%, center;
-} */
 
 footer { 
     /* grid-area: footer; */
