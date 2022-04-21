@@ -401,9 +401,45 @@ h1 {
         text-align: left;
     }
 
-    .benefits .narrative-wrapper * { /*stopped here*/
+    .benefits .narrative-wrapper * { 
         grid-column: 1 / span 10;
     }
+}
+
+#bottom-segment {
+    grid-area: bottom-segment;
+    grid-column: 1 / -1;
+    background-color: var(--very-light-gray); /*change to something lighter*/
+}
+
+/* set margin around article elements */
+.article-wrapper {
+    margin: 1em
+}
+
+/* create grid layout for blog picture & content */
+.blog-post-wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.blog-post-wrapper > * { /*stopped here*/
+    grid-column: span 12;
+}
+
+.thumbnails > img {
+    width: 90%;
+    height: auto;
+}
+
+.blog-post {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items:center;
+}
+
+.blog-post > * { 
+    grid-column: span 8;
 }
 
 footer { 
