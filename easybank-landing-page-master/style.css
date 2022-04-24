@@ -32,6 +32,7 @@
 
 }
 
+/* shrink content box to absorb extra width */
 * {
     box-sizing: border-box;
 }
@@ -344,7 +345,7 @@ h1 {
     grid-column: 3 / span 8;
 }
 
-.content > p { /*stopped here*/
+.content > p {
     grid-column: span 12;
 }
 
@@ -353,14 +354,19 @@ h1 {
     margin: auto 1em;
 }
 
-/* .benefits {
-    display: grid;
-    grid-template-columns: repeat(12, auto);
-} */
+.benefits-wrapper > .content-wrapper {
+    margin: 1.5em auto;
+}
 
-/* .icon-wrapper {
-    grid-column: 6 / span 2;
-} */
+.icon-wrapper {
+    grid-column: 5 / span 3;
+    margin: auto auto auto 0.9em;
+}
+
+/* remove margin around .narrative-wrapper */
+.benefits > .narrative-wrapper {
+    margin: auto;
+}
 
 /* .narrative-wrapper { 
     grid-column: 1 / -1;
@@ -373,8 +379,20 @@ h1 {
         background-image: url(./images/image-mockups.png);
         background-repeat: no-repeat;
         background-size: 42% auto;
-        background-position: bottom -52% right -12%;
+        background-position: bottom -150% right -12%;
         margin: auto auto 3em;
+    }
+
+    #middle-segment > .buffer {
+        margin: 3em auto 3em 12em;
+    }
+
+    .content-wrapper > .content {
+        grid-column: span 4;
+    }
+
+    .content > h2 {
+        grid-column: span 12;
     }
 
     /* #middle-segment .content-wrapper {
@@ -395,28 +413,31 @@ h1 {
         text-align: left;
     } */
 
-    .benefits-wrapper {
+    .benefits-wrapper { /*stopped here*/
         /* grid-column: 1 / -1; */
-        display: flex;
+        /* display: flex;
         justify-content: space-evenly;
-        margin: auto 12em;
+        align-content: center; */
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        margin: 3em 12em;
         gap: 1em;
     }
 
-    /* .benefits {
-        margin: auto 1em auto 0;
+    .benefits {
+        /* margin: auto 1em auto 0; */
         grid-column: span 3;
-        gap: 1.5em;
-    } */
+        /* gap: 1.5em; */
+    }
 
-    /* .icon-wrapper {
-        grid-column: span 2;
-    } */
-
-    /* .benefits .narrative-wrapper {
+    .icon-wrapper {
+        grid-column: 1 / span 2;
         margin: auto 0;
-        text-align: left;
-    } */
+    }
+
+    .benefits > .narrative-wrapper {
+        grid-column: span 12;
+    }
 
     /* .benefits .narrative-wrapper * { 
         grid-column: 1 / span 10;
