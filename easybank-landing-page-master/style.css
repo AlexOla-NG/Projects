@@ -413,7 +413,7 @@ h1 {
         text-align: left;
     } */
 
-    .benefits-wrapper { /*stopped here*/
+    .benefits-wrapper { 
         /* grid-column: 1 / -1; */
         /* display: flex;
         justify-content: space-evenly;
@@ -451,34 +451,44 @@ h1 {
 }
 
 /* set margin around article elements */
-.article-wrapper {
+/* .article-wrapper {
     margin: 1em
+} */
+
+/* remove bottom margin on content-wrapper for header */
+#bottom-segment > .content-wrapper {
+    margin: 3em auto auto;
+}
+
+/* reduce margin around content-wrapper for article elements */
+.article-wrapper > .content-wrapper { /*stopped here*/
+    margin: 1em;
 }
 
 /* create grid layout for blog picture & content */
-.blog-post-wrapper {
+/* .blog-post-wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-}
+} */
 
-.blog-post-wrapper > * { /*stopped here*/
+.blog-post-wrapper > * { 
     grid-column: span 12;
 }
 
 .thumbnails > img {
-    width: 90%;
+    width: 100%;
     height: auto;
 }
 
-.blog-post {
+/* .blog-post {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items:center;
-}
+} */
 
-.blog-post > * { 
+/* .blog-post > * { 
     grid-column: span 8;
-}
+} */
 
 footer { 
     /* grid-area: footer; */
