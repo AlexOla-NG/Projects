@@ -8,6 +8,8 @@
     --very-light-gray: hsl(0, 0%, 98%);
     --white: hsl(0, 0%, 100%);
 
+    --fs-100: 0.6rem;
+    --fs-200: 0.7rem;
     --fs-300: 0.83rem;
     --fs-400: 1rem;
     --fs-600: 1.75rem;
@@ -215,7 +217,7 @@ main {
 }
 
 /* mobileview - set margin, color & thickness of header elements */
-h1, h2, h3 {
+h1, h2, h3, h4 {
     /* margin: 1em 0.7em 0.5em; */
     color: var(--dark-blue);
     font-weight: var(--fw-200);
@@ -380,7 +382,6 @@ h1 {
         background-repeat: no-repeat;
         background-size: 42% auto;
         background-position: bottom -150% right -12%;
-        margin: auto auto 3em;
     }
 
     #middle-segment > .buffer {
@@ -450,6 +451,11 @@ h1 {
     background-color: var(--very-light-gray); /*change to something lighter*/
 }
 
+/*set margin of header elements */
+    h4 {
+        margin: 0.5em auto;
+    }
+
 /* set margin around article elements */
 /* .article-wrapper {
     margin: 1em
@@ -460,16 +466,12 @@ h1 {
     margin: 3em auto auto;
 }
 
-/* reduce margin around content-wrapper for article elements */
-.article-wrapper > .content-wrapper { /*stopped here*/
-    margin: 1em;
+/* reduce margin around content-wrapper for article elements, set border-radius */
+.article-wrapper > .content-wrapper {
+    margin: 1em 1em 1.5em;
+    background-color: var(--white);
+    border-radius: 0 0 var(--br-300) var(--br-300);
 }
-
-/* create grid layout for blog picture & content */
-/* .blog-post-wrapper {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-} */
 
 .blog-post-wrapper > * { 
     grid-column: span 12;
@@ -478,17 +480,60 @@ h1 {
 .thumbnails > img {
     width: 100%;
     height: auto;
+    border-radius: var(--br-300) var(--br-300) 0 0;
 }
 
-/* .blog-post {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    align-items:center;
-} */
+/* set padding around blog-post and align text left */
+.blog-post {
+    padding: 0 1.5em 1.5em;
+    text-align: left;
+}
 
-/* .blog-post > * { 
-    grid-column: span 8;
-} */
+.blog-post-wrapper > .narrative-wrapper {
+    margin: auto;
+}
+
+/* set color on header hover */
+h4:hover {
+    cursor: pointer;
+    color: var(--lime-green);
+    opacity: 0.6;
+    /* color: var(--bright-cyan); */
+}
+
+/* set font size of p elements in .blog-post */
+.author-name {
+    font-size: var(--fs-100);
+}
+
+.snippet {
+    font-size: var(--fs-200);
+    line-height: 1.5;
+}
+
+@media (min-width: 40em) {
+    /* #bottom-segment {
+
+    } */
+
+/* apply margin to header */
+    #bottom-segment > .buffer {
+        margin: 3em auto 3em 12em;
+    }
+
+/* remove extra left margin on header */
+    .buffer > .content {
+        margin: 0;
+    }
+
+    .article-wrapper {
+        margin: 3em auto 3em 12em;
+    }
+
+    .article-wrapper > .content-wrapper { /*stopped here*/
+        margin: 1em auto 1.5em;
+    }
+}
 
 footer { 
     /* grid-area: footer; */
