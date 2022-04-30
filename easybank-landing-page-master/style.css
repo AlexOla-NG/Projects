@@ -422,7 +422,7 @@ h1 {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         margin: 3em 12em;
-        gap: 1em;
+        gap: 1.5em;
     }
 
     .benefits {
@@ -477,6 +477,10 @@ h1 {
     grid-column: span 12;
 }
 
+/* .thumbnails {
+    grid-column: span 12;
+} */
+
 .thumbnails > img {
     width: 100%;
     height: auto;
@@ -487,6 +491,7 @@ h1 {
 .blog-post {
     padding: 0 1.5em 1.5em;
     text-align: left;
+    /* grid-column: span 12; */
 }
 
 .blog-post-wrapper > .narrative-wrapper {
@@ -494,6 +499,9 @@ h1 {
 }
 
 /* set color on header hover */
+h4 {
+    transition: color ease 300ms;
+}
 h4:hover {
     cursor: pointer;
     color: var(--lime-green);
@@ -518,7 +526,7 @@ h4:hover {
 
 /* apply margin to header */
     #bottom-segment > .buffer {
-        margin: 3em auto 3em 12em;
+        margin: auto 12em;
     }
 
 /* remove extra left margin on header */
@@ -527,12 +535,36 @@ h4:hover {
     }
 
     .article-wrapper {
-        margin: 3em auto 3em 12em;
+        margin: auto 12em 3em;
     }
 
     .article-wrapper > .content-wrapper { /*stopped here*/
         margin: 1em auto 1.5em;
+        /* grid-template-rows: 0.5fr 1fr; */
+        /* grid-template-areas:
+        "thumbnails"
+        "blog-post"; */
+        grid-auto-rows: minmax(25%, auto); /*stopped here*/
+        /* align-items: stretch; */
     }
+
+
+
+    .thumbnails {
+        width: 100%;
+        /* height: 90%; */
+        /* grid-area: thumbnails; */
+    }
+
+    .thumbnails > img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* .blog-post {
+        grid-area: blog-post;
+    } */
 }
 
 footer { 
