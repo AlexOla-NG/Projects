@@ -1,5 +1,5 @@
 const hamburger = document.querySelector("#hamburger")
-const navList = document.querySelector(".nav-list")
+const navList = document.querySelector(".header-nav-list")
 
 let menuOpen = false
 
