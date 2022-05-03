@@ -635,10 +635,24 @@ footer { /*stopped here*/
 
     .logo-wrapper { /*stopped here*/
         /* grid-column: span 3; */
-        margin: auto;
+        margin: 1em;
+    }
+
+    .bottom-logo {
+        align-self: flex-end;
+    }
+
+    .footer-nav-list {
+        margin: 1em;
+    }
+
+    .footer-nav-list > .list-links {
+        float: none;
+        margin: 2em;
+        text-align: left;
     }
 
     .footer-nav-list .hyper-links {
-        margin: auto 1.5em;
+        /* margin: 1.5em; */
     }
 }
