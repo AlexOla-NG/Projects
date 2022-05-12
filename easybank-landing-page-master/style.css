@@ -106,6 +106,10 @@ header {
     /* box-sizing: border-box; */
 }
 
+.hyper-links:visited {
+    color: var(--white);
+}
+
 #nav-invite-btn {
     display: none;
 }
@@ -116,6 +120,7 @@ header {
     min-width: 10%;
     /* height: 3em; */
     font-size: var(--fs-300);
+    font-weight: var(--fw-700);
     padding: 1em;
     border-radius: var(--br-600);
     transition: opacity ease 300ms;
@@ -126,7 +131,7 @@ header {
     cursor: pointer;
 }
 
-.request-invite .hyper-links {
+.request-invite .white-link {
     color: var(--white);
 }
 
@@ -281,7 +286,6 @@ h1 {
 
 #top-request-btn { 
     grid-column: 4 / 10; 
-    font-weight: var(--fw-700);
     /* margin: 0.5em auto; */
 }
 
@@ -513,11 +517,11 @@ h1 {
 }
 
 /* set color on header hover */
-h4 {
+.highlight {
     transition: color ease 300ms;
 }
 
-h4:hover {
+.highlight:hover {
     cursor: pointer;
     color: var(--lime-green);
     opacity: 0.6;
@@ -619,9 +623,9 @@ footer {
     display: inline-block;
 }
 
-.footer-nav-list .hyper-links {
+/* .footer-nav-list .white-link {
     color: var(--white);
-}
+} */
 
 .button-wrapper {
     display: grid;
@@ -640,13 +644,9 @@ footer {
         column-gap: 1em;
     }
 
-    .bottom-nav > * {
-        grid-column: span 4;
-    }
-
     .logo-wrapper { 
-        /* grid-column: span 4; */
-        margin: auto;
+        grid-column: 1 / span 2;
+        margin: 0;
         row-gap: 4.5em;
         column-gap: 0;
     }
@@ -659,22 +659,40 @@ footer {
         grid-column: span 12;
     } */
 
+    .bottom-nav > .nav-list {
+        /* padding: 10em; */
+    }
+
     .footer-nav-list {
+        grid-column: 4 / span 4;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1em;
+        /* row-gap: 1em; */
     }
 
-    .footer-nav-list > .list-links > .hyper-links { /*stopped here*/
-        /* margin: 2em; */
+    .footer-nav-list > .list-links { 
+        margin: auto 1em;
         text-align: left;
-    }
-
-    .footer-nav-list .hyper-links {
-        /* margin: 1.5em; */
+        /* float: left; */
     }
 
     .button-wrapper {
-        /* grid-column: span 4; */
+        grid-column: 11 / span 2;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        text-align: right;
+    }
+
+    .button-wrapper > * {
+        grid-column: span 12;
+    }
+
+    #footer-request-btn {
+        grid-column: 4 / span 9;
+    }
+
+    .light-opacity:hover { /*stopped here*/
+        background-color: rgba(255, 255, 255);
     }
 }
