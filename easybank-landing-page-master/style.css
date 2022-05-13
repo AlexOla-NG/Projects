@@ -2,11 +2,15 @@
 :root {
     --dark-blue: hsl(233, 26%, 24%);
     --lime-green: hsl(136, 65%, 51%);
+    --light-lime-green: hsl(136, 65%, 61%);
     --bright-cyan: hsl(192, 70%, 51%);
+    --light-bright-cyan: hsl(192, 70%, 61%);
     --grayish-blue: hsl(233, 8%, 62%);
     --light-grayish-blue: hsl(220, 16%, 96%);
     --very-light-gray: hsl(0, 0%, 98%);
     --white: hsl(0, 0%, 100%);
+
+    --ease-transition: 300ms ease;
 
     --fs-100: 0.6rem;
     --fs-200: 0.7rem;
@@ -123,7 +127,7 @@ header {
     font-weight: var(--fw-700);
     padding: 1em;
     border-radius: var(--br-600);
-    transition: opacity ease 300ms;
+    transition: opacity var(--ease-transition);
 }
 
 .request-invite:hover {
@@ -202,9 +206,7 @@ header {
         margin: auto;
         /* border: solid saddlebrown; */
         border: transparent;
-        transition-property: box-shadow, color;
-        transition-timing-function: ease;
-        transition-duration: 300ms;
+        transition: box-shadow var(--ease-transition), color var(--ease-transition);
     }
 
     .header-nav-list .hyper-links:hover{
@@ -350,7 +352,7 @@ h1 {
     grid-area: middle-segment;
     grid-column: 1 / -1;
     margin: 0;
-    background-color: var(--very-light-gray);
+    background-color: var(--light-grayish-blue);
 }
 
 .content-wrapper > .content {
@@ -507,7 +509,7 @@ h1 {
 
 /* set padding around blog-post and align text left */
 .blog-post {
-    padding: 0 1.5em 1.5em;
+    padding: 0 1em 1em;
     text-align: left;
     /* grid-column: span 12; */
 }
@@ -518,7 +520,7 @@ h1 {
 
 /* set color on header hover */
 .highlight {
-    transition: color ease 300ms;
+    transition: color var(--ease-transition);
 }
 
 .highlight:hover {
@@ -545,7 +547,7 @@ h1 {
 
 /* apply margin to header */
     #bottom-segment > .buffer {
-        margin: auto 12em;
+        margin: 3em 12em auto;
     }
 
 /* remove extra left margin on header */
@@ -563,7 +565,7 @@ h1 {
         /* grid-template-areas:
         "thumbnails"
         "blog-post"; */
-        grid-auto-rows: minmax(25%, 1fr); 
+        grid-auto-rows: minmax(25%, 50%); 
         /* align-items: stretch; */
     }
 
@@ -571,6 +573,10 @@ h1 {
         max-width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .blog-post {
+        padding: 0 1.5em 1em;
     }
 }
 
@@ -638,6 +644,10 @@ footer {
     grid-column: span 12;
 }
 
+#footer-request-btn {
+    grid-column: 4 / 10;
+}
+
 @media (min-width: 40em) { /*stopped here*/
     .bottom-nav {
         margin: 3em 12em;
@@ -647,8 +657,7 @@ footer {
     .logo-wrapper { 
         grid-column: 1 / span 2;
         margin: 0;
-        row-gap: 4.5em;
-        column-gap: 0;
+        row-gap: 2.5em;
     }
 
     .logo-wrapper > * {
@@ -659,6 +668,15 @@ footer {
         grid-column: span 12;
     } */
 
+    .social-logo > img {
+        transition: filter var(--ease-transition);
+    }
+
+    .social-logo > img:hover { /*stopped here*/
+        filter: invert(68%) sepia(92%) saturate(425%) hue-rotate(75deg) brightness(89%) contrast(85%);
+        cursor: pointer;
+    }
+
     .bottom-nav > .nav-list {
         /* padding: 10em; */
     }
@@ -666,7 +684,10 @@ footer {
     .footer-nav-list {
         grid-column: 4 / span 4;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        /* display: inline-grid; */
+        /* grid-template-columns: repeat(2, 1fr); */
+        grid-template-rows: repeat(3, 0.5fr);
+        grid-auto-flow: column;
         column-gap: 1em;
         /* row-gap: 1em; */
     }
@@ -681,6 +702,7 @@ footer {
         grid-column: 11 / span 2;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
+        row-gap: 1.5em;
         text-align: right;
     }
 
@@ -692,7 +714,12 @@ footer {
         grid-column: 4 / span 9;
     }
 
-    .light-opacity:hover { /*stopped here*/
-        background-color: rgba(255, 255, 255);
+    .light-opacity-green {
+        transition-property: opacity var(--ease-transition),
+    }
+
+    .light-opacity-green:hover { 
+        background-image: linear-gradient(90deg, var(--light-lime-green), var(--light-bright-cyan));
+        opacity: 1;
     }
 }
