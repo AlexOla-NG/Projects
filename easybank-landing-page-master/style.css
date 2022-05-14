@@ -1,4 +1,4 @@
-/* mobileview - set default values */
+/* set default values for color, transition, font size, font weight and border radius*/
 :root {
     --dark-blue: hsl(233, 26%, 24%);
     --lime-green: hsl(136, 65%, 51%);
@@ -28,7 +28,7 @@
     --br-600: 2em;
 }
 
-/* webview - set default values */
+/* webview - set default values for font size */
 @media (min-width: 40em) {
     :root {
         --fs-300: 0.75rem;
@@ -38,11 +38,12 @@
 
 }
 
-/* shrink content box of all elements to absorb extra width */
+/* set box-sizing of all elements to border-box; helps absorb extra width */
 * {
     box-sizing: border-box;
 }
 
+/* set font (family, size and weight), color, margin and layout to grid on body */
 body {
     font-family: 'Public Sans', sans-serif;
     font-size: var(--fs-400);
@@ -51,22 +52,15 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    /* grid-template-rows: repeat(3, auto);
-    grid-template-areas:
-    "header"
-    "main"
-    "footer"; */
 }
 
 header {
-    /* grid-area: header; */
     grid-area: 1/1/1/-1;
 }
 
+/* set nav bar layout to grid, and style elements */
 .header-nav {
-    /* border: solid purple; */
     position: relative;
-    /* width: 90%; */
     margin: 1em 1.2em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -86,8 +80,8 @@ header {
     /* transition: all cubic-bezier(0.4, 0, 1, 1) 200ms 500ms; */
 }
 
+/* style nav bar list in mobileview */
 .header-nav-list {
-    /* border: solid pink; */
     display: none;
 }
 
@@ -100,29 +94,27 @@ header {
 }
 
 .list-links {
-    /* border: solid pink; */
     margin: 1.3em auto;
-    /* box-sizing: border-box; */
 }
 
 .hyper-links {
     text-decoration: none;
-    /* box-sizing: border-box; */
 }
 
 .hyper-links:visited {
     color: var(--white);
 }
 
+/* hide nav bar button in mobileview */
 #nav-invite-btn {
     display: none;
 }
 
+/* set default style for all buttons with the .request-invite class */
 .request-invite {
     background: linear-gradient(90deg, var(--lime-green), var(--bright-cyan));
     border: transparent;
     min-width: 10%;
-    /* height: 3em; */
     font-size: var(--fs-300);
     font-weight: var(--fw-700);
     padding: 1em;
@@ -139,12 +131,12 @@ header {
     color: var(--white);
 }
 
+/* set nav bar list to show onclick in mobileview */
 .header-nav-list.show {
     display: inline-block;
     position: absolute;
     top: 4em;
     width: 100%;
-    /* background-color: var(--bright-cyan); */
     background-color: var(--white);
     border: transparent;
     border-radius: var(--br-300);
@@ -153,25 +145,20 @@ header {
 
 .header-nav-list .hyper-links {
     color: var(--dark-blue);
-    /* box-sizing: border-box; */
-    /* font-weight: var(--fw-700); */
 }
 
+/* set style for header elements in web view */
 @media (min-width: 40em) {
+    /* set header to grid */
     header {
         margin: auto 12em;
-        /* display: flex;
-        justify-content: space-between; */
         display: grid;
         grid-template-columns: repeat(12, 1fr);
     }
 
+    /* style nav bar and its elements*/
     .header-nav {
         grid-column: span 12;
-        /* width: 100%; */
-        /* display: flex;
-        justify-content: space-between;
-        align-items: center; */
         margin: 1em auto;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
@@ -193,18 +180,12 @@ header {
         grid-template-columns: repeat(5, 1fr);
         gap: 2.5em;
         list-style: none;
-        /* margin: 0; */
     }
-
-    /* .list-links {
-        float: left;
-    } */
 
     .header-nav-list .hyper-links {
         color: var(--grayish-blue);
         padding-bottom: 2em;
         margin: auto;
-        /* border: solid saddlebrown; */
         border: transparent;
         transition: box-shadow var(--ease-transition), color var(--ease-transition);
     }
@@ -218,13 +199,11 @@ header {
         grid-column: 11 / span 2;
         display: block;
         max-width: 80%;
-        /* justify-self: right; */
     }
 }
 
+/* set layout of main to grid */
 main {
-    /* border: solid purple; */
-    /* grid-area: main; */
     grid-area: 2/1/2/-1;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -236,9 +215,8 @@ main {
     width: 100%;
 }
 
-/* mobileview - set margin, color & thickness of header elements */
+/* mobileview - set default color & thickness of all text tags (headers and paragraphs) */
 h1, h2, h3, h4 {
-    /* margin: 1em 0.7em 0.5em; */
     color: var(--dark-blue);
     font-weight: var(--fw-200);
 }
@@ -248,8 +226,8 @@ p {
     font-size: var(--fs-300);
 }
 
+/* style elements in #top-segment */
 #top-segment { 
-    /* border: solid purple; */
     grid-area: top-segment;
     grid-column: 1 / -1;
     background-image: url(./images/image-mockups.png),url(./images/bg-intro-mobile.svg), linear-gradient(var(--very-light-gray), var(--white));
@@ -258,7 +236,6 @@ p {
     background-position: top -42% center, top -22% center, center;
     margin: 0 auto;
     background-color: transparent;
-    /* height: 15em; */
 }
 
 /* mobile & web view - set content-wrapper to grid */
@@ -274,72 +251,46 @@ p {
     margin: 16.5em auto 3em;
 }
 
-/* set content to span 12 cols, margin and text align to center */
+/* set content in .native-wrapper to span 12 cols, margin and text align to center */
 .narrative-wrapper {
     grid-column: span 12;
     margin: 1em 0.5em;
     text-align: center;
 }
 
-/* set font-size of h1 element */
+/* set font-size of h1 */
 h1 {
     font-size: var(--fs-xl);
 }
 
+/* align button in #top-segment */
 #top-request-btn { 
     grid-column: 4 / 10; 
-    /* margin: 0.5em auto; */
 }
 
-/* for webview */
+/* for webview of #top-segment */
 @media (min-width: 40em) {
-/*set margin of header elements */
-    /* h1, h2, h3, p {
-        margin: 0;
-    } */
-
-/* create grid in segment class */
-    /* .segment {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-    } */
-
     #top-segment { 
-        /* border: solid pink; */
-        /* grid-row-end: middle-segment start; */
         margin: 0;
         padding: auto 5em 30em;
         background-image: url(./images/image-mockups.png), url(./images/bg-intro-desktop.svg), linear-gradient(var(--very-light-gray) 60%, var(--white));
         background-repeat: no-repeat;
         background-size: 42% auto, 60% auto, cover;
         background-position: top 45% right -12%, bottom right -35%;
-        /* overflow-y: visible; */
-        /* z-index: 1; */
     }
-
-/* set content-wrapper column-start, margin & grid-gap */
-    /* .content-wrapper {
-        grid-column: 1 / 9; 
-        margin: 10em 0 10em 12em;
-        gap: 1.5em;
-    } */
 
     #top-segment > .buffer {
         margin: 10em 0 10em 12em;
     }
 
-/* set margin & create grids in .narrative-wrapper */
+    /* set margin & create grids in .narrative-wrapper */
     .narrative-wrapper {
-        /* width: 100%; */
         margin: auto;
         grid-column: 1 / span 3;
         text-align: left;
-        /* display: grid; */
-        /* grid-template-columns: repeat(12, 1fr); */
-        /* gap: 1.5em; */
     }
 
-/* make the #top-request-btn span 2 columns */
+    /* make the #top-request-btn span 2 columns */
     #top-request-btn {
         grid-column: 1 / span 2;
         width: 70%;
@@ -348,7 +299,6 @@ h1 {
 
 /* mobileview - set layout for middle-segment */
 #middle-segment { 
-    /* border: solid pink; */
     grid-area: middle-segment;
     grid-column: 1 / -1;
     margin: 0;
@@ -360,7 +310,7 @@ h1 {
     grid-template-columns: repeat(12, 1fr);
 }
 
-/* set font-size on h2 of benefit segment */
+/* set font-size on h2 for benefit segment */
 .content > h2 {
     font-size: var(--fs-600);
     grid-column: 3 / span 8;
@@ -379,6 +329,7 @@ h1 {
     margin: 1.5em auto;
 }
 
+/* align icons to center */
 .icon-wrapper {
     grid-column: 5 / span 3;
     margin: auto 0.7em;
@@ -389,12 +340,7 @@ h1 {
     margin: auto;
 }
 
-/* .narrative-wrapper { 
-    grid-column: 1 / -1;
-    text-align: center;
-    margin: auto 1em 1em;
-} */
-
+/* mobileview - set layout for middle-segment */
 @media (min-width: 40em) {
     #middle-segment { 
         background-image: url(./images/image-mockups.png);
@@ -415,29 +361,7 @@ h1 {
         grid-column: span 12;
     }
 
-    /* #middle-segment .content-wrapper {
-        margin: 3em 12em;
-        text-align: left;
-    } */
-
-    /* #middle-segment .narrative-wrapper { 
-        text-align: left;
-        margin: auto 2em auto 0;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 1.5em;
-    } */
-
-    /* #middle-segment .content * {
-        grid-column: 1 / span 8;
-        text-align: left;
-    } */
-
     .benefits-wrapper { 
-        /* grid-column: 1 / -1; */
-        /* display: flex;
-        justify-content: space-evenly;
-        align-content: center; */
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         margin: 3em 12em;
@@ -445,9 +369,7 @@ h1 {
     }
 
     .benefits {
-        /* margin: auto 1em auto 0; */
         grid-column: span 3;
-        /* gap: 1.5em; */
     }
 
     .icon-wrapper {
@@ -458,27 +380,19 @@ h1 {
     .benefits > .narrative-wrapper {
         grid-column: span 12;
     }
-
-    /* .benefits .narrative-wrapper * { 
-        grid-column: 1 / span 10;
-    } */
 }
 
+/* set layout for #bottom-segment and style its elements */
 #bottom-segment {
     grid-area: bottom-segment;
     grid-column: 1 / -1;
-    background-color: var(--very-light-gray); /*change to something lighter*/
+    background-color: var(--very-light-gray);
 }
 
-/*set margin of header elements */
-    h4 {
-        margin: 0.5em auto;
-    }
-
-/* set margin around article elements */
-/* .article-wrapper {
-    margin: 1em
-} */
+/*set margin of h4 elements in bottom-segment */
+h4 {
+    margin: 0.5em auto;
+}
 
 /* remove bottom margin on content-wrapper for header */
 #bottom-segment > .content-wrapper {
@@ -496,10 +410,6 @@ h1 {
     grid-column: span 12;
 }
 
-/* .thumbnails {
-    grid-column: span 12;
-} */
-
 /* set border radius on thumbnails */
 .thumbnails {
     width: 100%;
@@ -511,14 +421,13 @@ h1 {
 .blog-post {
     padding: 0 1em 1em;
     text-align: left;
-    /* grid-column: span 12; */
 }
 
 .blog-post-wrapper > .narrative-wrapper {
     margin: auto;
 }
 
-/* set color on header hover */
+/* set transition for color of h4 class, .highlight, on hover */
 .highlight {
     transition: color var(--ease-transition);
 }
@@ -527,10 +436,9 @@ h1 {
     cursor: pointer;
     color: var(--lime-green);
     opacity: 0.6;
-    /* color: var(--bright-cyan); */
 }
 
-/* set font size of p elements in .blog-post */
+/* set font size of p classes (.author-name and .snippet in .blog-post */
 .author-name {
     font-size: var(--fs-100);
 }
@@ -540,17 +448,14 @@ h1 {
     line-height: 1.5;
 }
 
+/* set webview layout for #bottom-segment and style its elements */
 @media (min-width: 40em) {
-    /* #bottom-segment {
-
-    } */
-
-/* apply margin to header */
+    /* apply margin to header */
     #bottom-segment > .buffer {
         margin: 3em 12em auto;
     }
 
-/* remove extra left margin on header */
+    /* remove extra left margin on header */
     .buffer > .content {
         margin: 0;
     }
@@ -559,16 +464,13 @@ h1 {
         margin: auto 12em 3em;
     }
 
+    /* set size of .content-wrapper rows in #bottom-segment */
     .article-wrapper > .content-wrapper { 
         margin: 1em auto 1.5em;
-        /* grid-template-rows: 0.5fr 1fr; */
-        /* grid-template-areas:
-        "thumbnails"
-        "blog-post"; */
         grid-auto-rows: minmax(25%, 50%); 
-        /* align-items: stretch; */
     }
 
+    /* set image size in .content-wrapper */
     .thumbnails {
         max-width: 100%;
         height: 100%;
@@ -580,8 +482,8 @@ h1 {
     }
 }
 
+/* set layout for footer and style its elements */
 footer { 
-    /* grid-area: footer; */
     grid-area: 3/1/3/-1;
     background-color: var(--dark-blue); 
 }
@@ -600,21 +502,16 @@ footer {
 }
 
 .logo-wrapper {
-    /* display: grid; */
-    /* grid-template-columns: repeat(12, 1fr); */
     place-items: center;
-    /* display: flex;
-    flex-direction: column; */
     row-gap: 1.5em;
-    /* justify-content: space-evenly; */
     margin: 1em 3em auto;
-    /* align-items: center; */
 }
 
 .logo-wrapper > * {
     grid-column: span 12;
 }
 
+/* set color of easybank logo to white */
 .bottom-logo {
     filter: brightness(0) invert(1);
 }
@@ -628,10 +525,6 @@ footer {
 .footer-nav-list {
     display: inline-block;
 }
-
-/* .footer-nav-list .white-link {
-    color: var(--white);
-} */
 
 .button-wrapper {
     display: grid;
@@ -648,7 +541,8 @@ footer {
     grid-column: 4 / 10;
 }
 
-@media (min-width: 40em) { /*stopped here*/
+/* set webview layout for footer and style its elements */
+@media (min-width: 40em) {
     .bottom-nav {
         margin: 3em 12em;
         column-gap: 1em;
@@ -664,38 +558,27 @@ footer {
         grid-column: span 12;
     }
 
-    /* .bottom-logo {
-        grid-column: span 12;
-    } */
-
+    /* set color of svg icons to --lime-green on hover */
     .social-logo > img {
         transition: filter var(--ease-transition);
     }
 
-    .social-logo > img:hover { /*stopped here*/
+    .social-logo > img:hover {
         filter: invert(68%) sepia(92%) saturate(425%) hue-rotate(75deg) brightness(89%) contrast(85%);
         cursor: pointer;
-    }
-
-    .bottom-nav > .nav-list {
-        /* padding: 10em; */
     }
 
     .footer-nav-list {
         grid-column: 4 / span 4;
         display: grid;
-        /* display: inline-grid; */
-        /* grid-template-columns: repeat(2, 1fr); */
         grid-template-rows: repeat(3, 0.5fr);
         grid-auto-flow: column;
         column-gap: 1em;
-        /* row-gap: 1em; */
     }
 
     .footer-nav-list > .list-links { 
         margin: auto 1em;
         text-align: left;
-        /* float: left; */
     }
 
     .button-wrapper {
