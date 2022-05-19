@@ -1,0 +1,15 @@
+:root {
+    /* ?colors */
+    --morning-blue: hsl(129, 6%, 58%);
+    --eton-blue: hsl(143, 26%, 66%);
+    --laurel-green: hsl(85, 22%, 70%);
+    --dutch-white: hsl(50, 32%, 75%);
+    --pale-spring-bud: hsl(70, 39%, 81%);
+
+    /* ?font-size */
+    --fs-400: 1rem;
+    --fs-600: 2rem;
+    --fs-800: 3rem;
+
+    /* ?font-weight stopped here */
+}
