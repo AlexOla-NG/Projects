@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexander Oweka</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>About Me</title>
 </head>
 <body>
     <div class="canvas">
-        <nav>
-            <ul>
-                <li><a href="./index.html">About Me</a></li>
-                <li><a href="#contact-page">Contact</a></li>
-                <li><a href="http://" target="_blank">Register</a></li>
-                <li><a href="http://" target="_blank">Login</a></li>
+        <nav class="nav-bar">
+            <!-- <img id="hamburger" src="./images/icon-hamburger.svg" alt="hamburger-icon"> -->
+
+            <ul class="nav-list">
+                <li class="list-links"><a class="hyper-links" href="./index.html">About Me</a></li>
+                <li class="list-links"><a class="hyper-links" href="#contact-page">Contact</a></li>
+                <li class="list-links"><a class="hyper-links" href="./register.html" target="_blank" rel="noreferrer">Register</a></li>
+                <li class="list-links"><a class="hyper-links" href="./login.html" target="_blank" rel="noreferrer">Login</a></li>
             </ul>
         </nav>
         <main>
@@ -42,8 +46,9 @@
                 </div>
             </section>
         </main>  <!-- stopped here -->
+        <br>
 
-        <section id="contact-page">Contact
+        <section class="form-data" id="contact-page">Contact
             <p>Kindly fill out your details below, and I'll reach out to you as soon as possible</p>
             <form>
                 <label for="name">Name

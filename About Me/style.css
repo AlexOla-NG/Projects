@@ -2,14 +2,93 @@
     /* ?colors */
     --morning-blue: hsl(129, 6%, 58%);
     --eton-blue: hsl(143, 26%, 66%);
-    --laurel-green: hsl(85, 22%, 70%);
+    --laurel-green: hsl(85, 28%, 14%);
     --dutch-white: hsl(50, 32%, 75%);
-    --pale-spring-bud: hsl(70, 39%, 81%);
+    --pale-spring-bud: hsl(70, 39%, 91%);
 
     /* ?font-size */
-    --fs-400: 1rem;
-    --fs-600: 2rem;
-    --fs-800: 3rem;
+    --fs-100: 0.6rem;
+    --fs-200: 0.7rem;
+    --fs-300: 0.85rem;
+    --fs-400: 0.9rem;
+    --fs-600: 1.75rem;
+    --fs-xl: 2rem;
 
-    /* ?font-weight stopped here */
+    /* ?font-weight */
+    --fw-200: 200;
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-700: 700;
+
+    /* ?border-radius */
+    --br-300: 0.2em;
+    --br-600: 2em;
+}
+
+/* ?webview - default values for font size */
+@media (min-width: 40em) {
+    :root {
+        --fs-300: 0.75rem;
+        --fs-400: 0.8rem;
+        --fs-xl: 2.7rem;
+    }
+
+}
+
+/* ?default values for margin, padding, box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    /* color: var(--dutch-white); */
+    color: var(--pale-spring-bud);
+    font-weight: var(--fw-200);
+    font-size: var(--fs-300);
+}
+
+/* !for debugging */
+.red-solid {
+    border: solid red;
+}
+
+.canvas {
+    background-color: var(--morning-blue);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 1.5em 1em;
+}
+
+.canvas > * {
+    grid-column: span 12;
+}
+
+.nav-bar {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 1em auto;
+}
+
+.nav-list {
+    font-size: var(--fs-400);
+    grid-column: span 12;
+    list-style-type: none;
+    list-style-position: outside;
+    /* text-align: center; */
+}
+
+.list-links {
+    float: left;
+}
+
+.hyper-links {
+    margin: auto 0.5em;
+    text-decoration: none;
+}
+
+.hyper-links:visited {
+    color: var(--pale-spring-bud);
 }
