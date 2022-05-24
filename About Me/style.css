@@ -50,6 +50,11 @@ body {
     font-size: var(--fs-300);
 }
 
+h1, h2, h3, h4, h5 {
+    color: var(--laurel-green);
+    /* font-weight: var(--fw-200); */
+}
+
 /* !for debugging */
 .red-solid {
     border: solid red;
@@ -64,6 +69,7 @@ body {
 
 .canvas > * {
     grid-column: span 12;
+    margin: 1em 0.5em;
 }
 
 .nav-bar {
@@ -92,3 +98,11 @@ body {
 .hyper-links:visited {
     color: var(--pale-spring-bud);
 }
+
+.content-head { /* *stopped here */
+    /* background-image: url(./images/profile-picture.jpg); */
+}
+
+/* .content-head > .buffer {
+    margin: 16.5em auto;
+} */
