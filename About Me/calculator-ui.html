@@ -4,48 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculator-ui-style.css">
     <title>Calculator</title>
 </head>
 <body>
-    <h1>Calculator</h1>
-    <main>
-        <section>
-            <div>
-                calculator display
-            </div>
+    <main class="canvas">
+        <h1>Calculator Layout Design Using HTML Table</h1>
+        
+        <section class="container">
+            <div class="header">Calculator</div>
+            <input type="text" class="result">
             <table>
-                <tbody>
-                    <tr>
-                        <td>(</td>
-                        <td>)</td>
-                        <td>%</td>
-                        <td>AC</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>/</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>*</td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>-</td>
-                    </tr>
-                    <tr>
-                        <td>0</td>
-                        <td>.</td>
-                        <td>=</td>
-                        <td>+</td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <td>
+                        <input type="button" value="&radic;" class="global first-row">
+                    </td>
+                    <td>
+                        <input type="button"  value="(" class="global first-row">
+                    </td>
+                    <td>
+                        <input type="button" value=")" class="global first-row">
+                    </td>
+                    <td>
+                        <input type="button" value="%" class="global first-row">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="7" class="global">
+                    </td>
+                    <td>
+                        <input type="button" value="8" class="global">
+                    </td>
+                    <td>
+                        <input type="button" value="9" class="global">
+                    </td>
+                    <td>
+                        <input type="button" value="/" class="global">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="4" class="global">
+                    </td>
+                    <td>
+                        <input type="button" value="5" class="global">
+                    </td>
+                    <td>
+                        <input type="button" value="6" class="global">
+                    </td>
+                    <td>
+                        <input type="button" value="X" class="global">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="1" class="global">
+                    </td>
+                    <td>
+                        <input type="button" value="2" class="global">
+                    </td>
+                    <td>
+                        <input type="button" value="3" class="global">
+                    </td>
+                    <td>
+                        <input type="button" value="-" class="global">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="button" value="0" class="global grey">
+                    </td>
+                    <td>
+                        <input type="button" value="." class="global">
+                    </td>
+                    <td rowspan="2">
+                        <input type="button" value="+" class="global plus">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" value="Del" class="global red white-text">
+                    </td>
+                    <td colspan="2">
+                        <input type="button" value="=" class="global green white-text">
+                    </td>
+                </tr>
             </table>
         </section>
     </main>

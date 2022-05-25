@@ -1,0 +1,142 @@
+:root {
+    /* ?border-radius */
+      --br-300: 0.2em;
+      --br-600: 2em;
+  
+    /* ?colors */
+    --amazon-dark: hsl(144, 56%, 34%);
+    --amazon-light: hsl(144, 86%, 34%);
+    --morning-blue: hsl(129, 6%, 58%);
+    --eton-blue: hsl(143, 26%, 66%);
+    --laurel-green: hsl(85, 28%, 14%);
+    --dutch-white: hsl(50, 32%, 75%);
+    --pale-spring-bud: hsl(70, 39%, 91%);
+    --off-white: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --red: hsl(1, 100%, 60%);
+
+    /* ?font-size */
+    --fs-100: 0.6rem;
+    --fs-200: 0.7rem;
+    --fs-300: 0.85rem;
+    --fs-400: 0.9rem;
+    --fs-500: 1.1rem;
+    --fs-600: 1.75rem;
+    --fs-xl: 2rem;
+
+    /* ?font-weight */
+    --fw-200: 200;
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-700: 700;
+
+    /* ?transition */
+    --ease-transition: 300ms ease;
+}
+
+/* ?webview - default values for font size */
+@media (min-width: 40em) {
+    :root {
+        --fs-300: 0.75rem;
+        --fs-400: 0.8rem;
+        --fs-xl: 2.7rem;
+    }
+
+}
+
+/* ?default values for margin, padding, box-sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    /* color: var(--dutch-white); */
+    color: var(--pale-spring-bud);
+    font-weight: var(--fw-200);
+    font-size: var(--fs-400);
+}
+
+.canvas {
+    background-color: var(--morning-blue);
+    margin: 2.5em 1em;
+}
+
+.canvas > * {
+    margin: 2em 1em 1.5em;
+}
+
+h1{
+    text-align: center;
+}
+.container{
+    margin: auto;
+    max-width: 60%;
+    padding: 10px;
+    border: 1px solid #f2f2f2;
+    -webkit-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
+    -moz-box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
+    box-shadow: 1px 1px 4px 0px rgba(176,176,176,1);
+    background-color: #F8F8F8;
+}
+
+.header{
+    background-color: var(--amazon-dark);
+    padding: 10px;
+    color: var(--white);
+    text-align: center;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    width: 25%;
+}
+
+.result{
+    font-size: 24px;
+    padding: 0.6em 0.2em;
+    font-weight: var(--fw-700);
+    text-align: right;
+    width: 100%;
+    border: none;
+    background-color: var(--off-white);
+}
+
+.global{
+    padding: 0.5em;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--br-300);
+    background-color: var(--pale-spring-bud);
+    width: 100%;
+}
+
+/*the global class padding reset for first-row class button*/
+.first-row{
+    padding: 0.5em;
+}
+
+.plus{
+    height: 4em;
+}
+
+.green{
+    background-color: var(--amazon-dark);
+}
+
+.red{
+    background-color: var(--red)
+}
+
+.grey{
+    background-color: var(--pale-spring-bud);
+}
+
+.white-text{
+    color: var(--white);
+}

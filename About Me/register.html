@@ -21,45 +21,50 @@
         
         <br>
 
-        <main class="form-data content-layout" id="register-page">Register
-            <p>Kindly fill out your details below to signup</p>
-            <form>
-                <label for="fname">First Name
-                    <input type="text" name="fname" id="fname">
-                </label>
-                <label for="lname">Last Name
-                    <input type="text" name="lname" id="lname">
-                </label>
-                <label for="phone-num">Phone
-                    <input type="tel" name="phone-num" id="phone-num">
-                </label>
-                <label for="gender">Gender
-                    <select name="gender" id="gender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="trans-gender">Trans-Gender</option>
-                        <option value="non-binary">Non-Binary</option>
-                        <option value="n/a">Prefer not to say</option>
-                    </select>
-                </label>
-                <label for="country">Country
-                    <input type="text" name="country" id="country">
-                </label>
-                <label for="state">State/Province
-                    <input type="text" name="state" id="state">
-                </label>
-                <label for="username">Username
-                    <input type="text" name="username" id="username">
-                </label>
-                <label for="password">Password
-                    <input type="password" name="password" id="password">
-                </label>
-                <label for="confirm-password">Confirm Password
-                    <input type="password" name="confirm-password" id="confirm-password">
-                </label>
-
-                <button class="submit-btn">Submit</button>
-            </form>
+        <main class="form-data content-layout" id="register-page">
+            <section class="form-data content-layout" id="contact-page">
+                <form id="contact" action="" method="post">
+                    <h3>✍️Register</h3>
+                    <p>Kindly fill out your details below to register</p>
+                    <fieldset>
+                        <input placeholder="First name" type="text" tabindex="1" required autofocus>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Last name" type="text" tabindex="2" required autofocus>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Phone number" type="tel" tabindex="3" required>
+                    </fieldset>
+                    <fieldset>
+                        <select tabindex="4">
+                            <option value="">--select gender--</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="trans-gender">Trans-Gender</option>
+                            <option value="non-binary">Non-Binary</option>
+                            <option value="n/a">Prefer not to say</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Country" type="text" tabindex="5">
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="State/Province" type="text" tabindex="6">
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Username" type="text" tabindex="7">
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Password" type="password" tabindex="8">
+                    </fieldset>
+                    <fieldset>
+                        <input placeholder="Confirm password" type="password" tabindex="9">
+                    </fieldset>
+                    <fieldset>
+                      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                    </fieldset>
+                </form>
+            </section>
         </main>
     </div>
 </body>
