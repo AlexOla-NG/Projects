@@ -1,0 +1,144 @@
+/*
+ * ──────────────────────────────────────────────────────────────────────── I ──────────
+ *   :::::: G L O B A L   V A R I A B L E S : :  :   :    :     :        :          :
+ * ──────────────────────────────────────────────────────────────────────────────────
+ */
+
+:root {
+    /* NOTE: border-radius */
+    --br-300: 0.2em;
+    --br-600: 2em;
+
+    /* NOTE: color */
+    --bright-cyan: hsl(192, 70%, 51%);
+    --bright-green: hsl(130, 75%, 51%);
+    --bright-red: hsl(1, 75%, 51%);
+    --dark-blue: hsl(220, 36%, 34%);
+    --dull-green: hsl(130, 55%, 51%);
+    --dull-red: hsl(1, 55%, 51%);
+    --grayish-blue: hsl(233, 8%, 62%);
+    --light-bright-cyan: hsl(192, 70%, 61%);
+    --light-gray: hsl(0, 0%, 98%);
+    --light-grayish-blue: hsl(220, 16%, 96%);
+    --light-lime-green: hsl(136, 65%, 61%);
+    --white: hsl(0, 0%, 100%);
+
+    /* NOTE: font-size */
+    --fs-100: 0.6rem;
+    --fs-200: 0.7rem;
+    --fs-300: 0.83rem;
+    --fs-400: 1rem;
+    --fs-600: 1.75rem;
+    --fs-xl: 2rem;
+    
+    /* NOTE: font-weight */
+    --fw-200: 200;
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-700: 700;
+
+    /* NOTE: margin */
+    --center-margin: 0 auto;
+    --mar-100: 1em;
+    --mar-200: 2em;
+
+    /* NOTE: padding */
+    --pad-100: 1em;
+    --pad-200: 2em;
+    
+    /* NOTE: transition */
+    --ease-transition: 300ms ease;
+}
+
+/*
+ * ────────────────────────────────────────────────────────────────────────── II ──────────
+ *   :::::: D E B U G G I N G   S E C T I O N : :  :   :    :     :        :          :
+ * ────────────────────────────────────────────────────────────────────────────────────
+ */
+.red-solid {
+    border: solid red;
+}
+
+.green-solid {
+    border: solid green;
+}
+
+
+/*
+ * ────────────────────────────────────────────────────────────────── III ──────────
+ *   :::::: G L O B A L   S T Y L E S : :  :   :    :     :        :          :
+ * ────────────────────────────────────────────────────────────────────────────
+ */
+
+
+/* NOTE: whitespace reset + box-sizing on all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--light-gray);
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+.container {
+    font-size: var(--fs-400);
+    width: 1200px;
+    max-width: 100%;
+    margin: var(--center-margin);
+}
+
+header {
+    background-color: var(--dark-blue);
+    border-radius: var(--br-300) var(--br-300) 0 0;
+    color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1em;
+    padding: var(--pad-200);
+}
+
+header > * {
+    grid-column: span 12;
+}
+
+.capitalize {
+    text-transform: capitalize;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    border: transparent;
+    border-radius: var(--br-300);
+    color: var(--white);
+    cursor: pointer;
+    float: left;
+    margin: var(--mar-100) auto var(--mar-100) var(--mar-100);
+    min-width: 1em;
+    padding: var(--pad-100);
+}
+
+.btn-success {
+    background-color: var(--dull-green);
+    transition: background-color var(--ease-transition);
+}
+
+.btn-success:hover {
+    background-color: var(--bright-green);
+}
+
+.btn-danger {
+    background-color: var(--dull-red);
+    transition: background-color var(--ease-transition);
+}
+
+.btn-danger:hover {  /* TODO: stopped here*/
+    background-color: var(--bright-red);
+}
