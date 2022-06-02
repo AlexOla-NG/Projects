@@ -11,7 +11,7 @@
 <body>
     <main class="container">
         <section class="table-wrapper">
-            <header class="capitalize">
+            <header class="capitalize grid-display">
                 <div>
                     <h1>
                         manage clientbase
@@ -19,7 +19,7 @@
                 </div>
                 <div>
                     <a href="#addClientModal" class="btn btn-success">➕add new client</a>
-                    <a href="deleteClientModal" class="btn btn-danger">➖delete</a>
+                    <a href="#deleteClientModal" class="btn btn-danger">➖delete</a>
                 </div>
             </header>
 
@@ -31,9 +31,86 @@
                     <th>name</th>
                     <th>email</th>
                     <th>address</th>
-                    <th>actions</th> <!-- stopped here -->
+                    <th>actions</th> 
                 </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="checkbox1">
+                        </td>
+                        <td class="capitalize">taiye sanni</td>
+                        <td>taiye@sanni.com</td>
+                        <td class="capitalize">3, acme road, lagos</td>
+                        <td>
+                            <a href="#editClientModal" title="Edit">📝</a>
+                            <a href="#deleteClientModal" title="Delete">🗑️</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="checkbox1">
+                        </td>
+                        <td class="capitalize">tobi adebowale</td>
+                        <td>tobi@adebowale.com</td>
+                        <td class="capitalize">5, dipo street, lagos</td>
+                        <td>
+                            <a href="#editClientModal" title="Edit">📝</a>
+                            <a href="#deleteClientModal" title="Delete">🗑️</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="checkbox1">
+                        </td>
+                        <td class="capitalize">kofo linda</td>
+                        <td>kofo@linda.com</td>
+                        <td class="capitalize">9, ring road, benin</td>
+                        <td>
+                            <a href="#editClientModal" title="Edit">📝</a>
+                            <a href="#deleteClientModal" title="Delete">🗑️</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" id="checkbox1">
+                        </td>
+                        <td class="capitalize">fred folayemi</td>
+                        <td>fred@folayemi.com</td>
+                        <td class="capitalize">3, shitta-bey, lagos</td>
+                        <td>
+                            <a href="#editClientModal" title="Edit">📝</a>
+                            <a href="#deleteClientModal" title="Delete">🗑️</a>
+                        </td>
+                    </tr>
+                </tbody>
             </table>
+
+            <div class="pagination-wrapper grid-display"> 
+                <div class="hint-text">Showing <b>4</b> entries out of <b>20</b></div>
+                <ul class="pagination grid-display"> <!-- stopped here -->
+                    <li class="page-item">
+                        <a href="#" class="page-link capitalize">previous</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link capitalize">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link capitalize">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link capitalize">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link capitalize">4</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link capitalize">5</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link capitalize">next</a>
+                    </li>
+                </ul>
+            </div>
         </section>
     </main>
 </body>

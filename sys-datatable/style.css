@@ -10,17 +10,19 @@
     --br-600: 2em;
 
     /* NOTE: color */
-    --bright-cyan: hsl(192, 70%, 51%);
     --bright-green: hsl(130, 75%, 51%);
     --bright-red: hsl(1, 75%, 51%);
     --dark-blue: hsl(220, 36%, 34%);
+    --dark-gray: hsl(0, 0%, 15%);
     --dull-green: hsl(130, 55%, 51%);
     --dull-red: hsl(1, 55%, 51%);
-    --grayish-blue: hsl(233, 8%, 62%);
+    --gray: hsl(0, 0%, 30%);
+    --grayish-blue: hsl(233, 20%, 30%);
     --light-bright-cyan: hsl(192, 70%, 61%);
     --light-gray: hsl(0, 0%, 98%);
     --light-grayish-blue: hsl(220, 16%, 96%);
     --light-lime-green: hsl(136, 65%, 61%);
+    --medium-gray: hsl(0, 0%, 90%);
     --white: hsl(0, 0%, 100%);
 
     /* NOTE: font-size */
@@ -91,23 +93,35 @@ body {
     margin: var(--center-margin);
 }
 
+.table-wrapper {
+    color: var(--grayish-blue);
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.table-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
 header {
     background-color: var(--dark-blue);
     border-radius: var(--br-300) var(--br-300) 0 0;
     color: var(--white);
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1em;
     padding: var(--pad-200);
 }
 
-header > * {
+.grid-display {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1em;
+}
+
+.grid-display > * {
     grid-column: span 12;
 }
 
 .capitalize {
     text-transform: capitalize;
-
 }
 
 a {
@@ -120,7 +134,7 @@ a {
     color: var(--white);
     cursor: pointer;
     float: left;
-    margin: var(--mar-100) auto var(--mar-100) var(--mar-100);
+    margin: auto auto var(--mar-100) var(--mar-100);
     min-width: 1em;
     padding: var(--pad-100);
 }
@@ -139,6 +153,38 @@ a {
     transition: background-color var(--ease-transition);
 }
 
-.btn-danger:hover {  /* TODO: stopped here*/
+.btn-danger:hover { 
     background-color: var(--bright-red);
+}
+
+.pagination-wrapper {
+    padding: var(--pad-200);
+}
+
+.hint-text {
+    /* margin: var(--center-margin); */
+    /* padding: var(--fs-100); */
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* TODO: stoped here
+    remove column-gap between elements in .pagination */
+.pagination > * {
+    grid-column: auto;
+    /* gap: 0; */
+}
+
+.page-link {
+    color: var(--gray);
+    padding: var(--pad-100);
+    transition: color var(--ease-transition), background-color var(--ease-transition), padding var(--ease-transition);
+}
+
+.page-link:hover {
+    background-color: var(--medium-gray);
+    color: var(--dark-gray);
 }
