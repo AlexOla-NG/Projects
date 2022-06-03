@@ -12,6 +12,7 @@
     /* NOTE: color */
     --bright-green: hsl(130, 75%, 51%);
     --bright-red: hsl(1, 75%, 51%);
+    --cultured: hsl(0, 0%, 96%);
     --dark-blue: hsl(220, 36%, 34%);
     --dark-gray: hsl(0, 0%, 15%);
     --dull-green: hsl(130, 55%, 51%);
@@ -22,6 +23,7 @@
     --light-gray: hsl(0, 0%, 98%);
     --light-grayish-blue: hsl(220, 16%, 96%);
     --light-lime-green: hsl(136, 65%, 61%);
+    --lotion: hsl(0, 0%, 99%);
     --medium-gray: hsl(0, 0%, 90%);
     --white: hsl(0, 0%, 100%);
 
@@ -29,7 +31,7 @@
     --fs-100: 0.6rem;
     --fs-200: 0.7rem;
     --fs-300: 0.83rem;
-    --fs-400: 1rem;
+    --fs-400: 1.2rem;
     --fs-600: 1.75rem;
     --fs-xl: 2rem;
     
@@ -93,8 +95,13 @@ body {
     margin: var(--center-margin);
 }
 
+/* TODO: stoped here
+    add box-shadow to .table-wrapper */
 .table-wrapper {
+    background-color: var(--white);
+    border-radius: var(--br-300) var(--br-300) 0 0;
     color: var(--grayish-blue);
+    margin: var(--mar-200) auto;
     overflow-x: auto;
     white-space: nowrap;
 }
@@ -105,7 +112,6 @@ body {
 
 header {
     background-color: var(--dark-blue);
-    border-radius: var(--br-300) var(--br-300) 0 0;
     color: var(--white);
     padding: var(--pad-200);
 }
@@ -157,13 +163,56 @@ a {
     background-color: var(--bright-red);
 }
 
-.pagination-wrapper {
+/*
+ * ──────────────────────────────────────────────────────────────── VI ──────────
+ *   :::::: T A B L E   S T Y L E S : :  :   :    :     :        :          :
+ * ──────────────────────────────────────────────────────────────────────────
+ */
+
+/* NOTE: table styles */
+table {
+    border-collapse: collapse;
+    font-size: var(--fs-400);
+}
+
+table tbody tr:nth-of-type(odd) {
+    background-color: var(--lotion);
+}
+
+table tbody tr {
+    border-top: 2px solid var(--cultured);
+    transition: background-color var(--ease-transition);
+}
+
+table tbody tr:hover {
+    border-top: 2px solid var(--cultured) ;
+    background-color: var(--cultured);
+}
+
+th {
+    padding: var(--pad-100);
+}
+
+td {
     padding: var(--pad-200);
 }
 
+table input[type="checkbox"] {
+    transform: scale(2);
+}
+
+/*
+ * ──────────────────────────────────────────────────────────────────────────────────────── VII ──────────
+ *   :::::: B O T T O M   N A V I G A T I O N   S T Y L E S : :  :   :    :     :        :          :
+ * ──────────────────────────────────────────────────────────────────────────────────────────────────
+ */
+
+/* NOTE: bottom navigation styles */
+.pagination-wrapper {
+    margin: var(--mar-100) auto;
+}
+
 .hint-text {
-    /* margin: var(--center-margin); */
-    /* padding: var(--fs-100); */
     text-align: center;
 }
 
@@ -171,11 +220,15 @@ ul {
     list-style-type: none;
 }
 
-/* TODO: stoped here
-    remove column-gap between elements in .pagination */
+
+.pagination {
+    gap: 0;
+    margin: var(--mar-100) auto;
+
+}
+
 .pagination > * {
     grid-column: auto;
-    /* gap: 0; */
 }
 
 .page-link {
