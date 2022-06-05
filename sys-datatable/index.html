@@ -115,13 +115,59 @@
             </div>
         </section>
 
-        <!-- stopped here
-        TODO: add modals for #addClientModal, #deleteClientModal, #editClientModal
-        -->
         <section class="modal-wrapper">
-            <div class="modal">
+            <div id="addClientModal" class="modal">
                 <form method="modal">
-
+                    <div class="modal-header">
+                        <h2 class="capitalize">add new client</h2>
+                        <button type="button" class="close" aria-hidden="true">&times</button>
+                    </div>
+                    <div class="modal-body">
+                        <fieldset class="capitalize">
+                            <input type="text" name="name" placeholder="name">
+                        </fieldset>
+                        <fieldset>
+                            <input type="email" name="email" placeholder="email address">
+                        </fieldset>
+                        <fieldset class="capitalize">
+                            <input type="text" name="address" placeholder="office address">
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="capitalize" name="cancel">cancel</button>
+                        <button type="submit" class="capitalize" name="submit" data-submit="...updating information">submit</button>
+                    </div>
+                </form>
+            </div>
+            <!-- stopped here
+                TODO: update modal for #deleteClientModal, #editClientModal
+            -->
+            <div id="editClientModal" class="modal">
+                <form method="modal">
+                    <fieldset class="capitalize">
+                        <input type="text" name="name" placeholder="name">
+                    </fieldset>
+                    <fieldset>
+                        <input type="email" name="email" placeholder="email address">
+                    </fieldset>
+                    <fieldset class="capitalize">
+                        <input type="text" name="address" placeholder="office address">
+                    </fieldset>
+                    <button class="capitalize" name="submit" data-submit="...updating information">submit</button>
+                </form>
+            </div>
+            <div id="deleteClientModal" class="modal">
+                <form method="modal">
+                    <fieldset class="capitalize">
+                        <input type="text" name="name" placeholder="name">
+                    </fieldset>
+                    <fieldset>
+                        <input type="email" name="email" placeholder="email address">
+                    </fieldset>
+                    <fieldset class="capitalize">
+                        <input type="text" name="address" placeholder="office address">
+                    </fieldset>
+                    <button class="capitalize" name="submit" data-submit="...updating information">submit</button>
                 </form>
             </div>
         </section>

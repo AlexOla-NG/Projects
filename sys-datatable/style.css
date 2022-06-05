@@ -31,9 +31,9 @@
     /* NOTE: font-size */
     --fs-100: 0.6rem;
     --fs-200: 0.7rem;
-    --fs-300: 0.83rem;
+    --fs-300: 1.2rem;
     --fs-400: 1.3rem;
-    --fs-600: 1.75rem;
+    --fs-600: 2.1rem;
     --fs-xl: 2rem;
     
     /* NOTE: font-weight */
@@ -89,6 +89,10 @@ body {
     font-size: 16px;
 }
 
+h1 {
+    font-size: var(--fs-600);
+}
+
 .container {
     font-size: var(--fs-400);
     width: 1200px;
@@ -96,8 +100,6 @@ body {
     margin: var(--center-margin);
 }
 
-/* TODO: stoped here
-    add box-shadow to .table-wrapper */
 .table-wrapper {
     background-color: var(--white);
     border-radius: var(--br-300);
@@ -108,6 +110,7 @@ body {
     white-space: nowrap;
 }
 
+/* STUB: remove the horizontal scrollbar*/
 .table-wrapper::-webkit-scrollbar {
     display: none;
 }
@@ -228,9 +231,9 @@ ul {
 }
 
 .pagination {
+    font-size: var(--fs-300);
     gap: 0;
     margin: var(--mar-100) auto;
-
 }
 
 .pagination > * {
@@ -253,3 +256,6 @@ ul {
     border-radius: var(--br-300);
     color: var(--white);
 }
+
+/* TODO: stoped here
+    add modal styles */
