@@ -18,8 +18,8 @@
                     </h1>
                 </div>
                 <div>
-                    <a href="#addClientModal" class="btn btn-success">➕add new client</a>
-                    <a href="#deleteClientModal" class="btn btn-danger">➖delete</a>
+                    <a href="#addClientModal" class="btn float btn-success">➕add new client</a>
+                    <a href="#deleteClientModal" class="btn float btn-danger">➖delete</a>
                 </div>
             </header>
 
@@ -120,7 +120,7 @@
                 <form method="modal">
                     <div class="modal-header">
                         <h2 class="capitalize">add new client</h2>
-                        <button type="button" class="close" aria-hidden="true">&times</button>
+                        <button type="button" class="btn close" aria-hidden="true">&times</button>
                     </div>
                     <div class="modal-body">
                         <fieldset class="capitalize">
@@ -134,40 +134,48 @@
                         </fieldset>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="capitalize" name="cancel">cancel</button>
-                        <button type="submit" class="capitalize" name="submit" data-submit="...updating information">submit</button>
+                        <button type="button" class="btn capitalize" name="cancel">cancel</button>
+                        <button type="submit" class="btn btn-success capitalize" name="submit" data-submit="...saving information">submit</button>
                     </div>
                 </form>
             </div>
-            <!-- stopped here
-                TODO: update modal for #deleteClientModal, #editClientModal
-            -->
             <div id="editClientModal" class="modal">
                 <form method="modal">
-                    <fieldset class="capitalize">
-                        <input type="text" name="name" placeholder="name">
-                    </fieldset>
-                    <fieldset>
-                        <input type="email" name="email" placeholder="email address">
-                    </fieldset>
-                    <fieldset class="capitalize">
-                        <input type="text" name="address" placeholder="office address">
-                    </fieldset>
-                    <button class="capitalize" name="submit" data-submit="...updating information">submit</button>
+                    <div class="modal-header">
+                        <h2 class="capitalize">edit client details</h2>
+                        <button type="button" class="btn close" aria-hidden="true">&times</button>
+                    </div>
+                    <div class="modal-body">
+                        <fieldset class="capitalize">
+                            <input type="text" name="name" placeholder="name">
+                        </fieldset>
+                        <fieldset>
+                            <input type="email" name="email" placeholder="email address">
+                        </fieldset>
+                        <fieldset class="capitalize">
+                            <input type="text" name="address" placeholder="office address">
+                        </fieldset>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn capitalize" name="cancel">cancel</button>
+                        <button type="submit" class="btn btn-success capitalize" name="submit" data-submit="...updating information">save</button>
+                    </div>
                 </form>
             </div>
             <div id="deleteClientModal" class="modal">
                 <form method="modal">
-                    <fieldset class="capitalize">
-                        <input type="text" name="name" placeholder="name">
-                    </fieldset>
-                    <fieldset>
-                        <input type="email" name="email" placeholder="email address">
-                    </fieldset>
-                    <fieldset class="capitalize">
-                        <input type="text" name="address" placeholder="office address">
-                    </fieldset>
-                    <button class="capitalize" name="submit" data-submit="...updating information">submit</button>
+                    <div class="modal-header">
+                        <h2 class="capitalize">delete client details</h2>
+                        <button type="button" class="btn close" aria-hidden="true">&times</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn capitalize" name="cancel">cancel</button>
+                        <button type="submit" class="btn btn-danger capitalize" name="submit" data-submit="...deleting information">delete</button>
+                    </div>
                 </form>
             </div>
         </section>
