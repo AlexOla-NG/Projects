@@ -101,6 +101,7 @@ I also need more practice with JS hoisting and closures. I think there are certa
 - [In Defence of Dialog | resource 5](https://whistlr.info/2021/in-defence-of-dialog/) - This helped with examples and usecases of the dialog html element
 - [<dialog>: The Dialog element | resource 6](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) - This is the documentation for the dialog html element.
 - [aria-hidden | resource 7](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-hidden) - This is the documentation for the aria-hidden attribute. It helped me understand how to hide redundant/non-interactive content from the accessibility API. We can use it to improve accessibility.
+- [Bootstrap : CRUD Table | resource 8](https://codepen.io/zic72/pen/BayvgZo) - This is a codepen containing a CRUD table. It was inspiration for building this project.
 - [Hoisting | resource 3](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting) - This is the mdn documentation for how hoisting works in JavaScript.
 - [Grid auto-flow resource 1](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout) - This helped me flow grid items by column, rather than the defailt row. I really liked this pattern and will use it going forward.
 - [HEX to Filter converter for SVG](https://codepen.io/sosuke/pen/Pjoqqp) - This helped me easily change the color of SVG icons in img tag. I really liked this resource and will use it going forward.

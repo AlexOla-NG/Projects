@@ -7,12 +7,14 @@
 :root {
     /* NOTE: border-radius */
     --br-300: 0.2em;
-    --br-600: 2em;
+    --br-600: 3em;
+    --br-circle: 50%;
 
     /* NOTE: color */
     --bright-gray: hsl(0, 0%, 91%);
     --bright-green: hsl(130, 75%, 51%);
     --bright-red: hsl(1, 75%, 51%);
+    --carmine-orange: hsl(13, 84%, 43%)  ;
     --cultured: hsl(0, 0%, 96%);
     --dark-blue: hsl(220, 36%, 34%);
     --dark-gray: hsl(0, 0%, 15%);
@@ -20,6 +22,7 @@
     --dull-red: hsl(1, 55%, 51%);
     --gray: hsl(0, 0%, 30%);
     --grayish-blue: hsl(233, 20%, 30%);
+    --ivory-gray: hsl(44, 18%, 71%) ;
     --light-bright-cyan: hsl(192, 70%, 61%);
     --light-gray: hsl(0, 0%, 98%);
     --light-grayish-blue: hsl(220, 16%, 96%);
@@ -33,6 +36,7 @@
     --fs-200: 0.7rem;
     --fs-300: 1.2rem;
     --fs-400: 1.3rem;
+    --fs-500: 1.6rem;
     --fs-600: 2.1rem;
     --fs-xl: 2rem;
     
@@ -268,20 +272,50 @@ ul {
  * ──────────────────────────────────────────────────────────────────────────
  */
 
-/* TODO: stoped here
-    add modal styles to modal-header, modal-body, modal-footer */
-
 /* NOTE: modal styles */
-
-.modal input[type="text"], input[type="email"], button {
-    font-family: "Lato", sans-serif;
-    font-size: var(--fs-400);
-}
 
 .modal {
     background-color: var(--lotion);
     margin: var(--mar-100);
     padding: var(--pad-200);
+}
+
+.modal-header {
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 var(--mar-200);
+}
+
+.modal-header > * {
+    color: var(--dark-gray);
+    font-size: var(--fs-500);
+}
+
+.modal-header > .close {
+    background-color: inherit;
+    border-radius: var(--br-circle);
+    color: var(--dull-red);
+    font-weight: var(--fw-700);
+    margin: 0;
+    padding: 0;
+    transform: scale(1.5);
+    transition: color var(--ease-transition);
+}
+
+.modal-header > .close:hover {
+    color: var(--bright-red);
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: var(--mar-100) 0 var(--mar-200);
+}
+
+.modal-body > * {
+    grid-column: span 12;
 }
 
 fieldset {
@@ -291,9 +325,14 @@ fieldset {
     width: 100%;
 }
 
+.modal input[type="text"], input[type="email"], button {
+    font-family: "Lato", sans-serif;
+    font-size: var(--fs-400);
+}
+
 .modal input[type="text"], input[type="email"] {
     border: 0.1em solid var(--grayish-blue);
-    margin: 0 auto var(--mar-100);
+    margin: 0 auto;
     padding: var(--pad-100);
     transition: border var(--ease-transition);
     width: 100%;
@@ -326,4 +365,15 @@ fieldset {
 
 :-ms-input-placeholder {
     color: #888;
+}
+
+.modal-body > .text-warning {
+    color: var(--carmine-orange);
+    margin-top: var(--mar-100);
+}
+
+/* TODO: stoped here
+    add modal styles to modal-footer */
+.modal-footer {
+    background-color: var(--ivory-gray);
 }
