@@ -18,8 +18,12 @@
                     </h1>
                 </div>
                 <div>
-                    <a href="#addClientModal" class="btn float btn-success">➕add new client</a>
-                    <a href="#deleteClientModal" class="btn float btn-danger">➖delete</a>
+                    <button class="btn float btn-success addClientModal">
+                        <a href="#addClientModal" class="capitalize">➕add new client</a>
+                    </button>
+                    <button class="btn float btn-danger deleteClientModal">
+                        <a href="#deleteClientModal" class="capitalize">➖delete</a>
+                    </button>
                 </div>
             </header>
 
@@ -116,7 +120,7 @@
         </section>
 
         <section class="modal-wrapper">
-            <div id="addClientModal" class="modal">
+            <dialog id="addClientModal" class="modal">
                 <form method="modal">
                     <div class="modal-header">
                         <h2 class="capitalize">add new client</h2>
@@ -134,12 +138,12 @@
                         </fieldset>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn capitalize" name="cancel">cancel</button>
+                        <button type="button" class="btn btn-cancel capitalize" name="cancel" autofocus>cancel</button>
                         <button type="submit" class="btn btn-success capitalize" name="submit" data-submit="...saving information">submit</button>
                     </div>
                 </form>
-            </div>
-            <div id="editClientModal" class="modal">
+            </dialog>
+            <dialog id="editClientModal" class="modal">
                 <form method="modal">
                     <div class="modal-header">
                         <h2 class="capitalize">edit client details</h2>
@@ -157,12 +161,12 @@
                         </fieldset>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn capitalize" name="cancel">cancel</button>
+                        <button type="button" class="btn btn-cancel capitalize" name="cancel" autofocus>cancel</button>
                         <button type="submit" class="btn btn-success capitalize" name="submit" data-submit="...updating information">save</button>
                     </div>
                 </form>
-            </div>
-            <div id="deleteClientModal" class="modal">
+            </dialog>
+            <dialog id="deleteClientModal" class="modal">
                 <form method="modal">
                     <div class="modal-header">
                         <h2 class="capitalize">delete client details</h2>
@@ -173,12 +177,14 @@
                         <p class="text-warning"><small>This action cannot be undone.</small></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn capitalize" name="cancel">cancel</button>
+                        <button type="button" class="btn btn-cancel capitalize" name="cancel" autofocus>cancel</button>
                         <button type="submit" class="btn btn-danger capitalize" name="submit" data-submit="...deleting information">delete</button>
                     </div>
                 </form>
-            </div>
+            </dialog>
         </section>
     </main>
+
+    <script src="./script.js"></script>
 </body>
 </html>

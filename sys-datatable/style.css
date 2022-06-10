@@ -11,6 +11,7 @@
     --br-circle: 50%;
 
     /* NOTE: color */
+    --black: hsl(0, 20%, 10%);
     --bright-gray: hsl(0, 0%, 91%);
     --bright-green: hsl(130, 75%, 51%);
     --bright-red: hsl(1, 75%, 51%);
@@ -22,11 +23,11 @@
     --dull-red: hsl(1, 55%, 51%);
     --gray: hsl(0, 0%, 30%);
     --grayish-blue: hsl(233, 20%, 30%);
-    --ivory-gray: hsl(44, 18%, 71%) ;
     --light-bright-cyan: hsl(192, 70%, 61%);
     --light-gray: hsl(0, 0%, 98%);
     --light-grayish-blue: hsl(220, 16%, 96%);
     --light-lime-green: hsl(136, 65%, 61%);
+    --light-lotion: hsl(0, 0%, 97%) ;
     --lotion: hsl(0, 0%, 99%);
     --medium-gray: hsl(0, 0%, 90%);
     --white: hsl(0, 0%, 100%);
@@ -140,13 +141,22 @@ header {
 }
 
 a {
+    color: var(--white);
     text-decoration: none;
 }
 
+/*
+ * ────────────────────────────────────────────────────────────────── IV ──────────
+ *   :::::: B U T T O N   S T Y L E S : :  :   :    :     :        :          :
+ * ────────────────────────────────────────────────────────────────────────────
+ */
+
+/* NOTE: button styles */
+
 .btn {
+    color: var(--white);
     border: transparent;
     border-radius: var(--br-300);
-    color: var(--white);
     cursor: pointer;
     margin: auto auto var(--mar-100) var(--mar-100);
     min-width: 1em;
@@ -173,6 +183,17 @@ a {
 
 .btn-danger:hover { 
     background-color: var(--bright-red);
+}
+
+.btn-cancel {
+    background-color: var(--white);
+    color: var(--black);
+    transition: background-color var(--ease-transition), color var(--ease-transition);
+}
+
+.btn-cancel:hover {
+    background-color: var(--black);
+    color: var(--white);
 }
 
 /*
@@ -276,8 +297,20 @@ ul {
 
 .modal {
     background-color: var(--lotion);
-    margin: var(--mar-100);
+    margin: var(--center-margin);
     padding: var(--pad-200);
+}
+
+@media (min-width: 768px) {
+    .modal {
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .modal {
+        max-width: 40%;
+    }
 }
 
 .modal-header {
@@ -375,5 +408,13 @@ fieldset {
 /* TODO: stoped here
     add modal styles to modal-footer */
 .modal-footer {
-    background-color: var(--ivory-gray);
+    background-color: var(--light-lotion);
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+    padding: var(--pad-100);
+}
+
+.modal-footer > .btn {
+    margin: 0;
 }

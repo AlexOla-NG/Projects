@@ -24,3 +24,32 @@
 //   }
 // }
 // </script>
+
+
+//
+// ──────────────────────────────────────────────────────────────────────────────────────── I ──────────
+//   :::::: D E C L A R E   G L O B A L   V A R I A B L E S : :  :   :    :     :        :          :
+// ──────────────────────────────────────────────────────────────────────────────────────────────────
+//
+
+// NOTE: global variables
+
+let addClientModal = document.querySelector("#addClientModal")
+let editClientModal = document.querySelector("#editClientModal")
+let deleteClientModal = document.querySelector("#deleteClientModal")
+let modalAddBtn = document.querySelector(".addClientModal")
+let modalDeleteBtn = document.querySelector(".deleteClientModal")
+console.log(modalAddBtn)
+
+
+// NOTE: button event listeners
+
+// TODO: stopped here
+    // add editClientModal event listener, closeModal for X-btn
+modalAddBtn.addEventListener("click", () => {
+    addClientModal.showModal()
+})
+
+modalDeleteBtn.addEventListener("click", () => {
+    deleteClientModal.showModal()
+})
