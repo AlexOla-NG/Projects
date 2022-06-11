@@ -38,24 +38,41 @@ let addClientModal = document.querySelector("#addClientModal")
 let editClientModal = document.querySelector("#editClientModal")
 let deleteClientModal = document.querySelector("#deleteClientModal")
 let modal = document.querySelectorAll(".modal")
-let modalAddBtn = document.querySelector(".addClientModal")
-let modalCloseBtn = document.querySelectorAll(".close")
-let modalDeleteBtn = document.querySelectorAll(".deleteClientModal")
+let modalAddBtn = document.querySelector("button[data-value='add']")
+let modalCloseBtn = document.querySelectorAll("button[data-value='cancel']")
+let modalDeleteBtn = document.querySelectorAll("[data-value='delete']")
+let modalEditBtn = document.querySelectorAll("[data-value='edit']")
 console.log(modalCloseBtn)
-let modalEditBtn = document.querySelectorAll(".editClientModal")
+
+//
+// ──────────────────────────────────────────────────────────────────────────────────── II ──────────
+//   :::::: B U T T O N   E V E N T   L I S T E N E R S : :  :   :    :     :        :          :
+// ──────────────────────────────────────────────────────────────────────────────────────────────
+//
 
 
 // NOTE: button event listeners
 
+// STUB: popup add-new-client modal
 modalAddBtn.addEventListener("click", () => {
     addClientModal.showModal()
 })
 
-modalDeleteBtn.addEventListener("click", () => {
-    deleteClientModal.showModal()
+// STUB: popup delete-client modal
+modalDeleteBtn.forEach(delIcon => {
+    delIcon.addEventListener("click", () => {
+        deleteClientModal.showModal()
+    })
 })
 
-// STUB: add functionality for all .close elements
+// STUB: popup edit-client modal
+modalEditBtn.forEach(editIcon => {
+    editIcon.addEventListener("click", () => {
+        editClientModal.showModal()
+    })
+})
+
+// STUB: close modal
 modalCloseBtn.forEach(closeBtn => {
     closeBtn.addEventListener("click", () => {
         modal.forEach(elem => elem.close())
@@ -65,12 +82,3 @@ modalCloseBtn.forEach(closeBtn => {
 // TODO: stopped here
     // add editClientModal event listener for each edit icon
 
-// modalEditBtn.addEventListener("click", () => {
-//     editClientModal.showModal()
-// })
-
-modalEditBtn.forEach(editBtn => {
-    editBtn.addEventListener("click", () => {
-        editClientModal.showModal()
-    })
-})
