@@ -48,8 +48,8 @@
                         <td>taiye@sanni.com</td>
                         <td class="capitalize">3, acme road, lagos</td>
                         <td>
-                            <a href="#editClientModal" title="Edit">📝</a>
-                            <a href="#deleteClientModal" title="Delete">🗑️</a>
+                            <a href="#editClientModal" class="editClientModal" title="Edit">📝</a>
+                            <a href="#deleteClientModal" class="deleteClientModal" title="Delete">🗑️</a>
                         </td>
                     </tr>
                     <tr>
@@ -60,8 +60,8 @@
                         <td>tobi@adebowale.com</td>
                         <td class="capitalize">5, dipo street, lagos</td>
                         <td>
-                            <a href="#editClientModal" title="Edit">📝</a>
-                            <a href="#deleteClientModal" title="Delete">🗑️</a>
+                            <a href="#editClientModal" class="editClientModal" title="Edit">📝</a>
+                            <a href="#deleteClientModal" class="deleteClientModal" title="Delete">🗑️</a>
                         </td>
                     </tr>
                     <tr>
@@ -72,8 +72,8 @@
                         <td>kofo@linda.com</td>
                         <td class="capitalize">9, ring road, benin</td>
                         <td>
-                            <a href="#editClientModal" title="Edit">📝</a>
-                            <a href="#deleteClientModal" title="Delete">🗑️</a>
+                            <a href="#editClientModal" class="editClientModal" title="Edit">📝</a>
+                            <a href="#deleteClientModal" class="deleteClientModal" title="Delete">🗑️</a>
                         </td>
                     </tr>
                     <tr>
@@ -84,8 +84,8 @@
                         <td>fred@folayemi.com</td>
                         <td class="capitalize">3, shitta-bey, lagos</td>
                         <td>
-                            <a href="#editClientModal" title="Edit">📝</a>
-                            <a href="#deleteClientModal" title="Delete">🗑️</a>
+                            <a href="#editClientModal" class="editClientModal" title="Edit">📝</a>
+                            <a href="#deleteClientModal" class="deleteClientModal" title="Delete">🗑️</a>
                         </td>
                     </tr>
                 </tbody>
@@ -126,7 +126,7 @@
                         <h2 class="capitalize">add new client</h2>
                         <button type="button" class="btn close" aria-hidden="true">&times</button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body grid-display">
                         <fieldset class="capitalize">
                             <input type="text" name="name" placeholder="name">
                         </fieldset>
@@ -138,7 +138,7 @@
                         </fieldset>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-cancel capitalize" name="cancel" autofocus>cancel</button>
+                        <button type="button" class="btn btn-cancel capitalize close" name="cancel" autofocus>cancel</button>
                         <button type="submit" class="btn btn-success capitalize" name="submit" data-submit="...saving information">submit</button>
                     </div>
                 </form>
@@ -149,7 +149,7 @@
                         <h2 class="capitalize">edit client details</h2>
                         <button type="button" class="btn close" aria-hidden="true">&times</button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body grid-display">
                         <fieldset class="capitalize">
                             <input type="text" name="name" placeholder="name">
                         </fieldset>
@@ -161,7 +161,7 @@
                         </fieldset>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-cancel capitalize" name="cancel" autofocus>cancel</button>
+                        <button type="button" class="btn btn-cancel capitalize close" name="cancel" autofocus>cancel</button>
                         <button type="submit" class="btn btn-success capitalize" name="submit" data-submit="...updating information">save</button>
                     </div>
                 </form>
@@ -172,12 +172,12 @@
                         <h2 class="capitalize">delete client details</h2>
                         <button type="button" class="btn close" aria-hidden="true">&times</button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body grid-display">
                         <p>⚠️ Are you sure you want to delete these Records?</p>
                         <p class="text-warning"><small>This action cannot be undone.</small></p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-cancel capitalize" name="cancel" autofocus>cancel</button>
+                        <button type="button" class="btn btn-cancel capitalize close" name="cancel" autofocus>cancel</button>
                         <button type="submit" class="btn btn-danger capitalize" name="submit" data-submit="...deleting information">delete</button>
                     </div>
                 </form>

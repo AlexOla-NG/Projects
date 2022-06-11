@@ -297,18 +297,22 @@ ul {
 
 .modal {
     background-color: var(--lotion);
+    border: transparent;
+    border-radius: var(--br-300);
     margin: var(--center-margin);
     padding: var(--pad-200);
 }
 
 @media (min-width: 768px) {
     .modal {
+        width: 50%;
         max-width: 50%;
     }
 }
 
 @media (min-width: 1024px) {
     .modal {
+        width: 40%;
         max-width: 40%;
     }
 }
@@ -342,13 +346,8 @@ ul {
 }
 
 .modal-body {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    gap: 0;
     margin: var(--mar-100) 0 var(--mar-200);
-}
-
-.modal-body > * {
-    grid-column: span 12;
 }
 
 fieldset {

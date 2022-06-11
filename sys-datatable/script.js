@@ -37,19 +37,40 @@
 let addClientModal = document.querySelector("#addClientModal")
 let editClientModal = document.querySelector("#editClientModal")
 let deleteClientModal = document.querySelector("#deleteClientModal")
+let modal = document.querySelectorAll(".modal")
 let modalAddBtn = document.querySelector(".addClientModal")
-let modalDeleteBtn = document.querySelector(".deleteClientModal")
-console.log(modalAddBtn)
+let modalCloseBtn = document.querySelectorAll(".close")
+let modalDeleteBtn = document.querySelectorAll(".deleteClientModal")
+console.log(modalCloseBtn)
+let modalEditBtn = document.querySelectorAll(".editClientModal")
 
 
 // NOTE: button event listeners
 
-// TODO: stopped here
-    // add editClientModal event listener, closeModal for X-btn
 modalAddBtn.addEventListener("click", () => {
     addClientModal.showModal()
 })
 
 modalDeleteBtn.addEventListener("click", () => {
     deleteClientModal.showModal()
+})
+
+// STUB: add functionality for all .close elements
+modalCloseBtn.forEach(closeBtn => {
+    closeBtn.addEventListener("click", () => {
+        modal.forEach(elem => elem.close())
+    })
+})
+
+// TODO: stopped here
+    // add editClientModal event listener for each edit icon
+
+// modalEditBtn.addEventListener("click", () => {
+//     editClientModal.showModal()
+// })
+
+modalEditBtn.forEach(editBtn => {
+    editBtn.addEventListener("click", () => {
+        editClientModal.showModal()
+    })
 })
