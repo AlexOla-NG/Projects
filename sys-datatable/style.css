@@ -15,7 +15,7 @@
     --bright-gray: hsl(0, 0%, 91%);
     --bright-green: hsl(130, 75%, 51%);
     --bright-red: hsl(1, 75%, 51%);
-    --carmine-orange: hsl(13, 84%, 43%)  ;
+    --carmine-orange: hsl(13, 84%, 43%);
     --cultured: hsl(0, 0%, 96%);
     --dark-blue: hsl(220, 36%, 34%);
     --dark-gray: hsl(0, 0%, 15%);
@@ -299,22 +299,22 @@ ul {
     background-color: var(--lotion);
     border: transparent;
     border-radius: var(--br-300);
-    margin: var(--center-margin);
-    padding: var(--pad-200);
-}
-
-@media (min-width: 768px) {
-    .modal {
-        width: 50%;
-        max-width: 50%;
-    }
+    box-shadow: 0 0 1em rgba(0 0 0 .05);
+    margin: var(--mar-200) auto;
+    padding: var(--pad-100) var(--pad-200);
+    max-width: 50ch;
 }
 
 @media (min-width: 1024px) {
     .modal {
         width: 40%;
-        max-width: 40%;
     }
+}
+/* TODO: stopped here
+    add transition to modal popup */
+    
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-header {
@@ -322,7 +322,7 @@ ul {
     gap: 2em;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 var(--mar-200);
+    margin: var(--mar-100) 0 var(--mar-200);
 }
 
 .modal-header > * {
@@ -347,7 +347,7 @@ ul {
 
 .modal-body {
     gap: 0;
-    margin: var(--mar-100) 0 var(--mar-200);
+    margin: var(--mar-100) 0;
 }
 
 fieldset {
@@ -404,8 +404,6 @@ fieldset {
     margin-top: var(--mar-100);
 }
 
-/* TODO: stoped here
-    add modal styles to modal-footer */
 .modal-footer {
     background-color: var(--light-lotion);
     display: flex;

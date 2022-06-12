@@ -53,29 +53,35 @@ console.log(modalCloseBtn)
 
 // NOTE: button event listeners
 
-// STUB: popup add-new-client modal
+// STUB: popup add-new-client modal, disable bg scrolling
 modalAddBtn.addEventListener("click", () => {
     addClientModal.showModal()
+    document.body.style.overflow = "hidden"
 })
 
-// STUB: popup delete-client modal
+// STUB: popup delete-client modal, disable bg scrolling
 modalDeleteBtn.forEach(delIcon => {
     delIcon.addEventListener("click", () => {
         deleteClientModal.showModal()
+        document.body.style.overflow = "hidden"
     })
 })
 
-// STUB: popup edit-client modal
+// STUB: popup edit-client modal, disable bg scrolling
 modalEditBtn.forEach(editIcon => {
     editIcon.addEventListener("click", () => {
         editClientModal.showModal()
+        document.body.style.overflow = "hidden"
     })
 })
 
-// STUB: close modal
+// STUB: close modal, enable bg scrolling
 modalCloseBtn.forEach(closeBtn => {
     closeBtn.addEventListener("click", () => {
-        modal.forEach(elem => elem.close())
+        modal.forEach(elem => {
+            elem.close()
+            document.body.style.overflow = ""
+        })
     })
 })
 
