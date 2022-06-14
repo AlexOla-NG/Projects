@@ -42,7 +42,8 @@ let modalAddBtn = document.querySelector("button[data-value='add']")
 let modalCloseBtn = document.querySelectorAll("button[data-value='cancel']")
 let modalDeleteBtn = document.querySelectorAll("[data-value='delete']")
 let modalEditBtn = document.querySelectorAll("[data-value='edit']")
-console.log(modalCloseBtn)
+let modalForm = document.querySelectorAll("form[method='modal']")
+console.log(modalForm)
 
 //
 // ──────────────────────────────────────────────────────────────────────────────────── II ──────────
@@ -85,6 +86,40 @@ modalCloseBtn.forEach(closeBtn => {
     })
 })
 
-// TODO: stopped here
-    // add editClientModal event listener for each edit icon
+// STUB: collect form response
 
+// REVIEW: this snippet collects form responses from all modal submissions. An ideal approach would be to collect form response from each modal because they're doing different things.
+modalForm.forEach(form => {
+    form.addEventListener("submit", (ev) => {
+        ev.preventDefault()
+        console.log(ev.target)
+    })
+})
+
+// TODO: stopped here
+    // add event listener for each modal submission
+
+//
+// ──────────────────────────────────────────────────────────────────────────────────────────── IV ──────────
+//   :::::: D E F I N E   C L I E N T   O B J E C T   C L A S S : :  :   :    :     :        :          :
+// ──────────────────────────────────────────────────────────────────────────────────────────────────────
+//
+
+// NOTE: define Client object class
+
+function Client(name, email, address) {
+    this.name = name;
+    this.email = email;
+    this.address = address;
+    this.isChecked;
+}
+
+//
+// ──────────────────────────────────────────────────────────────────────────── V ──────────
+//   :::::: H A N D L I N G   F O R M   D A T A : :  :   :    :     :        :          :
+// ──────────────────────────────────────────────────────────────────────────────────────
+//
+
+// NOTE: handling form data on submit
+
+// TODO: create function to handle form data object
