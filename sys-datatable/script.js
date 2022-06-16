@@ -42,8 +42,9 @@ let modalAddBtn = document.querySelector("button[data-value='add']")
 let modalCloseBtn = document.querySelectorAll("button[data-value='cancel']")
 let modalDeleteBtn = document.querySelectorAll("[data-value='delete']")
 let modalEditBtn = document.querySelectorAll("[data-value='edit']")
-let modalForm = document.querySelectorAll("form[method='modal']")
-console.log(modalForm)
+let modalForms = document.querySelectorAll("form[method='modal']")
+let addModalForm = document.querySelector("#addClientModal > form[method='modal']")
+console.log(addModalForm)
 
 //
 // ──────────────────────────────────────────────────────────────────────────────────── II ──────────
@@ -76,29 +77,78 @@ modalEditBtn.forEach(editIcon => {
     })
 })
 
-// STUB: close modal, enable bg scrolling
+// STUB: close modal, enable bg scrolling, reset all form input
 modalCloseBtn.forEach(closeBtn => {
     closeBtn.addEventListener("click", () => {
         modal.forEach(elem => {
-            elem.close()
-            document.body.style.overflow = ""
+            closeDialog(elem)
+
+            // REVIEW: this might cause unintended consequences for editModal
+            modalForms.forEach(form => resetForm(form))
         })
     })
 })
 
-// STUB: collect form response
 
-// REVIEW: this snippet collects form responses from all modal submissions. An ideal approach would be to collect form response from each modal because they're doing different things.
-modalForm.forEach(form => {
-    form.addEventListener("submit", (ev) => {
-        ev.preventDefault()
-        console.log(ev.target)
-    })
+// STUB: collect addModal form response, converts it to obj,reset form & close modal
+addModalForm.addEventListener("submit", (ev) => {
+    ev.preventDefault()
+    
+    let addClientForm = new FormData(ev.target)
+
+    convertFormData(addClientForm)
+    console.log(convertFormData(addClientForm))
+
+    resetForm(addModalForm)
+    closeDialog(addClientModal)
 })
 
-// TODO: stopped here
-    // add event listener for each modal submission
+// REVIEW: this snippet collects form responses from all modal submissions. An ideal approach would be to collect form response from each modal because they're for different purposes.
+// modalForm.forEach(form => {
+//     form.addEventListener("submit", (ev) => {
+//         ev.preventDefault()
+//         console.log(ev.target)
+//     })
+// })
 
+
+
+//
+// ────────────────────────────────────────────────────────── V ──────────
+//   :::::: F U N C T I O N S : :  :   :    :     :        :          :
+// ────────────────────────────────────────────────────────────────────
+//
+
+// NOTE: function definitions
+
+// STUB: create function for close dialog events
+function closeDialog(dialog) {
+    dialog.close()
+    document.body.style.overflow = ""
+}
+
+// STUB: create function for reset forms
+function resetForm(form) {
+    form.reset()
+}
+
+// STUB: create function that formats formData into object
+function convertFormData(formDataObj) {
+    let obj = {}
+
+    for(const[key, value] of formDataObj) {
+        obj[key] = value
+    }
+    
+    return obj
+}
+
+// TODO: stopped here
+    // write logic for convertObj2Class function
+// STUB: create function that maps entries from formDataObj to instances of Client class
+function convertObj2Class(obj, constructorClass) {
+
+}
 //
 // ──────────────────────────────────────────────────────────────────────────────────────────── IV ──────────
 //   :::::: D E F I N E   C L I E N T   O B J E C T   C L A S S : :  :   :    :     :        :          :
