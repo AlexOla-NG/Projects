@@ -55,53 +55,61 @@ console.log(addModalForm)
 
 // NOTE: button event listeners
 
-// STUB: popup add-new-client modal, disable bg scrolling
-modalAddBtn.addEventListener("click", () => {
-    addClientModal.showModal()
-    document.body.style.overflow = "hidden"
-})
-
-// STUB: popup delete-client modal, disable bg scrolling
-modalDeleteBtn.forEach(delIcon => {
-    delIcon.addEventListener("click", () => {
-        deleteClientModal.showModal()
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // STUB: popup add-new-client modal, disable bg scrolling
+    modalAddBtn.addEventListener("click", () => {
+        addClientModal.showModal()
         document.body.style.overflow = "hidden"
     })
-})
-
-// STUB: popup edit-client modal, disable bg scrolling
-modalEditBtn.forEach(editIcon => {
-    editIcon.addEventListener("click", () => {
-        editClientModal.showModal()
-        document.body.style.overflow = "hidden"
-    })
-})
-
-// STUB: close modal, enable bg scrolling, reset all form input
-modalCloseBtn.forEach(closeBtn => {
-    closeBtn.addEventListener("click", () => {
-        modal.forEach(elem => {
-            closeDialog(elem)
-
-            // REVIEW: this might cause unintended consequences for editModal
-            modalForms.forEach(form => resetForm(form))
+    
+    // STUB: popup delete-client modal, disable bg scrolling
+    modalDeleteBtn.forEach(delIcon => {
+        delIcon.addEventListener("click", () => {
+            deleteClientModal.showModal()
+            document.body.style.overflow = "hidden"
         })
     })
-})
-
-
-// STUB: collect addModal form response, converts it to obj,reset form & close modal
-addModalForm.addEventListener("submit", (ev) => {
-    ev.preventDefault()
     
-    let addClientForm = new FormData(ev.target)
+    // STUB: popup edit-client modal, disable bg scrolling
+    modalEditBtn.forEach(editIcon => {
+        editIcon.addEventListener("click", () => {
+            editClientModal.showModal()
+            document.body.style.overflow = "hidden"
+        })
+    })
+    
+    // STUB: close modal, enable bg scrolling, reset all form input
+    modalCloseBtn.forEach(closeBtn => {
+        closeBtn.addEventListener("click", () => {
+            modal.forEach(elem => {
+                closeDialog(elem)
+    
+                // REVIEW: this might cause unintended consequences for editModal
+                modalForms.forEach(form => resetForm(form))
+            })
+        })
+    })
 
-    convertFormData(addClientForm)
-    console.log(convertFormData(addClientForm))
+    // STUB: collect addModal form response, convert it to obj,reset form & close modal
+    addModalForm.addEventListener("submit", (ev) => {
+        ev.preventDefault()
+        
+        let addClientForm = new FormData(ev.target)
+        let newClient = new Client()
+    
+        // convertFormData(addClientForm)
+        console.log(convertFormData(addClientForm))
 
-    resetForm(addModalForm)
-    closeDialog(addClientModal)
-})
+        // convertObj2Class(convertFormData(addClientForm), newClient)
+        console.log(convertObj2Class(convertFormData(addClientForm), newClient))
+    
+        resetForm(addModalForm)
+        closeDialog(addClientModal)
+    })
+}) 
+
+
 
 // REVIEW: this snippet collects form responses from all modal submissions. An ideal approach would be to collect form response from each modal because they're for different purposes.
 // modalForm.forEach(form => {
@@ -130,23 +138,44 @@ function closeDialog(dialog) {
 // STUB: create function for reset forms
 function resetForm(form) {
     form.reset()
+    alert(`Form successfully uploaded✔️`)
 }
 
-// STUB: create function that formats formData into object
+// STUB: create function that converts formData object into map
 function convertFormData(formDataObj) {
-    let obj = {}
+    // let obj = {}
+    // let newArray = []
+    let newMap = new Map()
 
     for(const[key, value] of formDataObj) {
-        obj[key] = value
+        // newArray[key] = value
+        newMap.set(key, value)
     }
-    
-    return obj
+    console.log(`The size of the map is: ${newMap.size}`)
+
+    return newMap
 }
 
 // TODO: stopped here
     // write logic for convertObj2Class function
-// STUB: create function that maps entries from formDataObj to instances of Client class
+// STUB: create function that converts newMap into instance of Client class
 function convertObj2Class(obj, constructorClass) {
+        
+    let objClass = constructorClass
+    objClass = Object.fromEntries(obj) 
+    
+    return objClass
+}
+
+// STUB: create function that maps entries from formDataObj to instances of Client class
+function convertMap2Class(formDataMap, constructorClass) {
+    // let formMap = new Map()
+    // let newClient = new Client()
+
+    // for((key, value) in newClient) {
+
+    // }
+
 
 }
 //
@@ -157,12 +186,15 @@ function convertObj2Class(obj, constructorClass) {
 
 // NOTE: define Client object class
 
-function Client(name, email, address) {
-    this.name = name;
-    this.email = email;
-    this.address = address;
-    this.isChecked;
+class Client {
+    constructor (_name, _email, _address) {
+        this.name = _name;
+        this.email = _email;
+        this.address = _address;
+        this.isChecked;
+    }
 }
+
 
 //
 // ──────────────────────────────────────────────────────────────────────────── V ──────────
