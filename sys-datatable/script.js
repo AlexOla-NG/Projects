@@ -37,7 +37,7 @@
 let addClientModal = document.querySelector("#addClientModal")
 let editClientModal = document.querySelector("#editClientModal")
 let deleteClientModal = document.querySelector("#deleteClientModal")
-let modal = document.querySelectorAll(".modal")
+let modalDialogList = document.querySelectorAll(".modal")
 let modalAddBtn = document.querySelector("button[data-value='add']")
 let addModalForm = document.querySelector("#addClientModal > form[method='modal']")
 let modalCloseBtn = document.querySelectorAll("button[data-value='cancel']")
@@ -46,7 +46,8 @@ let modalEditBtn = document.querySelectorAll("[data-value='edit']")
 let modalForms = document.querySelectorAll("form[method='modal']")
 let selectAllCheckbox = document.querySelector("#selectAllCheckbox")
 let clientCheckboxes = document.querySelectorAll(".clientCheckboxes")
-console.log(clientCheckboxes)
+console.log(selectAllCheckbox)
+console.log(modalDialogList)
 
 //
 // ──────────────────────────────────────────────────────────────────────────────────── II ──────────
@@ -81,25 +82,29 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
     
-    // STUB: close modal, enable bg scrolling, reset all form input
+    // STUB: close modalDialogList & enable bg scrolling, reset all form input
     modalCloseBtn.forEach(closeBtn => {
         closeBtn.addEventListener("click", () => {
-            modal.forEach(elem => {
-                closeDialog(elem)
+            modalDialogList.forEach(dialog => {
+                closeDialog(dialog)
+                // restoreOverflow()
     
-                // REVIEW: this might cause unintended consequences for editModal
-                modalForms.forEach(form => resetForm(form))
             })
+
+            // REVIEW: this might prevent us from saving user input as a draft via the editModal eventListener
+            modalForms.forEach(form => resetForm(form))
         })
     })
 
-    // STUB: collect addModal form response, convert it to obj,reset form & close modal
+    // STUB: collect addModal form response, convert it to obj,reset form & close modal, collect mapped data in convertFormData
+    // TODO: connect convertFormData to Client class
     addModalForm.addEventListener("submit", (ev) => {
         ev.preventDefault()
         
         let addClientForm = new FormData(ev.target)
-        let newClient = new Client()
+        // let newClient = new Client()
     
+        // NOTE: addclientform from user input is returned from this function as a Map
         // convertFormData(addClientForm)
         console.log(convertFormData(addClientForm))
 
@@ -107,8 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
         // convertObj2Class(convertFormData(addClientForm), newClient)
         // console.log(convertObj2Class(convertFormData(addClientForm), newClient))
     
+        alert(`Form successfully uploaded✔️`)
         resetForm(addModalForm)
         closeDialog(addClientModal)
+
     })
 
     // STUB: add event listener to selectAllCheckbox, check event object returned
@@ -118,15 +125,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // TODO: stopped here
     // collect clientCheckbox return values
-    // STUB: add event listener to clientCheckboxes, check event object returned
+    // STUB: add event listener to clientCheckboxes, check object event returned
+    let clientCheckboxList = new Map()
     clientCheckboxes.forEach((clientCheckbox, currentIndex) => {
+        // let clientCheckboxList = new Map()
+        
+        // TODO: stopped here
+        // write function to handle clientCheckbox onchange event
         clientCheckbox.onchange = e => {
-            console.log(`${currentIndex}: ${e.target.checked}`)
-        } 
+            let checkboxValue = e.target.checked
+            let checkboxMap = new Map()
+            
+            checkboxMap.set(currentIndex, checkboxValue)
+            console.log(checkboxMap)
+            return checkboxMap
+        }
+
+        clientCheckboxList.set(clientCheckbox, currentIndex)
+        console.log(clientCheckboxList)
+        
+        // clientCheckbox.onchange = e => {
+        //     console.log(`${currentIndex}: ${e.target.checked}`)
+        //     let clientCheckboxValue = []
+
+        //     clientCheckboxValue = [currentIndex, e.target.checked]
+            
+        //     console.log(clientCheckboxValue)
+        //     clientCheckboxList.push(clientCheckboxValue)
+        //     // console.log(clientCheckboxList)
+        //     return clientCheckboxValue
+        // }
+        // clientCheckboxList.push(clientCheckbox)
+        // console.log(clientCheckboxList)
     })
 }) 
 
-
+function selectAllCheckboxFunction(topCheckbox, individualCheckboxList) {
+    if(topCheckbox == true) {
+        individualCheckboxList.forEach(clientCheckbox => {
+            clientCheckbox == true
+        })
+    }
+}
 
 // REVIEW: this snippet collects form responses from all modal submissions. An ideal approach would be to collect form response from each modal because they're for different purposes.
 // modalForm.forEach(form => {
@@ -149,13 +189,17 @@ document.addEventListener("DOMContentLoaded", () => {
 // STUB: create function for close dialog events
 function closeDialog(dialog) {
     dialog.close()
+    restoreOverflow()
+}
+
+// STUB: create function to reset overflow
+function restoreOverflow() {
     document.body.style.overflow = ""
 }
 
 // STUB: create function for reset forms
 function resetForm(form) {
     form.reset()
-    alert(`Form successfully uploaded✔️`)
 }
 
 // STUB: create function that converts formData object into map
@@ -164,12 +208,13 @@ function convertFormData(formDataObj) {
     // let newArray = []
     let newMap = new Map()
     newMap.set("isChecked", undefined)
+    console.log(`The size of the map is: ${newMap.size}`)
     
     for(const[key, value] of formDataObj) {
         // newArray[key] = value
         newMap.set(key, value)
     }
-    console.log(`The size of the map is: ${newMap.size}`)
+    console.log(`The map has been updated. New size is: ${newMap.size}`)
 
     return newMap
 }
