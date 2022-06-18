@@ -39,12 +39,14 @@ let editClientModal = document.querySelector("#editClientModal")
 let deleteClientModal = document.querySelector("#deleteClientModal")
 let modal = document.querySelectorAll(".modal")
 let modalAddBtn = document.querySelector("button[data-value='add']")
+let addModalForm = document.querySelector("#addClientModal > form[method='modal']")
 let modalCloseBtn = document.querySelectorAll("button[data-value='cancel']")
 let modalDeleteBtn = document.querySelectorAll("[data-value='delete']")
 let modalEditBtn = document.querySelectorAll("[data-value='edit']")
 let modalForms = document.querySelectorAll("form[method='modal']")
-let addModalForm = document.querySelector("#addClientModal > form[method='modal']")
-console.log(addModalForm)
+let selectAllCheckbox = document.querySelector("#selectAllCheckbox")
+let clientCheckboxes = document.querySelectorAll(".clientCheckboxes")
+console.log(clientCheckboxes)
 
 //
 // ──────────────────────────────────────────────────────────────────────────────────── II ──────────
@@ -101,11 +103,26 @@ document.addEventListener("DOMContentLoaded", () => {
         // convertFormData(addClientForm)
         console.log(convertFormData(addClientForm))
 
+        // REVIEW: why are we trying to convert a map into an object (Class)? See 163
         // convertObj2Class(convertFormData(addClientForm), newClient)
-        console.log(convertObj2Class(convertFormData(addClientForm), newClient))
+        // console.log(convertObj2Class(convertFormData(addClientForm), newClient))
     
         resetForm(addModalForm)
         closeDialog(addClientModal)
+    })
+
+    // STUB: add event listener to selectAllCheckbox, check event object returned
+    selectAllCheckbox.onchange = e => {
+        console.log(e.target.checked)
+    }
+
+    // TODO: stopped here
+    // collect clientCheckbox return values
+    // STUB: add event listener to clientCheckboxes, check event object returned
+    clientCheckboxes.forEach((clientCheckbox, currentIndex) => {
+        clientCheckbox.onchange = e => {
+            console.log(`${currentIndex}: ${e.target.checked}`)
+        } 
     })
 }) 
 
@@ -146,7 +163,8 @@ function convertFormData(formDataObj) {
     // let obj = {}
     // let newArray = []
     let newMap = new Map()
-
+    newMap.set("isChecked", undefined)
+    
     for(const[key, value] of formDataObj) {
         // newArray[key] = value
         newMap.set(key, value)
@@ -156,9 +174,9 @@ function convertFormData(formDataObj) {
     return newMap
 }
 
-// TODO: stopped here
-    // write logic for convertObj2Class function
+
 // STUB: create function that converts newMap into instance of Client class
+// REVIEW: why are we trying to convert a map into an object (Class)? See 104 
 function convertObj2Class(obj, constructorClass) {
         
     let objClass = constructorClass
