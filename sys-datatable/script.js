@@ -44,10 +44,11 @@ let modalCloseBtn = document.querySelectorAll("button[data-value='cancel']")
 let modalDeleteBtn = document.querySelectorAll("[data-value='delete']")
 let modalEditBtn = document.querySelectorAll("[data-value='edit']")
 let modalForms = document.querySelectorAll("form[method='modal']")
-let selectAllCheckbox = document.querySelector("#selectAllCheckbox")
-let clientCheckboxes = document.querySelectorAll(".clientCheckboxes")
-console.log(selectAllCheckbox)
-console.log(modalDialogList)
+let headerCheckbox = document.querySelector("#headerCheckbox")
+let tbodyCheckboxList = document.querySelectorAll(".clientCheckboxes")
+let editDelBtnList = document.querySelectorAll("tbody > tr > td:last-child")
+console.log(headerCheckbox)
+console.log(editAddBtnList)
 
 //
 // ──────────────────────────────────────────────────────────────────────────────────── II ──────────
@@ -102,12 +103,16 @@ document.addEventListener("DOMContentLoaded", () => {
         ev.preventDefault()
         
         let addClientForm = new FormData(ev.target)
+        let mappedDataForm = convertFormData(addClientForm)
         // let newClient = new Client()
     
-        // NOTE: addclientform from user input is returned from this function as a Map
+        // NOTE: addclientform from user input is returned from convertFormData() as a Map
         // convertFormData(addClientForm)
         console.log(convertFormData(addClientForm))
-
+        
+        mappedData2Table(mappedDataForm)
+        // TODO: create function that dynamically adds rows to table 
+        
         // REVIEW: why are we trying to convert a map into an object (Class)? See 163
         // convertObj2Class(convertFormData(addClientForm), newClient)
         // console.log(convertObj2Class(convertFormData(addClientForm), newClient))
@@ -118,34 +123,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
+    // STUB: create function that maps values in covertFormData to columns in table
+    function mappedData2Table(mapObject) {
+        let convertMap2Array = []
+
+        convertMap2Array = Array.from(mapObject)
+        console.log(convertMap2Array)
+
+        // TODO: stopped here
+            // create function that dynamically adds rows to table.
+            // Use editDelBtnList var to add the edit & del td. we only need to add one td from the list, so change querySelectorAll to just querySelector
+    }
+
+    // TODO: run selectAllCheckbox function inside headerCheckbox event listener
     // STUB: add event listener to selectAllCheckbox, check event object returned
-    selectAllCheckbox.onchange = e => {
+    headerCheckbox.onchange = e => {
         console.log(e.target.checked)
     }
 
     // TODO: stopped here
     // collect clientCheckbox return values
     // STUB: add event listener to clientCheckboxes, check object event returned
-    let clientCheckboxList = new Map()
-    clientCheckboxes.forEach((clientCheckbox, currentIndex) => {
-        // let clientCheckboxList = new Map()
+    let clientCheckboxMap = []
+    tbodyCheckboxList.forEach((clientCheckbox, currentIndex) => {
+        let clientCheckboxList = []
         
         // TODO: stopped here
         // write function to handle clientCheckbox onchange event
-        clientCheckbox.onchange = e => {
-            let checkboxValue = e.target.checked
-            let checkboxMap = new Map()
-            
-            checkboxMap.set(currentIndex, checkboxValue)
-            console.log(checkboxMap)
-            return checkboxMap
-        }
+        clientCheckbox.addEventListener("change", (event) => {
+            let checkboxValue = Boolean
 
-        clientCheckboxList.set(clientCheckbox, currentIndex)
-        console.log(clientCheckboxList)
+            checkboxValue = event.target.checked
+
+            clientCheckboxList.push(checkboxValue)
+            console.log(clientCheckboxList)
+        })
+
+        clientCheckboxMap.push(currentIndex, clientCheckboxList)
+
+        // clientCheckbox.onchange = isCheckboxActive
         
         // clientCheckbox.onchange = e => {
-        //     console.log(`${currentIndex}: ${e.target.checked}`)
+        //     let checkboxValue = e.target.checked
+        //     let checkboxMap = new Map()
+            
+        //     checkboxMap.set(currentIndex, checkboxValue)
+        //     console.log(checkboxMap)
+        //     return checkboxMap
+        // }
+
+        // clientCheckboxList.set(currentIndex, clientCheckbox)
+        
+        // clientCheckbox.onchange = e => {
+            //     console.log(`${currentIndex}: ${e.target.checked}`)
         //     let clientCheckboxValue = []
 
         //     clientCheckboxValue = [currentIndex, e.target.checked]
@@ -158,14 +188,24 @@ document.addEventListener("DOMContentLoaded", () => {
         // clientCheckboxList.push(clientCheckbox)
         // console.log(clientCheckboxList)
     })
+    console.log(clientCheckboxMap)
 }) 
 
-function selectAllCheckboxFunction(topCheckbox, individualCheckboxList) {
+function selectAllCheckbox(topCheckbox, individualCheckboxList) {
     if(topCheckbox == true) {
         individualCheckboxList.forEach(clientCheckbox => {
             clientCheckbox == true
         })
     }
+}
+
+// STUB: create function to return checkbox value from onchange event
+function isCheckboxActive(event) {
+    let checkboxValue = Boolean
+
+    checkboxValue = event.target.checked
+
+    return checkboxValue
 }
 
 // REVIEW: this snippet collects form responses from all modal submissions. An ideal approach would be to collect form response from each modal because they're for different purposes.
