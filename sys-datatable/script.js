@@ -46,9 +46,11 @@ let modalEditBtn = document.querySelectorAll("[data-value='edit']")
 let modalForms = document.querySelectorAll("form[method='modal']")
 let headerCheckbox = document.querySelector("#headerCheckbox")
 let tbodyCheckboxList = document.querySelectorAll(".clientCheckboxes")
-let editDelBtnList = document.querySelectorAll("tbody > tr > td:last-child")
-console.log(headerCheckbox)
-console.log(editAddBtnList)
+let tableLastCol = document.querySelector("tbody > tr:last-child > td:last-child")
+let tableFirstCol = document.querySelector("tbody > tr:last-child > td:first-child")
+let tbody = document.querySelector("tbody")
+console.log(tableFirstCol)
+console.log(tableLastCol)
 
 //
 // ──────────────────────────────────────────────────────────────────────────────────── II ──────────
@@ -59,7 +61,7 @@ console.log(editAddBtnList)
 
 // NOTE: button event listeners
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
     
     // STUB: popup add-new-client modal, disable bg scrolling
     modalAddBtn.addEventListener("click", () => {
@@ -88,8 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
         closeBtn.addEventListener("click", () => {
             modalDialogList.forEach(dialog => {
                 closeDialog(dialog)
-                // restoreOverflow()
-    
             })
 
             // REVIEW: this might prevent us from saving user input as a draft via the editModal eventListener
@@ -97,42 +97,50 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 
-    // STUB: collect addModal form response, convert it to obj,reset form & close modal, collect mapped data in convertFormData
-    // TODO: connect convertFormData to Client class
+    // STUB: convert submitted form to formDataobj, convert formDataObj to array, reset form & close modal, collect mapped data in convertFormData
+    // since we converted formData straight to array, convertFormData is redundant
     addModalForm.addEventListener("submit", (ev) => {
         ev.preventDefault()
         
+        // STUB: save submitted form in formDataObj as addClientForm
         let addClientForm = new FormData(ev.target)
-        let mappedDataForm = convertFormData(addClientForm)
-        // let newClient = new Client()
-    
-        // NOTE: addclientform from user input is returned from convertFormData() as a Map
-        // convertFormData(addClientForm)
-        console.log(convertFormData(addClientForm))
+        let arrFormData = formData2Array(addClientForm)
+
+        console.log(arrFormData)
+         
+        console.log(pushFormData2Table(arrFormData, tbody))
         
-        mappedData2Table(mappedDataForm)
-        // TODO: create function that dynamically adds rows to table 
-        
-        // REVIEW: why are we trying to convert a map into an object (Class)? See 163
-        // convertObj2Class(convertFormData(addClientForm), newClient)
-        // console.log(convertObj2Class(convertFormData(addClientForm), newClient))
-    
         alert(`Form successfully uploaded✔️`)
         resetForm(addModalForm)
         closeDialog(addClientModal)
-
+        
     })
+    
+    // TODO: create function that dynamically adds rows to table
+    // STUB: create function that takes formData as array, and dynamically adds as td of new row to table.
+    function pushFormData2Table(arr, tbodyElement) {
+        let newArray = [...arr]
+        let newTableRow = document.createElement("tr")
+        let tdArray = []
 
-    // STUB: create function that maps values in covertFormData to columns in table
-    function mappedData2Table(mapObject) {
-        let convertMap2Array = []
+        // TODO: stopped here, map the 2nd element in newArray to the td tag
+        tdArray = newArray.forEach([, value] => {
+            `<td></td>`
+        })
 
-        convertMap2Array = Array.from(mapObject)
-        console.log(convertMap2Array)
+        console.log(tdArray)
 
-        // TODO: stopped here
-            // create function that dynamically adds rows to table.
-            // Use editDelBtnList var to add the edit & del td. we only need to add one td from the list, so change querySelectorAll to just querySelector
+        tdArray.reduce((tableRow, td) => {
+            tableRow += td
+        }, 0)
+
+        // newTableRow = newArray.reduce((tableRow, elem) => {
+        //     tableRow.insertAdjacentElement("beforeend", elem)
+        // }, 0)
+
+        tbodyElement.append(newTableRow)
+
+
     }
 
     // TODO: run selectAllCheckbox function inside headerCheckbox event listener
@@ -177,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // clientCheckbox.onchange = e => {
             //     console.log(`${currentIndex}: ${e.target.checked}`)
         //     let clientCheckboxValue = []
-
+        
         //     clientCheckboxValue = [currentIndex, e.target.checked]
             
         //     console.log(clientCheckboxValue)
@@ -202,15 +210,15 @@ function selectAllCheckbox(topCheckbox, individualCheckboxList) {
 // STUB: create function to return checkbox value from onchange event
 function isCheckboxActive(event) {
     let checkboxValue = Boolean
-
+    
     checkboxValue = event.target.checked
-
+    
     return checkboxValue
 }
 
 // REVIEW: this snippet collects form responses from all modal submissions. An ideal approach would be to collect form response from each modal because they're for different purposes.
 // modalForm.forEach(form => {
-//     form.addEventListener("submit", (ev) => {
+    //     form.addEventListener("submit", (ev) => {
 //         ev.preventDefault()
 //         console.log(ev.target)
 //     })
@@ -225,6 +233,13 @@ function isCheckboxActive(event) {
 //
 
 // NOTE: function definitions
+
+// TODO: replace anonymous function for all modal calls with showModal
+// STUB: create function to showModal on click
+function showModal(userModal) {
+    userModal.showModal()
+    document.body.style.overflow = "hidden"
+}
 
 // STUB: create function for close dialog events
 function closeDialog(dialog) {
@@ -242,22 +257,35 @@ function resetForm(form) {
     form.reset()
 }
 
-// STUB: create function that converts formData object into map
-function convertFormData(formDataObj) {
-    // let obj = {}
-    // let newArray = []
-    let newMap = new Map()
-    newMap.set("isChecked", undefined)
-    console.log(`The size of the map is: ${newMap.size}`)
-    
-    for(const[key, value] of formDataObj) {
-        // newArray[key] = value
-        newMap.set(key, value)
-    }
-    console.log(`The map has been updated. New size is: ${newMap.size}`)
+// STUB: create function that converts formDataObj to array
+function formData2Array(obj) {
+    let newArray = []
 
-    return newMap
+    newArray = Array.from(obj)
+
+    return newArray
+
+    // TODO: stopped here
+        // create function that dynamically adds rows to table.
+        // Use tableLastCol var to add the edit & del td. we only need to add one td from the list, so change querySelectorAll to just querySelector
 }
+
+// STUB: create function that converts formData object into map
+// function convertFormData(formDataObj) {
+//     // let obj = {}
+//     // let newArray = []
+//     let newMap = new Map()
+//     newMap.set("isChecked", undefined)
+//     console.log(`The size of the map is: ${newMap.size}`)
+    
+//     for(const[key, value] of formDataObj) {
+    //         // newArray[key] = value
+//         newMap.set(key, value)
+//     }
+//     console.log(`The map has been updated. New size is: ${newMap.size}`)
+
+//     return newMap
+// }
 
 
 // STUB: create function that converts newMap into instance of Client class
