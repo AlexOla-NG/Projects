@@ -105,10 +105,12 @@ window.addEventListener("DOMContentLoaded", () => {
         // STUB: save submitted form in formDataObj as addClientForm
         let addClientForm = new FormData(ev.target)
         let arrFormData = formData2Array(addClientForm)
+        let tdValues = mapValue2TD(arrFormData)
 
         console.log(arrFormData)
          
-        console.log(pushFormData2Table(arrFormData, tbody))
+        console.log(mapValue2TD(arrFormData))
+        console.log(pushFormData2Table(tdValues, tbody))
         
         alert(`Form successfully uploaded✔️`)
         resetForm(addModalForm)
@@ -116,31 +118,55 @@ window.addEventListener("DOMContentLoaded", () => {
         
     })
     
-    // TODO: create function that dynamically adds rows to table
+    // TODO: stopped here
+        // add checkbox at the start, and editDel btn to end
     // STUB: create function that takes formData as array, and dynamically adds as td of new row to table.
-    function pushFormData2Table(arr, tbodyElement) {
-        let newArray = [...arr]
-        let newTableRow = document.createElement("tr")
-        let tdArray = []
+    function pushFormData2Table(trElement, tbodyElement) {
+        // let newArray = [...arr]
+        // console.log(newArray)
+        // let newTableRow = document.createElement("tr")
+        // let trArray;
+        // let td = document.createElement("td")
 
-        // TODO: stopped here, map the 2nd element in newArray to the td tag
-        tdArray = newArray.forEach([, value] => {
-            `<td></td>`
-        })
+        // trArray = newArray.forEach(elem => {
+        //     return newTableRow += elem
+        // })
 
-        console.log(tdArray)
+        // console.log(trArray)
+        // console.log(newTableRow)
 
-        tdArray.reduce((tableRow, td) => {
-            tableRow += td
-        }, 0)
+        // // TODO: stopped here, map the 2nd element in newArray to the td tag
+        // let tdArray = newArray.forEach(([, value]) => {
+        //     `<td>${value}</td>`
+        // })
+        // console.log(tdArray)
+
+        // tdArray.reduce((tableRow, td) => {
+        //     tableRow += td
+        // }, 0)
 
         // newTableRow = newArray.reduce((tableRow, elem) => {
         //     tableRow.insertAdjacentElement("beforeend", elem)
         // }, 0)
 
-        tbodyElement.append(newTableRow)
+        // tbodyElement.append(newTableRow)
+        tbodyElement.append(trElement)
+    }
 
+    // STUB: create function that maps each 2nd element in array to a td tag, and appends it to a tr tag
+    function mapValue2TD (array) {
+        let newArray = [...array]
+        let newTableRow = document.createElement("tr")
 
+        newArray.map(([, value]) => {
+            let newTableData = document.createElement("td")
+
+            newTableData.textContent = value
+            
+            return newTableRow.append(newTableData)
+        })
+
+        return newTableRow
     }
 
     // TODO: run selectAllCheckbox function inside headerCheckbox event listener
