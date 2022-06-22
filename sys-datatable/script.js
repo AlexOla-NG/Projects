@@ -105,11 +105,11 @@ window.addEventListener("DOMContentLoaded", () => {
         // STUB: save submitted form in formDataObj as addClientForm
         let addClientForm = new FormData(ev.target)
         let arrFormData = formData2Array(addClientForm)
-        let tdValues = mapValue2TD(arrFormData)
+        let tdValues = mapValue2TD(arrFormData, tableFirstCol, tableLastCol)
 
         console.log(arrFormData)
          
-        console.log(mapValue2TD(arrFormData))
+        console.log(mapValue2TD(arrFormData, tableFirstCol, tableLastCol))
         console.log(pushFormData2Table(tdValues, tbody))
         
         alert(`Form successfully uploaded✔️`)
@@ -118,53 +118,34 @@ window.addEventListener("DOMContentLoaded", () => {
         
     })
     
-    // TODO: stopped here
-        // add checkbox at the start, and editDel btn to end
     // STUB: create function that takes formData as array, and dynamically adds as td of new row to table.
     function pushFormData2Table(trElement, tbodyElement) {
-        // let newArray = [...arr]
-        // console.log(newArray)
-        // let newTableRow = document.createElement("tr")
-        // let trArray;
-        // let td = document.createElement("td")
-
-        // trArray = newArray.forEach(elem => {
-        //     return newTableRow += elem
-        // })
-
-        // console.log(trArray)
-        // console.log(newTableRow)
-
-        // // TODO: stopped here, map the 2nd element in newArray to the td tag
-        // let tdArray = newArray.forEach(([, value]) => {
-        //     `<td>${value}</td>`
-        // })
-        // console.log(tdArray)
-
-        // tdArray.reduce((tableRow, td) => {
-        //     tableRow += td
-        // }, 0)
-
-        // newTableRow = newArray.reduce((tableRow, elem) => {
-        //     tableRow.insertAdjacentElement("beforeend", elem)
-        // }, 0)
-
-        // tbodyElement.append(newTableRow)
+       
         tbodyElement.append(trElement)
     }
 
+    // TODO: stopped here
+        // refactor event Listeners to match CSS selectors so that cloned elems (checkbox and editDel btn) events can be captured
     // STUB: create function that maps each 2nd element in array to a td tag, and appends it to a tr tag
-    function mapValue2TD (array) {
+    function mapValue2TD (array, checkboxElem, actionBtnsElem) {
         let newArray = [...array]
         let newTableRow = document.createElement("tr")
+        let newCheckbox = document.createElement("td")
+        let newActionBtns = document.createElement("td")
 
+        newCheckbox = checkboxElem.cloneNode(true)
+        newTableRow.insertAdjacentElement("afterbegin",newCheckbox)
+        
         newArray.map(([, value]) => {
             let newTableData = document.createElement("td")
 
             newTableData.textContent = value
             
-            return newTableRow.append(newTableData)
+            newTableRow.append(newTableData)
         })
+
+        newActionBtns = actionBtnsElem.cloneNode(true)
+        newTableRow.insertAdjacentElement("beforeend", newActionBtns)
 
         return newTableRow
     }
