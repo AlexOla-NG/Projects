@@ -37,7 +37,7 @@
 let addClientModal = document.querySelector("#addClientModal")
 let editClientModal = document.querySelector("#editClientModal")
 let deleteClientModal = document.querySelector("#deleteClientModal")
-let modalDialogList = document.querySelectorAll(".modal")
+let modalDialogList = document.querySelectorAll("dialog")
 let modalAddBtn = document.querySelector("button[data-value='add']")
 let addModalForm = document.querySelector("#addClientModal > form[method='modal']")
 let modalCloseBtn = document.querySelectorAll("button[data-value='cancel']")
@@ -63,35 +63,36 @@ console.log(tableLastCol)
 
 window.addEventListener("DOMContentLoaded", () => {
     
-    // STUB: popup add-new-client modal, disable bg scrolling
-    modalAddBtn.addEventListener("click", () => {
-        showModalFunc(addClientModal)
-    })
+    // STUB: popup add-new-client modal
+    addGlobalEventListener("click", "[data-value='add']", showModalFunc, addClientModal)
     
-    // STUB: popup delete-client modal, disable bg scrolling
-    modalDeleteBtn.forEach(delIcon => {
-        delIcon.addEventListener("click", () => {
-            showModalFunc(deleteClientModal)
-        })
-    })
-    
+    // STUB: popup delete-client modal
+    addGlobalEventListener("click", "[data-value='delete']", showModalFunc, deleteClientModal)
 
-    // TODO: stopped here
-        // update the remaining eventlisteners with addGlobalEventListener
-    // STUB: popup edit-client modal, disable bg scrolling
+    // STUB: popup edit-client modal
     addGlobalEventListener("click", "[data-value='edit']", showModalFunc, editClientModal)
     
-    
+    // TODO: stopped here
+        // addmodal form should reset after closing the addClientModal dialog
     // STUB: close modalDialogList & enable bg scrolling, reset all form input
-    modalCloseBtn.forEach(closeBtn => {
-        closeBtn.addEventListener("click", () => {
-            modalDialogList.forEach(dialog => {
-                closeDialog(dialog)
-            })
-
-            // REVIEW: this might prevent us from saving user input as a draft via the editModal eventListener
-            modalForms.forEach(form => resetForm(form))
-        })
+    // modalCloseBtn.forEach(closeBtn => {
+    //     closeBtn.addEventListener("click", () => {
+    //         modalDialogList.forEach(dialog => {
+        //             closeDialog(dialog)
+    //         })
+    
+    //         // REVIEW: this might prevent us from saving user input as a draft via the editModal eventListener
+    //         modalForms.forEach(form => resetForm(form))
+    //     })
+    // })
+    modalDialogList.forEach(dialog => {
+        addGlobalEventListener("click", "[data-value='cancel']", closeDialog, dialog)
+        
+        // REVIEW: the snippet below is not working properly. 
+                // addmodal form should reset after closing the addClientModal dialog
+        if (dialog.matches("#addClientModal")) {
+            resetForm(addModalForm)
+        }
     })
 
 
@@ -219,16 +220,6 @@ function isCheckboxActive(event) {
     return checkboxValue
 }
 
-// REVIEW: this snippet collects form responses from all modal submissions. An ideal approach would be to collect form response from each modal because they're for different purposes.
-// modalForm.forEach(form => {
-    //     form.addEventListener("submit", (ev) => {
-//         ev.preventDefault()
-//         console.log(ev.target)
-//     })
-// })
-
-
-
 //
 // ────────────────────────────────────────────────────────── V ──────────
 //   :::::: F U N C T I O N S : :  :   :    :     :        :          :
@@ -237,16 +228,15 @@ function isCheckboxActive(event) {
 
 // NOTE: function definitions
 
-// TODO: replace anonymous function for all modal calls with showModal
-// STUB: create function to showModal on click
-function showModal(userModal) {
-    userModal.showModal()
+// STUB: popup modal on window
+function showModalFunc(targetModal) {
+    targetModal.showModal()
     document.body.style.overflow = "hidden"
 }
 
-// STUB: create function for close dialog events
-function closeDialog(dialog) {
-    dialog.close()
+// STUB: close dialog box
+function closeDialog(targetModal) {
+    targetModal.close()
     restoreOverflow()
 }
 
@@ -255,24 +245,18 @@ function restoreOverflow() {
     document.body.style.overflow = ""
 }
 
-// STUB: create function for reset forms
+// STUB: reset forms
 function resetForm(form) {
     form.reset()
 }
 
-// STUB: create function that activates modal for each btn
+// STUB: create function that dynamically add event listeners to elements.
 function addGlobalEventListener(type, selector, callback, eventHandler) {
     document.addEventListener(type, (e) => {
         if (e.target.matches(selector)) {
             callback(eventHandler)
         }
     })
-}
-
-// STUB: create function to display modal
-function showModalFunc(targetModal) {
-    targetModal.showModal()
-    document.body.style.overflow = "hidden"
 }
 
 // STUB: create function that converts formDataObj to array
