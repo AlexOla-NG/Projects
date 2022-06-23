@@ -65,25 +65,22 @@ window.addEventListener("DOMContentLoaded", () => {
     
     // STUB: popup add-new-client modal, disable bg scrolling
     modalAddBtn.addEventListener("click", () => {
-        addClientModal.showModal()
-        document.body.style.overflow = "hidden"
+        showModalFunc(addClientModal)
     })
     
     // STUB: popup delete-client modal, disable bg scrolling
     modalDeleteBtn.forEach(delIcon => {
         delIcon.addEventListener("click", () => {
-            deleteClientModal.showModal()
-            document.body.style.overflow = "hidden"
+            showModalFunc(deleteClientModal)
         })
     })
     
+
+    // TODO: stopped here
+        // update the remaining eventlisteners with addGlobalEventListener
     // STUB: popup edit-client modal, disable bg scrolling
-    modalEditBtn.forEach(editIcon => {
-        editIcon.addEventListener("click", () => {
-            editClientModal.showModal()
-            document.body.style.overflow = "hidden"
-        })
-    })
+    addGlobalEventListener("click", "[data-value='edit']", showModalFunc, editClientModal)
+    
     
     // STUB: close modalDialogList & enable bg scrolling, reset all form input
     modalCloseBtn.forEach(closeBtn => {
@@ -97,6 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
         })
     })
 
+
     // STUB: convert submitted form to formDataobj, convert formDataObj to array, reset form & close modal, collect mapped data in convertFormData
     // since we converted formData straight to array, convertFormData is redundant
     addModalForm.addEventListener("submit", (ev) => {
@@ -105,12 +103,12 @@ window.addEventListener("DOMContentLoaded", () => {
         // STUB: save submitted form in formDataObj as addClientForm
         let addClientForm = new FormData(ev.target)
         let arrFormData = formData2Array(addClientForm)
-        let tdValues = mapValue2TD(arrFormData, tableFirstCol, tableLastCol)
+        let trElem = mapValue2TD(arrFormData, tableFirstCol, tableLastCol)
 
         console.log(arrFormData)
          
         console.log(mapValue2TD(arrFormData, tableFirstCol, tableLastCol))
-        console.log(pushFormData2Table(tdValues, tbody))
+        console.log(pushTr2Tbody(trElem, tbody))
         
         alert(`Form successfully uploaded✔️`)
         resetForm(addModalForm)
@@ -118,15 +116,13 @@ window.addEventListener("DOMContentLoaded", () => {
         
     })
     
-    // STUB: create function that takes formData as array, and dynamically adds as td of new row to table.
-    function pushFormData2Table(trElement, tbodyElement) {
+    // STUB: create function that appends tr to tbody.
+    function pushTr2Tbody(trElement, tbodyElement) {
        
         tbodyElement.append(trElement)
     }
-
-    // TODO: stopped here
-        // refactor event Listeners to match CSS selectors so that cloned elems (checkbox and editDel btn) events can be captured
-    // STUB: create function that maps each 2nd element in array to a td tag, and appends it to a tr tag
+    
+    // STUB: create function that maps each 2nd element in array to a td element, and appends it to a tr element along with the checkbox and editDel action btns
     function mapValue2TD (array, checkboxElem, actionBtnsElem) {
         let newArray = [...array]
         let newTableRow = document.createElement("tr")
@@ -262,6 +258,21 @@ function restoreOverflow() {
 // STUB: create function for reset forms
 function resetForm(form) {
     form.reset()
+}
+
+// STUB: create function that activates modal for each btn
+function addGlobalEventListener(type, selector, callback, eventHandler) {
+    document.addEventListener(type, (e) => {
+        if (e.target.matches(selector)) {
+            callback(eventHandler)
+        }
+    })
+}
+
+// STUB: create function to display modal
+function showModalFunc(targetModal) {
+    targetModal.showModal()
+    document.body.style.overflow = "hidden"
 }
 
 // STUB: create function that converts formDataObj to array
