@@ -37,7 +37,8 @@
 let addClientModal = document.querySelector("#addClientModal")
 let editClientModal = document.querySelector("#editClientModal")
 let deleteClientModal = document.querySelector("#deleteClientModal")
-let modalDialogList = document.querySelectorAll("dialog")
+let modalDialogNodeList = document.querySelectorAll("dialog")
+let modalDialogList = [...modalDialogNodeList]
 let modalAddBtn = document.querySelector("button[data-value='add']")
 let addModalForm = document.querySelector("#addClientModal > form[method='modal']")
 let modalCloseBtn = document.querySelectorAll("button[data-value='cancel']")
@@ -46,6 +47,7 @@ let modalEditBtn = document.querySelectorAll("[data-value='edit']")
 let modalForms = document.querySelectorAll("form[method='modal']")
 let headerCheckbox = document.querySelector("#headerCheckbox")
 let tbodyCheckboxList = document.querySelectorAll(".clientCheckboxes")
+// let
 let tableLastCol = document.querySelector("tbody > tr:last-child > td:last-child")
 let tableFirstCol = document.querySelector("tbody > tr:last-child > td:first-child")
 let tbody = document.querySelector("tbody")
@@ -136,7 +138,7 @@ window.addEventListener("DOMContentLoaded", () => {
         newArray.map(([, value]) => {
             let newTableData = document.createElement("td")
 
-            newTableData.textContent = value
+            newTableData.innerHTML = value
             
             newTableRow.append(newTableData)
         })
@@ -155,24 +157,56 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // TODO: stopped here
     // collect clientCheckbox return values
-    // STUB: add event listener to clientCheckboxes, check object event returned
+    // STUB: add event listener to clientCheckboxes, check if object event returned is Boolean
     let clientCheckboxMap = []
     tbodyCheckboxList.forEach((clientCheckbox, currentIndex) => {
-        let clientCheckboxList = []
+        // let clientCheckboxList = []
         
         // TODO: stopped here
         // write function to handle clientCheckbox onchange event
-        clientCheckbox.addEventListener("change", (event) => {
-            let checkboxValue = Boolean
+        clientCheckbox.addEventListener("change", checkValueOfCheckbox(checkboxEvent))
 
-            checkboxValue = event.target.checked
+        // => {
+        //     // NOTE: set default value to false, since checkbox is unchecked by default in HTML
+        //     let checkboxValue = false
 
-            clientCheckboxList.push(checkboxValue)
-            console.log(clientCheckboxList)
-        })
+        //     checkboxValue += checkboxEvent.target.checked
+            
+        //     clientCheckboxList.push(checkboxValue)
+        //     // TODO: stopped here
+        //             // clear clientCheckboxList after event is added
+        //     console.log(clientCheckboxList)
+        // })
 
+        // addGlobalEventListener("change", ".clientCheckboxes", checkValueOfCheckbox, "event")
+        
+        
+        let clientCheckboxList = []
+        
+        // TODO: stopped here
+        // return value of checkValueOfCheckbox function in clientCheckboxList
+        function checkValueOfCheckbox (onChangeEvent) {
+
+            if (onChangeEvent.target.checked) {
+
+                let checkboxValue = new Boolean
+                
+                checkboxValue = onChangeEvent.target.checked
+                
+                return checkboxValue
+                
+            }
+    
+            
+            // clientCheckboxList.push(checkboxValue)
+            // TODO: stopped here
+            // clear clientCheckboxList after event is added
+            // console.log(clientCheckboxList)
+            
+        }
+        
         clientCheckboxMap.push(currentIndex, clientCheckboxList)
-
+        
         // clientCheckbox.onchange = isCheckboxActive
         
         // clientCheckbox.onchange = e => {
