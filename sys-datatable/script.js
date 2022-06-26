@@ -92,9 +92,9 @@ window.addEventListener("DOMContentLoaded", () => {
         
         // REVIEW: the snippet below is not working properly. 
                 // addmodal form should reset after closing the addClientModal dialog
-        if (dialog.matches("#addClientModal")) {
-            resetForm(addModalForm)
-        }
+        // if (dialog.matches("#addClientModal")) {
+        //     resetForm(addModalForm)
+        // }
     })
 
 
@@ -103,52 +103,27 @@ window.addEventListener("DOMContentLoaded", () => {
     addModalForm.addEventListener("submit", (ev) => {
         ev.preventDefault()
         
-        // STUB: save submitted form in formDataObj as addClientForm
+        // STUB: convert formData to array
         let addClientForm = new FormData(ev.target)
         let arrFormData = formData2Array(addClientForm)
-        let trElem = mapValue2TD(arrFormData, tableFirstCol, tableLastCol)
-
         console.log(arrFormData)
-         
-        console.log(mapValue2TD(arrFormData, tableFirstCol, tableLastCol))
-        console.log(pushTr2Tbody(trElem, tbody))
+
+        // STUB: save values from array to tr element
+        let trElem = mapValue2TD(arrFormData, tableFirstCol, tableLastCol)
+        console.log(trElem)
+        
+        // STUB: update table with new row
+        let updatedTbody = pushTr2Tbody(trElem, tbody)
+        console.log(updatedTbody)
         
         alert(`Form successfully uploaded✔️`)
         resetForm(addModalForm)
         closeDialog(addClientModal)
         
     })
-    
-    // STUB: create function that appends tr to tbody.
-    function pushTr2Tbody(trElement, tbodyElement) {
-       
-        tbodyElement.append(trElement)
-    }
-    
-    // STUB: create function that maps each 2nd element in array to a td element, and appends it to a tr element along with the checkbox and editDel action btns
-    function mapValue2TD (array, checkboxElem, actionBtnsElem) {
-        let newArray = [...array]
-        let newTableRow = document.createElement("tr")
-        let newCheckbox = document.createElement("td")
-        let newActionBtns = document.createElement("td")
 
-        newCheckbox = checkboxElem.cloneNode(true)
-        newTableRow.insertAdjacentElement("afterbegin",newCheckbox)
-        
-        newArray.map(([, value]) => {
-            let newTableData = document.createElement("td")
-
-            newTableData.innerHTML = value
-            
-            newTableRow.append(newTableData)
-        })
-
-        newActionBtns = actionBtnsElem.cloneNode(true)
-        newTableRow.insertAdjacentElement("beforeend", newActionBtns)
-
-        return newTableRow
-    }
-
+    // TODO: stopped here
+        // write function to handle tbodye clientCheckbox change event
     // TODO: run selectAllCheckbox function inside headerCheckbox event listener
     // STUB: add event listener to selectAllCheckbox, check event object returned
     headerCheckbox.onchange = e => {
@@ -158,84 +133,88 @@ window.addEventListener("DOMContentLoaded", () => {
     // TODO: stopped here
     // collect clientCheckbox return values
     // STUB: add event listener to clientCheckboxes, check if object event returned is Boolean
-    let clientCheckboxMap = []
-    tbodyCheckboxList.forEach((clientCheckbox, currentIndex) => {
-        // let clientCheckboxList = []
+    // let clientCheckboxMap = []
+    // tbodyCheckboxList.forEach((clientCheckbox, currentIndex) => {
+    //     // let clientCheckboxList = []
         
-        // TODO: stopped here
-        // write function to handle clientCheckbox onchange event
-        clientCheckbox.addEventListener("change", checkValueOfCheckbox(checkboxEvent))
+    //     // TODO: stopped here
+    //     // write function to handle clientCheckbox onchange event
+    //     clientCheckbox.addEventListener("change", checkValueOfCheckbox(checkboxEvent))
 
-        // => {
-        //     // NOTE: set default value to false, since checkbox is unchecked by default in HTML
-        //     let checkboxValue = false
+    //     // => {
+    //     //     // NOTE: set default value to false, since checkbox is unchecked by default in HTML
+    //     //     let checkboxValue = false
 
-        //     checkboxValue += checkboxEvent.target.checked
+    //     //     checkboxValue += checkboxEvent.target.checked
             
-        //     clientCheckboxList.push(checkboxValue)
-        //     // TODO: stopped here
-        //             // clear clientCheckboxList after event is added
-        //     console.log(clientCheckboxList)
-        // })
+    //     //     clientCheckboxList.push(checkboxValue)
+    //     //     // TODO: stopped here
+    //     //             // clear clientCheckboxList after event is added
+    //     //     console.log(clientCheckboxList)
+    //     // })
 
-        // addGlobalEventListener("change", ".clientCheckboxes", checkValueOfCheckbox, "event")
+    //     // addGlobalEventListener("change", ".clientCheckboxes", checkValueOfCheckbox, "event")
         
         
-        let clientCheckboxList = []
+    //     let clientCheckboxList = []
         
-        // TODO: stopped here
-        // return value of checkValueOfCheckbox function in clientCheckboxList
-        function checkValueOfCheckbox (onChangeEvent) {
+    //     // TODO: stopped here
+    //     // return value of checkValueOfCheckbox function in clientCheckboxList
+        
+    //     clientCheckboxMap.push(currentIndex, clientCheckboxList)
+        
+    //     // clientCheckbox.onchange = isCheckboxActive
+        
+    //     // clientCheckbox.onchange = e => {
+    //     //     let checkboxValue = e.target.checked
+    //     //     let checkboxMap = new Map()
+            
+    //     //     checkboxMap.set(currentIndex, checkboxValue)
+    //     //     console.log(checkboxMap)
+    //     //     return checkboxMap
+    //     // }
 
-            if (onChangeEvent.target.checked) {
-
-                let checkboxValue = new Boolean
-                
-                checkboxValue = onChangeEvent.target.checked
-                
-                return checkboxValue
-                
-            }
+    //     // clientCheckboxList.set(currentIndex, clientCheckbox)
+        
+    //     // clientCheckbox.onchange = e => {
+    //         //     console.log(`${currentIndex}: ${e.target.checked}`)
+    //     //     let clientCheckboxValue = []
+        
+    //     //     clientCheckboxValue = [currentIndex, e.target.checked]
+        
+    //     //     console.log(clientCheckboxValue)
+    //     //     clientCheckboxList.push(clientCheckboxValue)
+    //     //     // console.log(clientCheckboxList)
+    //     //     return clientCheckboxValue
+    //     // }
+    //     // clientCheckboxList.push(clientCheckbox)
+    //     // console.log(clientCheckboxList)
+    // })
     
-            
-            // clientCheckboxList.push(checkboxValue)
-            // TODO: stopped here
-            // clear clientCheckboxList after event is added
-            // console.log(clientCheckboxList)
-            
-        }
-        
-        clientCheckboxMap.push(currentIndex, clientCheckboxList)
-        
-        // clientCheckbox.onchange = isCheckboxActive
-        
-        // clientCheckbox.onchange = e => {
-        //     let checkboxValue = e.target.checked
-        //     let checkboxMap = new Map()
-            
-        //     checkboxMap.set(currentIndex, checkboxValue)
-        //     console.log(checkboxMap)
-        //     return checkboxMap
-        // }
+    // function checkValueOfCheckbox(onChangeEvent) {
 
-        // clientCheckboxList.set(currentIndex, clientCheckbox)
-        
-        // clientCheckbox.onchange = e => {
-            //     console.log(`${currentIndex}: ${e.target.checked}`)
-        //     let clientCheckboxValue = []
-        
-        //     clientCheckboxValue = [currentIndex, e.target.checked]
+    //     if (onChangeEvent.target.checked) {
+
+    //         let checkboxValue = new Boolean
             
-        //     console.log(clientCheckboxValue)
-        //     clientCheckboxList.push(clientCheckboxValue)
-        //     // console.log(clientCheckboxList)
-        //     return clientCheckboxValue
-        // }
-        // clientCheckboxList.push(clientCheckbox)
-        // console.log(clientCheckboxList)
-    })
-    console.log(clientCheckboxMap)
-}) 
+    //         checkboxValue = onChangeEvent.target.checked
+            
+    //         return checkboxValue
+            
+    //     }
+
+        
+    //     // clientCheckboxList.push(checkboxValue)
+    //     // TODO: stopped here
+    //     // clear clientCheckboxList after event is added
+    //     // console.log(clientCheckboxList)
+        
+    // }
+
+    // console.log(clientCheckboxMap)
+
+    console.log(checkboxEventListener("change", ".clientCheckboxes", isCheckboxActive))
+})
 
 function selectAllCheckbox(topCheckbox, individualCheckboxList) {
     if(topCheckbox == true) {
@@ -293,6 +272,29 @@ function addGlobalEventListener(type, selector, callback, eventHandler) {
     })
 }
 
+// STUB: create function that returns the boolean value of selected checkbox
+function checkboxEventListener(type, selector, callback) {
+
+    let checkboxValue = false;
+    let checkboxValueList = []
+
+    document.addEventListener(type, (e) => {
+        if (e.target.matches(selector)) {
+            checkboxValue = callback(e)
+        }
+        console.log(checkboxValue)
+        checkboxValueList.push(checkboxValue)
+        console.log(checkboxValueList)
+        return checkboxValueList
+    })
+    console.log(checkboxValueList)
+    
+    // TODO: stopped here
+        // checkboxValueList is not returning value from push in line 310
+    return checkboxValueList
+    // return checkboxValue
+}
+
 // STUB: create function that converts formDataObj to array
 function formData2Array(obj) {
     let newArray = []
@@ -300,51 +302,38 @@ function formData2Array(obj) {
     newArray = Array.from(obj)
 
     return newArray
-
-    // TODO: stopped here
-        // create function that dynamically adds rows to table.
-        // Use tableLastCol var to add the edit & del td. we only need to add one td from the list, so change querySelectorAll to just querySelector
 }
 
-// STUB: create function that converts formData object into map
-// function convertFormData(formDataObj) {
-//     // let obj = {}
-//     // let newArray = []
-//     let newMap = new Map()
-//     newMap.set("isChecked", undefined)
-//     console.log(`The size of the map is: ${newMap.size}`)
+// STUB: create function that returns a tr element containing values from submitted formData, along with the checkbox and editDel action btns
+function mapValue2TD (array, checkboxElem, actionBtnsElem) {
+    let newArray = [...array]
+    let newTableRow = document.createElement("tr")
+    let newCheckbox = document.createElement("td")
+    let newActionBtns = document.createElement("td")
+
+    newCheckbox = checkboxElem.cloneNode(true)
+    newTableRow.insertAdjacentElement("afterbegin",newCheckbox)
     
-//     for(const[key, value] of formDataObj) {
-    //         // newArray[key] = value
-//         newMap.set(key, value)
-//     }
-//     console.log(`The map has been updated. New size is: ${newMap.size}`)
-
-//     return newMap
-// }
-
-
-// STUB: create function that converts newMap into instance of Client class
-// REVIEW: why are we trying to convert a map into an object (Class)? See 104 
-function convertObj2Class(obj, constructorClass) {
+    newArray.map(([, value]) => {
+        let newTableData = document.createElement("td")
         
-    let objClass = constructorClass
-    objClass = Object.fromEntries(obj) 
+        newTableData.innerHTML = value
+        
+        newTableRow.append(newTableData)
+    })
     
-    return objClass
+    newActionBtns = actionBtnsElem.cloneNode(true)
+    newTableRow.insertAdjacentElement("beforeend", newActionBtns)
+    
+    return newTableRow
 }
 
-// STUB: create function that maps entries from formDataObj to instances of Client class
-function convertMap2Class(formDataMap, constructorClass) {
-    // let formMap = new Map()
-    // let newClient = new Client()
-
-    // for((key, value) in newClient) {
-
-    // }
-
-
+// STUB: create function that appends tr to tbody.
+function pushTr2Tbody(trElement, tbodyElement) {
+       
+    tbodyElement.append(trElement)
 }
+
 //
 // ──────────────────────────────────────────────────────────────────────────────────────────── IV ──────────
 //   :::::: D E F I N E   C L I E N T   O B J E C T   C L A S S : :  :   :    :     :        :          :
@@ -361,14 +350,3 @@ class Client {
         this.isChecked;
     }
 }
-
-
-//
-// ──────────────────────────────────────────────────────────────────────────── V ──────────
-//   :::::: H A N D L I N G   F O R M   D A T A : :  :   :    :     :        :          :
-// ──────────────────────────────────────────────────────────────────────────────────────
-//
-
-// NOTE: handling form data on submit
-
-// TODO: create function to handle form data object
