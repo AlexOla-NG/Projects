@@ -38,20 +38,23 @@ let addClientModal = document.querySelector("#addClientModal")
 let editClientModal = document.querySelector("#editClientModal")
 let deleteClientModal = document.querySelector("#deleteClientModal")
 let modalDialogNodeList = document.querySelectorAll("dialog")
-let modalDialogList = [...modalDialogNodeList]
+let modalDialogList = Array.from(modalDialogNodeList)
 let modalAddBtn = document.querySelector("button[data-value='add']")
 let addModalForm = document.querySelector("#addClientModal > form[method='modal']")
-let modalCloseBtn = document.querySelectorAll("button[data-value='cancel']")
-let modalDeleteBtn = document.querySelectorAll("[data-value='delete']")
-let modalEditBtn = document.querySelectorAll("[data-value='edit']")
-let modalForms = document.querySelectorAll("form[method='modal']")
+let modalCloseBtnNodeList = document.querySelectorAll("button[data-value='cancel']")
+let modalCloseBtnList = Array.from(modalCloseBtnNodeList)
+let modalDeleteBtnNodeList = document.querySelectorAll("[data-value='delete']")
+let modalDeleteBtnList = Array.from(modalDeleteBtnNodeList)
+let modalEditBtnNodeList = document.querySelectorAll("[data-value='edit']")
+let modalEditBtnList = Array.from(modalEditBtnNodeList)
+let modalFormsNodeList = document.querySelectorAll("form[method='modal']")
+let modalFormsList = Array.from(modalFormsNodeList)
 let headerCheckbox = document.querySelector("#headerCheckbox")
-let tbodyCheckboxList = document.querySelectorAll(".clientCheckboxes")
-// let
+let tbodyCheckboxList = Array.from(document.querySelectorAll("tbody input[type='checkbox']"))
 let tableLastCol = document.querySelector("tbody > tr:last-child > td:last-child")
 let tableFirstCol = document.querySelector("tbody > tr:last-child > td:first-child")
 let tbody = document.querySelector("tbody")
-console.log(tableFirstCol)
+console.log(tbodyCheckboxList)
 console.log(tableLastCol)
 
 //
@@ -98,8 +101,7 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
 
-    // STUB: convert submitted form to formDataobj, convert formDataObj to array, reset form & close modal, collect mapped data in convertFormData
-    // since we converted formData straight to array, convertFormData is redundant
+    // STUB: convert submitted form to formDataobj, convert formDataObj to array, reset form & close modal, update table with form values
     addModalForm.addEventListener("submit", (ev) => {
         ev.preventDefault()
         
@@ -123,15 +125,12 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
     // TODO: stopped here
-        // write function to handle tbodye clientCheckbox change event
-    // TODO: run selectAllCheckbox function inside headerCheckbox event listener
-    // STUB: add event listener to selectAllCheckbox, check event object returned
-    headerCheckbox.onchange = e => {
-        console.log(e.target.checked)
-    }
+        // listener has no effect on checkboxes added via forms submit. Please fix
+    // STUB: add event listener to headerCheckbox, toggle value 
+    checkboxEventListener("change", "#headerCheckbox", selectAllCheckbox, headerCheckbox, tbodyCheckboxList)
 
-    // TODO: stopped here
-    // collect clientCheckbox return values
+
+    
     // STUB: add event listener to clientCheckboxes, check if object event returned is Boolean
     // let clientCheckboxMap = []
     // tbodyCheckboxList.forEach((clientCheckbox, currentIndex) => {
@@ -213,25 +212,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // console.log(clientCheckboxMap)
 
-    console.log(checkboxEventListener("change", ".clientCheckboxes", isCheckboxActive))
+    // console.log(checkboxEventListener("change", ".clientCheckboxes", isCheckboxActive))
 })
 
-function selectAllCheckbox(topCheckbox, individualCheckboxList) {
-    if(topCheckbox == true) {
-        individualCheckboxList.forEach(clientCheckbox => {
-            clientCheckbox == true
-        })
-    }
-}
-
 // STUB: create function to return checkbox value from onchange event
-function isCheckboxActive(event) {
-    let checkboxValue = Boolean
+// function isCheckboxActive(event) {
+//     let checkboxValue = Boolean
     
-    checkboxValue = event.target.checked
+//     checkboxValue = event.target.checked
     
-    return checkboxValue
-}
+//     return checkboxValue
+// }
 
 //
 // ────────────────────────────────────────────────────────── V ──────────
@@ -273,26 +264,32 @@ function addGlobalEventListener(type, selector, callback, eventHandler) {
 }
 
 // STUB: create function that returns the boolean value of selected checkbox
-function checkboxEventListener(type, selector, callback) {
-
-    let checkboxValue = false;
-    let checkboxValueList = []
+function checkboxEventListener(type, selector, callback, topCheckbox, individualCheckboxList) {
 
     document.addEventListener(type, (e) => {
         if (e.target.matches(selector)) {
-            checkboxValue = callback(e)
+            callback(topCheckbox, individualCheckboxList)
         }
-        console.log(checkboxValue)
-        checkboxValueList.push(checkboxValue)
-        console.log(checkboxValueList)
-        return checkboxValueList
     })
-    console.log(checkboxValueList)
+
+    // let checkboxValue = false;
+    // let checkboxValueList = []
+
+    // document.addEventListener(type, (e) => {
+    //     if (e.target.matches(selector)) {
+    //         checkboxValue = callback(e)
+    //     }
+    //     console.log(checkboxValue)
+    //     checkboxValueList.push(checkboxValue)
+    //     console.log(checkboxValueList)
+    //     return checkboxValueList
+    // })
+    // console.log(checkboxValueList)
     
-    // TODO: stopped here
-        // checkboxValueList is not returning value from push in line 310
-    return checkboxValueList
-    // return checkboxValue
+    // // TODO: stopped here
+    //     // checkboxValueList is not returning value from push in line 310
+    // return checkboxValueList
+    // // return checkboxValue
 }
 
 // STUB: create function that converts formDataObj to array
@@ -312,7 +309,7 @@ function mapValue2TD (array, checkboxElem, actionBtnsElem) {
     let newActionBtns = document.createElement("td")
 
     newCheckbox = checkboxElem.cloneNode(true)
-    newTableRow.insertAdjacentElement("afterbegin",newCheckbox)
+    newTableRow.insertAdjacentElement("afterbegin", newCheckbox)
     
     newArray.map(([, value]) => {
         let newTableData = document.createElement("td")
@@ -332,6 +329,20 @@ function mapValue2TD (array, checkboxElem, actionBtnsElem) {
 function pushTr2Tbody(trElement, tbodyElement) {
        
     tbodyElement.append(trElement)
+}
+
+function selectAllCheckbox(topCheckbox, individualCheckboxList) {
+    if (topCheckbox.checked) {
+        console.log(`checkbox is checked, captn`)
+
+        individualCheckboxList.forEach(checkbox => {
+            checkbox.checked = true
+        })
+    } else {
+        individualCheckboxList.map(checkbox => {
+            checkbox.checked = false
+        })
+    }
 }
 
 //
