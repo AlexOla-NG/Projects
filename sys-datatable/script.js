@@ -54,7 +54,7 @@ let headerCheckbox = document.querySelector("#headerCheckbox")
 let tableLastCol = document.querySelector("tbody > tr:last-child > td:last-child")
 let tableFirstCol = document.querySelector("tbody > tr:last-child > td:first-child")
 let tbody = document.querySelector("tbody")
-console.log(tableLastCol)
+
 
 //
 // ──────────────────────────────────────────────────────────────────────────────────── II ──────────
@@ -74,7 +74,39 @@ window.addEventListener("DOMContentLoaded", () => {
     addGlobalEventListener("click", "[data-value='delete']", showModalFunc, deleteClientModal)
 
     // STUB: popup edit-client modal
-    addGlobalEventListener("click", "[data-value='edit']", showModalFunc, editClientModal)
+    // addGlobalEventListener("click", "[data-value='edit']", showModalFunc, editClientModal)
+
+    document.querySelectorAll("[data-value='edit']").forEach(editBtn => {
+        editBtn.addEventListener("click", (ev) => {
+            // STUB: get the children of the tr tag
+            let parentElementTR = ev.target.parentElement.parentElement
+            let trChildrenList = parentElementTR.children
+            // console.log(trChildrenList)
+            let trChildrenArray = Array.from(trChildrenList)
+            // console.log(trChildrenArray)
+            let clientInfoList = trChildrenArray.slice(1, -1)
+            // console.log(clientInfoList);
+            let clientInfoListValues = clientInfoList.map(inputField => {
+                return inputField.textContent
+            })
+            // console.log(clientInfoListValues)
+
+            // STUB: call edit modal
+            showModalFunc(editClientModal)
+
+            // STUB: get input tags in edit modal form
+            let editModalFormInpList = Array.from(editModalForm.querySelectorAll("input"))
+            // console.log(editModalFormInpList)
+
+            // STUB: map textContent in clientInfoListValues to in edit modal form
+            editModalFormInpList.map((inputElem, index) => {
+                inputElem.value = clientInfoListValues[index]
+            })
+
+            // TODO: stopped here
+                // write logic for editModalForm submit event
+        })
+    })
     
     // TODO: stopped here
         // addmodal form should reset after closing the addClientModal dialog
@@ -163,9 +195,9 @@ function showModalFunc(targetModal) {
 
     // TODO: stopped here
         // add logic to populate edit form with values from tr, when edit btn is clicked
-    if (targetModal == editClientModal) {
+    // if (targetModal == editClientModal) {
 
-    }
+    // }
 
     targetModal.showModal()
     document.body.style.overflow = "hidden"
