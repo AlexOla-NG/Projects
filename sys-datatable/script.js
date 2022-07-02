@@ -41,6 +41,7 @@ let modalDialogNodeList = document.querySelectorAll("dialog")
 let modalDialogList = Array.from(modalDialogNodeList)
 let modalAddBtn = document.querySelector("button[data-value='add']")
 let addModalForm = document.querySelector("#addClientModal > form[method='modal']")
+let editModalForm = document.querySelector("#editClientModal > form[method='modal']")
 let modalCloseBtnNodeList = document.querySelectorAll("button[data-value='cancel']")
 let modalCloseBtnList = Array.from(modalCloseBtnNodeList)
 let modalDeleteBtnNodeList = document.querySelectorAll("[data-value='delete']")
@@ -50,11 +51,9 @@ let modalEditBtnList = Array.from(modalEditBtnNodeList)
 let modalFormsNodeList = document.querySelectorAll("form[method='modal']")
 let modalFormsList = Array.from(modalFormsNodeList)
 let headerCheckbox = document.querySelector("#headerCheckbox")
-let tbodyCheckboxList = Array.from(document.querySelectorAll("tbody input[type='checkbox']"))
 let tableLastCol = document.querySelector("tbody > tr:last-child > td:last-child")
 let tableFirstCol = document.querySelector("tbody > tr:last-child > td:first-child")
 let tbody = document.querySelector("tbody")
-console.log(tbodyCheckboxList)
 console.log(tableLastCol)
 
 //
@@ -101,7 +100,7 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
 
-    // STUB: convert submitted form to formDataobj, convert formDataObj to array, reset form & close modal, update table with form values
+    // STUB: convert submitted form to formDataobj, convert formDataObj to array, update table with form values, reset form & close modal
     addModalForm.addEventListener("submit", (ev) => {
         ev.preventDefault()
         
@@ -124,105 +123,32 @@ window.addEventListener("DOMContentLoaded", () => {
         
     })
 
-    // TODO: stopped here
-        // listener has no effect on checkboxes added via forms submit. Please fix
+    // TODO: add logic on editModalForm submit
+    // STUB: edit row
+    editModalForm.addEventListener("submit", (ev) => {
+        ev.preventDefault()
+
+
+    })
+
     // STUB: add event listener to headerCheckbox, toggle value 
-    checkboxEventListener("change", "#headerCheckbox", selectAllCheckbox, headerCheckbox, tbodyCheckboxList)
+    headerCheckbox.addEventListener("change", () => {
+        // STUB: define tbodyCheckboxList inside event listener to capture new checkboxes added from addForm modal
+        let tbodyCheckboxList = Array.from(document.querySelectorAll(".clientCheckboxes"))
 
-
+        if (headerCheckbox.checked) {
+            console.log(`checkbox is checked, captn`)
     
-    // STUB: add event listener to clientCheckboxes, check if object event returned is Boolean
-    // let clientCheckboxMap = []
-    // tbodyCheckboxList.forEach((clientCheckbox, currentIndex) => {
-    //     // let clientCheckboxList = []
-        
-    //     // TODO: stopped here
-    //     // write function to handle clientCheckbox onchange event
-    //     clientCheckbox.addEventListener("change", checkValueOfCheckbox(checkboxEvent))
-
-    //     // => {
-    //     //     // NOTE: set default value to false, since checkbox is unchecked by default in HTML
-    //     //     let checkboxValue = false
-
-    //     //     checkboxValue += checkboxEvent.target.checked
-            
-    //     //     clientCheckboxList.push(checkboxValue)
-    //     //     // TODO: stopped here
-    //     //             // clear clientCheckboxList after event is added
-    //     //     console.log(clientCheckboxList)
-    //     // })
-
-    //     // addGlobalEventListener("change", ".clientCheckboxes", checkValueOfCheckbox, "event")
-        
-        
-    //     let clientCheckboxList = []
-        
-    //     // TODO: stopped here
-    //     // return value of checkValueOfCheckbox function in clientCheckboxList
-        
-    //     clientCheckboxMap.push(currentIndex, clientCheckboxList)
-        
-    //     // clientCheckbox.onchange = isCheckboxActive
-        
-    //     // clientCheckbox.onchange = e => {
-    //     //     let checkboxValue = e.target.checked
-    //     //     let checkboxMap = new Map()
-            
-    //     //     checkboxMap.set(currentIndex, checkboxValue)
-    //     //     console.log(checkboxMap)
-    //     //     return checkboxMap
-    //     // }
-
-    //     // clientCheckboxList.set(currentIndex, clientCheckbox)
-        
-    //     // clientCheckbox.onchange = e => {
-    //         //     console.log(`${currentIndex}: ${e.target.checked}`)
-    //     //     let clientCheckboxValue = []
-        
-    //     //     clientCheckboxValue = [currentIndex, e.target.checked]
-        
-    //     //     console.log(clientCheckboxValue)
-    //     //     clientCheckboxList.push(clientCheckboxValue)
-    //     //     // console.log(clientCheckboxList)
-    //     //     return clientCheckboxValue
-    //     // }
-    //     // clientCheckboxList.push(clientCheckbox)
-    //     // console.log(clientCheckboxList)
-    // })
-    
-    // function checkValueOfCheckbox(onChangeEvent) {
-
-    //     if (onChangeEvent.target.checked) {
-
-    //         let checkboxValue = new Boolean
-            
-    //         checkboxValue = onChangeEvent.target.checked
-            
-    //         return checkboxValue
-            
-    //     }
-
-        
-    //     // clientCheckboxList.push(checkboxValue)
-    //     // TODO: stopped here
-    //     // clear clientCheckboxList after event is added
-    //     // console.log(clientCheckboxList)
-        
-    // }
-
-    // console.log(clientCheckboxMap)
-
-    // console.log(checkboxEventListener("change", ".clientCheckboxes", isCheckboxActive))
+            tbodyCheckboxList.forEach(checkbox => {
+                checkbox.checked = true
+            })
+        } else {
+            tbodyCheckboxList.forEach(checkbox => {
+                checkbox.checked = false
+            })
+        }
+    })
 })
-
-// STUB: create function to return checkbox value from onchange event
-// function isCheckboxActive(event) {
-//     let checkboxValue = Boolean
-    
-//     checkboxValue = event.target.checked
-    
-//     return checkboxValue
-// }
 
 //
 // ────────────────────────────────────────────────────────── V ──────────
@@ -234,6 +160,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // STUB: popup modal on window
 function showModalFunc(targetModal) {
+
+    // TODO: stopped here
+        // add logic to populate edit form with values from tr, when edit btn is clicked
+    if (targetModal == editClientModal) {
+
+    }
+
     targetModal.showModal()
     document.body.style.overflow = "hidden"
 }
@@ -263,34 +196,6 @@ function addGlobalEventListener(type, selector, callback, eventHandler) {
     })
 }
 
-// STUB: create function that returns the boolean value of selected checkbox
-function checkboxEventListener(type, selector, callback, topCheckbox, individualCheckboxList) {
-
-    document.addEventListener(type, (e) => {
-        if (e.target.matches(selector)) {
-            callback(topCheckbox, individualCheckboxList)
-        }
-    })
-
-    // let checkboxValue = false;
-    // let checkboxValueList = []
-
-    // document.addEventListener(type, (e) => {
-    //     if (e.target.matches(selector)) {
-    //         checkboxValue = callback(e)
-    //     }
-    //     console.log(checkboxValue)
-    //     checkboxValueList.push(checkboxValue)
-    //     console.log(checkboxValueList)
-    //     return checkboxValueList
-    // })
-    // console.log(checkboxValueList)
-    
-    // // TODO: stopped here
-    //     // checkboxValueList is not returning value from push in line 310
-    // return checkboxValueList
-    // // return checkboxValue
-}
 
 // STUB: create function that converts formDataObj to array
 function formData2Array(obj) {
@@ -339,7 +244,7 @@ function selectAllCheckbox(topCheckbox, individualCheckboxList) {
             checkbox.checked = true
         })
     } else {
-        individualCheckboxList.map(checkbox => {
+        individualCheckboxList.forEach(checkbox => {
             checkbox.checked = false
         })
     }
