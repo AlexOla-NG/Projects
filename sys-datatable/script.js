@@ -39,9 +39,10 @@ let editClientModal = document.querySelector("#editClientModal")
 let deleteClientModal = document.querySelector("#deleteClientModal")
 let modalDialogNodeList = document.querySelectorAll("dialog")
 let modalDialogList = Array.from(modalDialogNodeList)
-let modalAddBtn = document.querySelector("button[data-value='add']")
+let groupDelBtn = document.querySelector("[data-value='group-delete']")
 let addModalForm = document.querySelector("#addClientModal > form[method='modal']")
 let editModalForm = document.querySelector("#editClientModal > form[method='modal']")
+let delModalForm = document.querySelector("#deleteClientModal > form[method='modal']")
 let modalCloseBtnNodeList = document.querySelectorAll("button[data-value='cancel']")
 let modalCloseBtnList = Array.from(modalCloseBtnNodeList)
 let modalDeleteBtnNodeList = document.querySelectorAll("[data-value='delete']")
@@ -71,42 +72,36 @@ window.addEventListener("DOMContentLoaded", () => {
     addGlobalEventListener("click", "[data-value='add']", showModalFunc, addClientModal)
     
     // STUB: popup delete-client modal
-    addGlobalEventListener("click", "[data-value='delete']", showModalFunc, deleteClientModal)
-
-    // STUB: popup edit-client modal
-    // addGlobalEventListener("click", "[data-value='edit']", showModalFunc, editClientModal)
-
-    document.querySelectorAll("[data-value='edit']").forEach(editBtn => {
-        editBtn.addEventListener("click", (ev) => {
-            // STUB: get the children of the tr tag
+    // addGlobalEventListener("click", "[data-value='delete']", showModalFunc, deleteClientModal)
+    // NOTE: there are two patterns for the delete btn action
+        // 1. when the groupDelBtn is clicked
+        // 2. when an individual del btn is clicked
+    // STUB: when an individual del btn is clicked
+    document.addEventListener("click", (ev) => {
+        if (ev.target.matches("[data-value='delete']")) {
             let parentElementTR = ev.target.parentElement.parentElement
-            let trChildrenList = parentElementTR.children
-            // console.log(trChildrenList)
-            let trChildrenArray = Array.from(trChildrenList)
-            // console.log(trChildrenArray)
-            let clientInfoList = trChildrenArray.slice(1, -1)
-            // console.log(clientInfoList);
-            let clientInfoListValues = clientInfoList.map(inputField => {
-                return inputField.textContent
-            })
-            // console.log(clientInfoListValues)
+            console.log(parentElementTR)
 
-            // STUB: call edit modal
-            showModalFunc(editClientModal)
+            showModalFunc(deleteClientModal)
 
-            // STUB: get input tags in edit modal form
-            let editModalFormInpList = Array.from(editModalForm.querySelectorAll("input"))
-            // console.log(editModalFormInpList)
+            delModalForm.addEventListener("submit", (ev) => {
+                ev.preventDefault()
 
-            // STUB: map textContent in clientInfoListValues to in edit modal form
-            editModalFormInpList.map((inputElem, index) => {
-                inputElem.value = clientInfoListValues[index]
+                if (parentElementTR.parentNode) {
+                    // STUB: removedNode contains removed row
+                    let removedNode = parentElementTR.parentNode.removeChild(parentElementTR)
+                }
+                
+                alert(`Client information successfully deleted❌`)
+                closeDialog(deleteClientModal)
             })
 
-            // TODO: stopped here
-                // write logic for editModalForm submit event
-        })
+        }
     })
+
+    // TODO: stopped here
+        // write logic for when groupDelBtn is clicked
+
     
     // TODO: stopped here
         // addmodal form should reset after closing the addClientModal dialog
@@ -132,7 +127,7 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
 
-    // STUB: convert submitted form to formDataobj, convert formDataObj to array, update table with form values, reset form & close modal
+    // STUB: add new client to html table
     addModalForm.addEventListener("submit", (ev) => {
         ev.preventDefault()
         
@@ -155,12 +150,50 @@ window.addEventListener("DOMContentLoaded", () => {
         
     })
 
-    // TODO: add logic on editModalForm submit
-    // STUB: edit row
-    editModalForm.addEventListener("submit", (ev) => {
-        ev.preventDefault()
+    // STUB: popup edit-client modal
+    document.addEventListener("click", (ev) => {
+        if (ev.target.matches("[data-value='edit']")) {
 
-
+            // STUB: get the children of the tr tag
+            let parentElementTR = ev.target.parentElement.parentElement
+            let trChildrenList = parentElementTR.children
+            // console.log(trChildrenList)
+            let trChildrenArray = Array.from(trChildrenList)
+            // console.log(trChildrenArray)
+            let clientInfoList = trChildrenArray.slice(1, -1)
+            // console.log(clientInfoList);
+            let clientInfoListValues = clientInfoList.map(clientInfo => {
+                return clientInfo.textContent
+            })
+            // console.log(clientInfoListValues)
+    
+            // STUB: call edit modal
+            showModalFunc(editClientModal)
+    
+            // STUB: get input tags in edit modal form
+            let editModalFormInpList = Array.from(editModalForm.querySelectorAll("input"))
+            // console.log(editModalFormInpList)
+    
+            // STUB: map elems in clientInfoListValues to input values in edit modal form
+            editModalFormInpList.map((inputElem, index) => {
+                inputElem.value = clientInfoListValues[index]
+            })
+            
+            // STUB: update html table on editform submit
+            editModalForm.addEventListener("submit", (ev) => {
+                let editClientForm = new FormData(ev.target)
+                let arrFormData = formData2Array(editClientForm)
+                console.log(arrFormData);
+    
+                // STUB: set arrFormData value as HTML value
+                clientInfoList.forEach((clientInfo, index) => {
+                    clientInfo.textContent = arrFormData[index][1]
+                })
+    
+                alert(`Client data successfully edited✔️`)
+                closeDialog(editClientModal)
+            })
+        }
     })
 
     // STUB: add event listener to headerCheckbox, toggle value 
