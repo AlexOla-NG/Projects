@@ -357,7 +357,7 @@ fieldset {
     width: 100%;
 }
 
-.modal input[type="text"], input[type="email"], button {
+input[type="search"], .modal input[type="text"], input[type="email"], button {
     font-family: "Lato", sans-serif;
     font-size: var(--fs-400);
 }
@@ -370,11 +370,11 @@ fieldset {
     width: 100%;
 }
 
-.modal input[type="text"]:hover, input[type="email"]:hover {
+input[type="search"], .modal input[type="text"]:hover, input[type="email"]:hover {
     border: 0.1em solid var(--dark-blue);
 }
 
-.modal input[type="text"]:focus, input[type="email"]:focus {
+input[type="search"], .modal input[type="text"]:focus, input[type="email"]:focus {
     outline: 0;
     border: 0.1em solid var(--light-bright-cyan);
 }

@@ -25,6 +25,15 @@
 // }
 // </script>
 
+let searchBar = document.querySelector("#searchInp")
+
+// STUB: search for events on click
+searchBar.addEventListener("keydown", () => {
+    // TODO: stopped here
+        // convert input.value to upper/lowercase, save to filter var
+        // get all valid td in table; save td textcontent in txtValue var; convert to upper/lowercase
+        // if filter and txtValue match (> -1), set display to ""; else set to none
+})
 
 //
 // ──────────────────────────────────────────────────────────────────────────────────────── I ──────────
@@ -71,8 +80,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // STUB: popup add-new-client modal
     addGlobalEventListener("click", "[data-value='add']", showModalFunc, addClientModal)
     
-    // STUB: popup delete-client modal
-    // addGlobalEventListener("click", "[data-value='delete']", showModalFunc, deleteClientModal)
+    // STUB: delete btn action
     // NOTE: there are two patterns for the delete btn action
         // 1. when the groupDelBtn is clicked
         // 2. when an individual del btn is clicked
@@ -99,8 +107,18 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    // TODO: stopped here
-        // write logic for when groupDelBtn is clicked
+    // STUB: delete only selected items when the groupDelBtn is clicked
+    groupDelBtn.addEventListener("click", () => {
+        
+        let tbodyCheckboxList = Array.from(document.querySelectorAll(".clientCheckboxes"))
+
+        tbodyCheckboxList.forEach(checkbox => {
+            let parentElementTR = checkbox.parentElement.parentElement
+            if (checkbox.checked) {
+                parentElementTR.remove()
+            }
+        })
+    })
 
     
     // TODO: stopped here
