@@ -1,41 +1,4 @@
 //
-// ────────────────────────────────────────────────────────────────────────────────────── I ──────────
-//   :::::: D Y N A M I C   S E A R C H   F U N C T I O N : :  :   :    :     :        :          :
-// ────────────────────────────────────────────────────────────────────────────────────────────────
-//
-// NOTE: dynamic search function, plug this to the search bar
-// <script>
-// function myFunction() {
-//   var input, filter, table, tr, td, i, txtValue;chichi
-//   input = document.getElementById("myInput");
-//   filter = input.value.toUpperCase();
-//   table = document.getElementById("myTable");
-//   tr = table.getElementsByTagName("tr");
-//   for (i = 0; i < tr.length; i++) {
-//     td = tr[i].getElementsByTagName("td")[0];
-//     if (td) {
-//       txtValue = td.textContent || td.innerText;
-//       if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//         tr[i].style.display = "";
-//       } else {
-//         tr[i].style.display = "none";
-//       }
-//     }       
-//   }
-// }
-// </script>
-
-let searchBar = document.querySelector("#searchInp")
-
-// STUB: search for events on click
-searchBar.addEventListener("keydown", () => {
-    // TODO: stopped here
-        // convert input.value to upper/lowercase, save to filter var
-        // get all valid td in table; save td textcontent in txtValue var; convert to upper/lowercase
-        // if filter and txtValue match (> -1), set display to ""; else set to none
-})
-
-//
 // ──────────────────────────────────────────────────────────────────────────────────────── I ──────────
 //   :::::: D E C L A R E   G L O B A L   V A R I A B L E S : :  :   :    :     :        :          :
 // ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -54,31 +17,47 @@ let editModalForm = document.querySelector("#editClientModal > form[method='moda
 let delModalForm = document.querySelector("#deleteClientModal > form[method='modal']")
 let modalCloseBtnNodeList = document.querySelectorAll("button[data-value='cancel']")
 let modalCloseBtnList = Array.from(modalCloseBtnNodeList)
-let modalDeleteBtnNodeList = document.querySelectorAll("[data-value='delete']")
-let modalDeleteBtnList = Array.from(modalDeleteBtnNodeList)
-let modalEditBtnNodeList = document.querySelectorAll("[data-value='edit']")
-let modalEditBtnList = Array.from(modalEditBtnNodeList)
-let modalFormsNodeList = document.querySelectorAll("form[method='modal']")
-let modalFormsList = Array.from(modalFormsNodeList)
 let headerCheckbox = document.querySelector("#headerCheckbox")
 let tableLastCol = document.querySelector("tbody > tr:last-child > td:last-child")
 let tableFirstCol = document.querySelector("tbody > tr:last-child > td:first-child")
 let tbody = document.querySelector("tbody")
+let searchBar = document.querySelector("#searchInp")
 
 
 //
 // ──────────────────────────────────────────────────────────────────────────────────── II ──────────
-//   :::::: B U T T O N   E V E N T   L I S T E N E R S : :  :   :    :     :        :          :
+//   :::::: E V E N T   L I S T E N E R S : :  :   :    :     :        :          :
 // ──────────────────────────────────────────────────────────────────────────────────────────────
 //
 
 
-// NOTE: button event listeners
+// NOTE: event listeners
 
 window.addEventListener("DOMContentLoaded", () => {
     
     // STUB: popup add-new-client modal
+    // REVIEW: defining a addGlobalEventListener function is redundant. It is only used once in this document
     addGlobalEventListener("click", "[data-value='add']", showModalFunc, addClientModal)
+
+    // STUB: add new client to html table
+    addModalForm.addEventListener("submit", (ev) => {
+        ev.preventDefault()
+        
+        // STUB: convert formData to array
+        let addClientForm = new FormData(ev.target)
+        let arrFormData = formData2Array(addClientForm)
+
+        // STUB: save values from array to tr element
+        let trElem = mapValue2TD(arrFormData, tableFirstCol, tableLastCol)
+        
+        // STUB: update table with new row
+        pushTr2Tbody(trElem, tbody)
+        
+        alert(`Client information successfully added✔️`)
+        resetForm(addModalForm)
+        closeDialog(addClientModal)
+        
+    })
     
     // STUB: delete btn action
     // NOTE: there are two patterns for the delete btn action
@@ -88,7 +67,6 @@ window.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", (ev) => {
         if (ev.target.matches("[data-value='delete']")) {
             let parentElementTR = ev.target.parentElement.parentElement
-            console.log(parentElementTR)
 
             showModalFunc(deleteClientModal)
 
@@ -100,7 +78,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     let removedNode = parentElementTR.parentNode.removeChild(parentElementTR)
                 }
                 
-                alert(`Client information successfully deleted❌`)
+                alert(`Client information deleted❌`)
                 closeDialog(deleteClientModal)
             })
 
@@ -112,60 +90,25 @@ window.addEventListener("DOMContentLoaded", () => {
         
         let tbodyCheckboxList = Array.from(document.querySelectorAll(".clientCheckboxes"))
 
-        tbodyCheckboxList.forEach(checkbox => {
-            let parentElementTR = checkbox.parentElement.parentElement
-            if (checkbox.checked) {
-                parentElementTR.remove()
-            }
-        })
+        if (window.confirm("Are you sure you want to delete the selected items?")) {
+            tbodyCheckboxList.forEach(checkbox => {
+                let parentElementTR = checkbox.parentElement.parentElement
+    
+                if (checkbox.checked) {
+                    parentElementTR.remove()
+                }
+            })
+        }
     })
 
-    
-    // TODO: stopped here
-        // addmodal form should reset after closing the addClientModal dialog
     // STUB: close modalDialogList & enable bg scrolling, reset all form input
-    // modalCloseBtn.forEach(closeBtn => {
-    //     closeBtn.addEventListener("click", () => {
-    //         modalDialogList.forEach(dialog => {
-        //             closeDialog(dialog)
-    //         })
-    
-    //         // REVIEW: this might prevent us from saving user input as a draft via the editModal eventListener
-    //         modalForms.forEach(form => resetForm(form))
-    //     })
-    // })
-    modalDialogList.forEach(dialog => {
-        addGlobalEventListener("click", "[data-value='cancel']", closeDialog, dialog)
-        
-        // REVIEW: the snippet below is not working properly. 
-                // addmodal form should reset after closing the addClientModal dialog
-        // if (dialog.matches("#addClientModal")) {
-        //     resetForm(addModalForm)
-        // }
-    })
-
-
-    // STUB: add new client to html table
-    addModalForm.addEventListener("submit", (ev) => {
-        ev.preventDefault()
-        
-        // STUB: convert formData to array
-        let addClientForm = new FormData(ev.target)
-        let arrFormData = formData2Array(addClientForm)
-        console.log(arrFormData)
-
-        // STUB: save values from array to tr element
-        let trElem = mapValue2TD(arrFormData, tableFirstCol, tableLastCol)
-        console.log(trElem)
-        
-        // STUB: update table with new row
-        let updatedTbody = pushTr2Tbody(trElem, tbody)
-        console.log(updatedTbody)
-        
-        alert(`Form successfully uploaded✔️`)
-        resetForm(addModalForm)
-        closeDialog(addClientModal)
-        
+    modalCloseBtnList.forEach(closeBtn => {
+        closeBtn.addEventListener("click", () => {
+            modalDialogList.forEach(dialog => {
+                resetForm(addModalForm)
+                closeDialog(dialog)
+            })
+        })
     })
 
     // STUB: popup edit-client modal
@@ -175,22 +118,18 @@ window.addEventListener("DOMContentLoaded", () => {
             // STUB: get the children of the tr tag
             let parentElementTR = ev.target.parentElement.parentElement
             let trChildrenList = parentElementTR.children
-            // console.log(trChildrenList)
             let trChildrenArray = Array.from(trChildrenList)
-            // console.log(trChildrenArray)
+
             let clientInfoList = trChildrenArray.slice(1, -1)
-            // console.log(clientInfoList);
             let clientInfoListValues = clientInfoList.map(clientInfo => {
                 return clientInfo.textContent
             })
-            // console.log(clientInfoListValues)
     
             // STUB: call edit modal
             showModalFunc(editClientModal)
     
             // STUB: get input tags in edit modal form
             let editModalFormInpList = Array.from(editModalForm.querySelectorAll("input"))
-            // console.log(editModalFormInpList)
     
             // STUB: map elems in clientInfoListValues to input values in edit modal form
             editModalFormInpList.map((inputElem, index) => {
@@ -201,7 +140,6 @@ window.addEventListener("DOMContentLoaded", () => {
             editModalForm.addEventListener("submit", (ev) => {
                 let editClientForm = new FormData(ev.target)
                 let arrFormData = formData2Array(editClientForm)
-                console.log(arrFormData);
     
                 // STUB: set arrFormData value as HTML value
                 clientInfoList.forEach((clientInfo, index) => {
@@ -220,7 +158,6 @@ window.addEventListener("DOMContentLoaded", () => {
         let tbodyCheckboxList = Array.from(document.querySelectorAll(".clientCheckboxes"))
 
         if (headerCheckbox.checked) {
-            console.log(`checkbox is checked, captn`)
     
             tbodyCheckboxList.forEach(checkbox => {
                 checkbox.checked = true
@@ -228,6 +165,31 @@ window.addEventListener("DOMContentLoaded", () => {
         } else {
             tbodyCheckboxList.forEach(checkbox => {
                 checkbox.checked = false
+            })
+        }
+    })
+
+    // STUB: search for text on click
+    searchBar.addEventListener("keydown", (event) => {
+        
+        let searchInp = searchBar.value.toUpperCase()
+        let tdList = Array.from(tbody.querySelectorAll("td"))
+        let txtValue = ""
+
+        if (searchInp == "") {
+            return
+        }
+
+        if (event.code == "Enter") {
+            alert(`Searching...`)
+            tdList.forEach(td => {
+                txtValue = td.textContent || td.innerText;
+
+                if (txtValue.toUpperCase().indexOf(searchInp) > -1) {
+                    td.style.backgroundColor = "lightblue"
+                } else {
+                    td.style.backgroundColor = ""
+                }
             })
         }
     })
@@ -243,13 +205,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // STUB: popup modal on window
 function showModalFunc(targetModal) {
-
-    // TODO: stopped here
-        // add logic to populate edit form with values from tr, when edit btn is clicked
-    // if (targetModal == editClientModal) {
-
-    // }
-
     targetModal.showModal()
     document.body.style.overflow = "hidden"
 }
@@ -317,35 +272,4 @@ function mapValue2TD (array, checkboxElem, actionBtnsElem) {
 function pushTr2Tbody(trElement, tbodyElement) {
        
     tbodyElement.append(trElement)
-}
-
-function selectAllCheckbox(topCheckbox, individualCheckboxList) {
-    if (topCheckbox.checked) {
-        console.log(`checkbox is checked, captn`)
-
-        individualCheckboxList.forEach(checkbox => {
-            checkbox.checked = true
-        })
-    } else {
-        individualCheckboxList.forEach(checkbox => {
-            checkbox.checked = false
-        })
-    }
-}
-
-//
-// ──────────────────────────────────────────────────────────────────────────────────────────── IV ──────────
-//   :::::: D E F I N E   C L I E N T   O B J E C T   C L A S S : :  :   :    :     :        :          :
-// ──────────────────────────────────────────────────────────────────────────────────────────────────────
-//
-
-// NOTE: define Client object class
-
-class Client {
-    constructor (_name, _email, _address) {
-        this.name = _name;
-        this.email = _email;
-        this.address = _address;
-        this.isChecked;
-    }
 }
