@@ -180,15 +180,15 @@ window.addEventListener("DOMContentLoaded", () => {
             return
         }
 
-        if (event.code == "Enter") {
-            alert(`Searching...`)
+        // REVIEW: highlighted td should return to default style when searchInp is cleared
+        if (event.key == "Enter") {
             tdList.forEach(td => {
                 txtValue = td.textContent || td.innerText;
-
-                if (txtValue.toUpperCase().indexOf(searchInp) > -1) {
-                    td.style.backgroundColor = "lightblue"
+                
+                if (txtValue.toUpperCase().indexOf(searchInp) == -1) {
+                    td.style.backgroundColor = "none"
                 } else {
-                    td.style.backgroundColor = ""
+                    td.style.backgroundColor = "lightblue"
                 }
             })
         }

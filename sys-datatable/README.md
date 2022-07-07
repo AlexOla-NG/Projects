@@ -1,6 +1,4 @@
-# Frontend Mentor - Easybank landing page solution
-
-This is a solution to the [Easybank landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/easybank-landing-page-WaUhkoDN). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+# Sysserve Project - Datatable with CRUD functionality
 
 ## Table of contents
 
@@ -24,14 +22,15 @@ Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
+- Perform CRUD operations
 
 ### Screenshot
 
-![](./design/Screenshot%20(webview)%202022-05-14%20120959.png)
+![](./Images/Screenshot%202022-07-07%20205248.png)
 
 ### Links
 
-- Live Site URL: [GitHub Pages](https://alexola-ng.github.io/Projects/easybank-landing-page-master/index.html)
+- Live Site URL: [GitHub Pages](https://alexola-ng.github.io/Projects/sys-datatable/index.html)
 
 ## My process
 
@@ -45,45 +44,39 @@ Users should be able to:
 
 ### What I learned
 
-This was a challenging project for me. It was the first time I'd build a landing page. The project took longer than I expected it to, and I think the most important lesson this has taught me is to plan. Plan the layout of the project; identify components that look similar, assign them like classes to reduce extra work in css. I spent so much time on css💀.
+This was a redo of a project I attempted in January this year.
 
-It was worth it though, I was able to grasp certain concepts better. For example, the difference between child and descendant selectors; grid-auto-flow; manipulating bg images; transition and its limitations. For JS, I think I understand hoisting and closures a bit better now. For HTML, I tried to use semantic tags and set alt attribute of placeholder img tags to role=presentation
+The original project was very plain, there was barely any CSS in it. I remember building it was very stressful because it was the first ever project I worked on.
 
+6 months later (August), a bunch of FCC courses, and Frontend Mentor projects, and I'm really proud of the progress I've made.
+
+I'm glad I took the leap to switch careers😄
 
 ```html
 <h1>Some HTML code I'm proud of</h1>
-<img class="thumbnails" src="./images/image-plane.jpg" alt="role=presentation">
+<dialog id="addClientModal" class="modal"></dialog>
 ```
+
 ```css
-table {
-    border-collapse: collapse;
+table tbody tr:nth-of-type(odd) {
+  background-color: var(--lotion);
 }
 
-.social-logo > img:hover {
-    filter: invert(68%) sepia(92%) saturate(425%) hue-rotate(75deg) brightness(89%) contrast(85%);
-    cursor: pointer;
-}
-
-.footer-nav-list {
-    grid-column: 4 / span 4;
-    display: grid;
-    grid-template-rows: repeat(3, 0.5fr);
-    grid-auto-flow: column;
-    column-gap: 1em;
+table input[type="checkbox"] {
+  transform: scale(2);
 }
 ```
+
 ```js
 // STUB: map elems in clientInfoListValues to input values in edit modal form
 editModalFormInpList.map((inputElem, index) => {
-    inputElem.value = clientInfoListValues[index]
-})
+  inputElem.value = clientInfoListValues[index];
+});
 ```
 
 ### Continued development
 
-I still need more practice using grids, but I've come to appreciate the full control it gives me in layout.
-
-I also need more practice with JS hoisting and closures. I think there are certain use cases that I need to understand.
+I still need more practice writing js logic. The search functionality is buggy. The highlighted td should return to default style when searchInp is cleared, however, this is not the case
 
 ### Useful resources
 
@@ -101,10 +94,6 @@ I also need more practice with JS hoisting and closures. I think there are certa
 - [Learn JavaScript Event Listeners In 18 Minutes | resource 12](https://www.youtube.com/watch?v=XF1_MlZ5l6M) - This is a video from "Kyle - Web Dev Simplified" explaining event listeners. I liked the addGlobalEventListener function he used; it helps dynamically add event listeners to elements.
 - [Implement toggle for checkbox with JavaScript/jQuery | resource 13](https://www.techiedelight.com/implement-toggle-check-box-javascript/) - This is an article on choosing the right property to target when trying to toggle a checkbox. I liked the method used; I slightly modified it though.
 - [Node.removeChild() - MDN | resource 14](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) - This is an mdn resource on removing childNodes. I copied the example on removing a specified element without having to specify its parent node. I like the style.
-- [Hoisting | resource 3](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting) - This is the mdn documentation for how hoisting works in JavaScript.
-- [Grid auto-flow resource 1](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout) - This helped me flow grid items by column, rather than the defailt row. I really liked this pattern and will use it going forward.
-- [HEX to Filter converter for SVG](https://codepen.io/sosuke/pen/Pjoqqp) - This helped me easily change the color of SVG icons in img tag. I really liked this resource and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 ## Author
 
@@ -112,4 +101,5 @@ I also need more practice with JS hoisting and closures. I think there are certa
 
 ## Acknowledgments
 
-Big thanks goes to Lamide for her hack on adjusting img height with CSS classes (I didn't think it would work, but it did!😂). It helped adjust the disparate image heights of .thumbnails. Saved me weeks of headache
+Big thanks to the html & css course on FreeCodeCamp. Without this course, my knowledge of CSS would have not improved the way it has.
+Special shoutout also goes to Kevin Powell; watching him deconstruct CSS on his youtube channel made CSS easier to understand and work with.
