@@ -9,7 +9,7 @@ const TodoList = () => {
   const { todos1 } = useGlobalContext()
 
   return (
-    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+    <List sx={{ width: '100%', bgcolor: 'background.paper', borderRadius: 1 }}>
       { todos1.map((item) => {
 
         return (

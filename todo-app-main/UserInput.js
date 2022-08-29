@@ -18,10 +18,6 @@ const UserInput = () => {
   
   const { todo, setTodo, handleSubmit} = useGlobalContext()
   const { colorMode, theme } = useGlobalThemeContext()
-  // console.log(theme, colorMode, toggleColorMode);
-
-  // const colorMode = React.useContext(ColorModeContext);
-  console.log(colorMode, theme);
 
   return (
     <Box
@@ -34,6 +30,7 @@ const UserInput = () => {
     >
       <Stack
         direction='row'
+        alignItems='center'
         justifyContent='space-between'
         spacing={ 2 }
         sx={ {
@@ -46,13 +43,11 @@ const UserInput = () => {
 
         { theme.palette.mode } mode
         <IconButton sx={{ ml: 1 }} onClick={colorMode.toggleColorMode} color="inherit">
-          { theme.palette.mode === 'dark' ? <DarkModeIcon sx={{fontSize: '2.125rem'}} /> : <LightModeIcon sx={{fontSize: '2.125rem'}}/> }
+          { theme.palette.mode === 'dark' ?  <LightModeIcon sx={{fontSize: '2.125rem'}}/> :  <DarkModeIcon sx={{fontSize: '2.125rem'}} />}
         </IconButton>
-
-        {/* <span role='img' aria-label='sun emoji'>☀️</span> */}
       </Stack>
       
-      <form onSubmit={ handleSubmit }>
+      <form onSubmit={ handleSubmit } style={{borderRadius: theme.shape.borderRadius}}>
         <TextField
           placeholder='Create a new todo...'
           id="userInp"
@@ -63,7 +58,7 @@ const UserInput = () => {
           onChange={ (e) => { setTodo(e.target.value); } }
           InputProps={ {
             startAdornment: (
-              <InputAdornment position='start'>
+              <InputAdornment position='start' sx={{minWidth: 56, mr: 0}}>
                 <CircleOutlinedIcon />
               </InputAdornment>
             )
@@ -71,7 +66,15 @@ const UserInput = () => {
           // TODO: stopped here
               // finish styling input field for light & dark mode
           sx={ {
-            bgcolor: 'background.paper'
+            bgcolor: 'background.paper',
+            borderRadius: 1,
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: 0,
+              // borderColor: 'transparent'
+            },
+            '& .MuiOutlinedInput-notchedOutline.Mui-focused': {
+              border: 0
+            }
           }}
         />
       </form>

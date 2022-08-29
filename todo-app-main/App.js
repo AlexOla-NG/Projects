@@ -39,6 +39,9 @@ const App = () => {
           <TodoList />
           <Footer />
         </Paper>
+        {/* <Paper>
+          <Footer />
+        </Paper> */}
       </Container>
 
     </Box>

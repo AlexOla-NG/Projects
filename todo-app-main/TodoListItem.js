@@ -14,6 +14,7 @@ const TodoListItem = ({ id, todo, completed }) => {
 
   // STUB: toggle delete button visibility
   const [showBtn, setShowBtn] = useState(false)
+  
   const { todos1, todos2, setTodos1, setTodos2, deleteTodo } = useGlobalContext()
 
   // STUB: toggle status of todo & checkbox
@@ -76,7 +77,7 @@ const TodoListItem = ({ id, todo, completed }) => {
           primary={ todo }
           sx={ {
             textDecoration: completed ? 'line-through' : 'none',
-            color: completed ? 'hsl(233, 11%, 84%)' : 'hsl(235, 19%, 35%)'
+            color: completed ? 'completed.contrastText' : 'primary.contrastText'
           } } 
         />
       </ListItemButton>

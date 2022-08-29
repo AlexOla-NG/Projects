@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
-import { useGlobalContext } from './Context'
+import { useGlobalContext, useGlobalThemeContext } from './Context'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-const TextButton = styled(Button)({
+
+// const {theme} = useGlobalThemeContext
+
+const TextButton = styled(Button)(({ theme }) => ({
   color: 'primary',
   size: 'small',
   variant: 'text',
 
   '&:hover': {
-  color: 'hsl(235, 19%, 35%)',
+  // color: 'onHover.main',
+  color: `${theme.palette.mode === 'dark' ? 'hsl(234, 39%, 85%)' : 'hsl(235, 19%, 35%)'}`,
   backgroundColor: 'transparent',
   boxShadow: 'none',
   },
@@ -21,10 +25,11 @@ const TextButton = styled(Button)({
   '&:focus': {
     color: 'hsl(220, 98%, 61%)',
   }
-})
+}))
 
 // TODO: stopped here
     // set display of btn container for mobile & desktop
+    // we can toggle display when a breakpoint is reached
 
 const Footer = () => {
 

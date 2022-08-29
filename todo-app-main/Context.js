@@ -17,7 +17,10 @@ const getDesignTokens = (mode) => ({
           // palette values for light mode
           primary: {
             main: 'hsl(236, 9%, 61%)',
-            light: '#424242'
+            contrastText: 'hsl(235, 19%, 35%)'
+          },
+          completed : {
+            contrastText: 'hsl(233, 11%, 84%)'
           },
           // divider: amber[200],
           // text: {
@@ -27,12 +30,19 @@ const getDesignTokens = (mode) => ({
         }
       : {
           // palette values for dark mode
-          primary: deepOrange,
-          divider: deepOrange[700],
-          background: {
-            default: deepOrange[900],
-            paper: deepOrange[900],
+          primary: {
+            main: 'hsl(233, 14%, 35%)',
+            contrastText: 'hsl(234, 39%, 85%)'
           },
+          completed : {
+            contrastText: 'hsl(234, 11%, 52%)'
+          },
+          // primary: deepOrange,
+          // divider: deepOrange[700],
+          // background: {
+          //   default: deepOrange[900],
+          //   paper: deepOrange[900],
+          // },
           text: {
             primary: '#fff',
             secondary: grey[500],
@@ -61,7 +71,19 @@ const getDesignTokens = (mode) => ({
         // The props to apply
         disableRipple: true, // No more ripple, on the whole application 💣!
       }
-    }
+    },
+    // TODO: stopped here
+        // override backgroundImage of paper on dark mode
+    MuiPaper: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          backgroundImage: 'none',
+          // backgroundColor: '#121212'
+        }
+      }
+    },
   }
 });
 
