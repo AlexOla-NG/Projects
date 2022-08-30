@@ -43,10 +43,10 @@ const getDesignTokens = (mode) => ({
           //   default: deepOrange[900],
           //   paper: deepOrange[900],
           // },
-          text: {
-            primary: '#fff',
-            secondary: grey[500],
-          },
+          // text: {
+          //   primary: '#fff',
+          //   secondary: grey[500],
+          // },
         }),
   },
   typography: {
@@ -101,6 +101,8 @@ export const AppProvider = ({ children }) => {
   // const [todoID, setTodoID] = useState(null)
   const [todos1, setTodos1] = useState([])
   const [todos2, setTodos2] = useState([]); //create new todos to handle extra functionality
+  const [completed, setCompleted] = useState([]) //hold completed todos
+
 
   
   const handleSubmit = (e) => {
@@ -138,6 +140,8 @@ export const AppProvider = ({ children }) => {
       //   setIsChecked,
       handleSubmit,
       deleteTodo,
+      completed,
+      setCompleted
     } }
     >
       { children }

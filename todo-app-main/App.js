@@ -1,7 +1,7 @@
 import React from "react";
 import UserInput from "./UserInput";
 import TodoList from "./TodoList";
-import Footer from "./Footer"
+import { ListActionButtons } from "./Footer"
 import { useGlobalThemeContext } from './Context'
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -16,6 +16,7 @@ const App = () => {
   return (
     <Box
       sx={ {
+        // TODO: stopped here
         // use cssqueryhook to change backgroundImage on smaller screens (sm, xs)
         backgroundImage: `url(${theme.palette.mode === 'dark' ? DarkImage : LightImage})`,
         backgroundSize: '100% 40%',
@@ -35,13 +36,18 @@ const App = () => {
         } }
       >
         <UserInput />
-        <Paper elevation={3}>
-          <TodoList />
-          <Footer />
+        <TodoList />
+
+        <Paper
+          elevation={3}
+          sx={ {
+            display: { xs: 'block', sm: 'none' },
+            mt: 3,
+            py: 1,
+            width: '100%'
+          } }>
+          <ListActionButtons />
         </Paper>
-        {/* <Paper>
-          <Footer />
-        </Paper> */}
       </Container>
 
     </Box>
