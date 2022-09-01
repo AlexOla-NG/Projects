@@ -129,6 +129,9 @@ your own plans for continued development.**
 -  [MUI: Display sub-element on hover of parent](https://stackoverflow.com/a/61205104) -
    This helped me toggle the delete button on each todo item. I really liked
    this pattern and will use it going forward.
+-  [media queries in MUI components](https://stackoverflow.com/a/69221863) -
+   This helped me toggle the background image based off the screen size. I really liked
+   this pattern and will use it going forward.
 -  [Example resource 1](https://www.example.com) - This helped me for XYZ
    reason. I really liked this pattern and will use it going forward.
 -  [Example resource 2](https://www.example.com) - This is an amazing article
