@@ -1,11 +1,13 @@
 import React from 'react';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Stack from '@mui/material/Stack';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import { useGlobalThemeContext } from './ColorModeProvider';
 import UserInput from './UserInput';
 import TodoList from './TodoList';
 import { ListActionButtons } from './Footer';
-import { useGlobalThemeContext } from './Context';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
 import DesktopDarkImage from './images/bg-desktop-dark.jpg';
 import DesktopLightImage from './images/bg-desktop-light.jpg';
 import MobileDarkImage from './images/bg-mobile-dark.jpg';
@@ -36,9 +38,7 @@ const App = () => {
 				sx={{
 					width: {
 						//dimensions in px
-						// xs: 400, // theme.breakpoints.up('xs') 0-599px
 						sm: 450, // theme.breakpoints.up('sm') 600 - 1199px
-						// lg: 300, // theme.breakpoints.up('lg') > 1200px
 					},
 				}}
 			>
@@ -56,6 +56,15 @@ const App = () => {
 				>
 					<ListActionButtons />
 				</Paper>
+
+				<Stack sx={{ color: 'primary', py: 6, textAlign: 'center' }}>
+					{/* TODO: stopped here
+					change color of caption to same color as btns
+					*/}
+					<Typography variant='caption' component='p'>
+						Drag and drop to reorder list
+					</Typography>
+				</Stack>
 			</Container>
 		</Box>
 	);
