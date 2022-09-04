@@ -2,17 +2,13 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import IconButton from '@mui/material/IconButton';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
-import { useGlobalContext } from './Context';
 import { useGlobalThemeContext } from './ColorModeProvider';
+import Form from './Form';
 
 const UserInput = () => {
-	const { todo, setTodo, handleSubmit } = useGlobalContext();
 	const { colorMode, theme } = useGlobalThemeContext();
 
 	return (
@@ -20,8 +16,6 @@ const UserInput = () => {
 			sx={{
 				mb: 3, //margin bottom
 				mx: 'auto',
-				// display: 'flex',
-				// justifyContent: 'center',
 			}}
 		>
 			<Stack
@@ -30,7 +24,6 @@ const UserInput = () => {
 				justifyContent='space-between'
 				spacing={2}
 				sx={{
-					// my: 4,
 					mb: 4,
 					mx: 'auto',
 				}}
@@ -38,7 +31,7 @@ const UserInput = () => {
 				<Typography variant='h4' component='h1'>
 					todo
 				</Typography>
-				{theme.palette.mode} mode
+
 				<IconButton
 					sx={{ ml: 1 }}
 					onClick={colorMode.toggleColorMode}
@@ -52,42 +45,7 @@ const UserInput = () => {
 				</IconButton>
 			</Stack>
 
-			<form
-				onSubmit={handleSubmit}
-				style={{ borderRadius: theme.shape.borderRadius }}
-			>
-				<TextField
-					placeholder='Create a new todo...'
-					id='userInp'
-					fullWidth
-					type='text'
-					variant='outlined'
-					value={todo}
-					onChange={(e) => {
-						setTodo(e.target.value);
-					}}
-					InputProps={{
-						startAdornment: (
-							<InputAdornment position='start' sx={{ minWidth: 56, mr: 0 }}>
-								<CircleOutlinedIcon />
-							</InputAdornment>
-						),
-					}}
-					// TODO: stopped here
-					// finish styling input field for light & dark mode
-					sx={{
-						bgcolor: 'background.paper',
-						borderRadius: 1,
-						'& .MuiOutlinedInput-notchedOutline': {
-							border: 0,
-							// borderColor: 'transparent'
-						},
-						'& .MuiOutlinedInput-notchedOutline.Mui-focused': {
-							border: 0,
-						},
-					}}
-				/>
-			</form>
+			<Form />
 		</Box>
 	);
 };

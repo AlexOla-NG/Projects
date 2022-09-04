@@ -1,7 +1,7 @@
 import React from 'react';
-import { useGlobalContext } from './Context';
 import List from '@mui/material/List';
 import Paper from '@mui/material/Paper';
+import { useGlobalContext } from './Context';
 import TodoListItem from './TodoListItem';
 import Footer from './Footer';
 

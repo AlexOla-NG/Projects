@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useGlobalContext } from './Context';
-import CheckedIcon from './CheckedIcon';
+import Draggable from 'react-draggable';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -9,7 +8,8 @@ import Checkbox from '@mui/material/Checkbox';
 import CancelIcon from '@mui/icons-material/Cancel';
 import IconButton from '@mui/material/IconButton';
 import RadioButtonUncheckedRoundedIcon from '@mui/icons-material/RadioButtonUncheckedRounded';
-import Draggable from 'react-draggable';
+import { useGlobalContext } from './Context';
+import CheckedIcon from './CheckedIcon';
 
 const TodoListItem = ({ id, todo, completed }) => {
 	// STUB: toggle delete button visibility
@@ -18,7 +18,8 @@ const TodoListItem = ({ id, todo, completed }) => {
 	const { todos1, todos2, setTodos1, setTodos2, deleteTodo } =
 		useGlobalContext();
 
-	// STUB: toggle status of todo & checkbox
+	// STUB: toggle completed status of todo
+	// completed prop on todos1&2 sets the checkbox state
 	const handleToggle = () => {
 		// STUB: if todos1 (main) has been altered
 		if (todos1.length !== todos2.length) {
@@ -65,24 +66,14 @@ const TodoListItem = ({ id, todo, completed }) => {
 			>
 				<ListItemButton role={undefined} onClick={handleToggle} dense>
 					<ListItemIcon>
-						{/* TODO: stopped here
-            change checkbox color oncheck
-            */}
 						<Checkbox
 							icon={<RadioButtonUncheckedRoundedIcon />}
 							checkedIcon={<CheckedIcon />}
-							// checkedIcon={<CheckCircleRoundedIcon />}
 							edge='start'
 							checked={completed}
 							tabIndex={-1}
 							disableRipple
 							inputProps={{ 'aria-labelledby': labelId }}
-							// sx={{
-							// 	'&.Mui-checked': {
-							// 		color:
-							// 			'linearGradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))',
-							// 	},
-							// }}
 						/>
 					</ListItemIcon>
 					<ListItemText

@@ -25,6 +25,10 @@ const getDesignTokens = (mode) => ({
 					completed: {
 						contrastText: 'hsl(234, 11%, 52%)',
 					},
+					background: {
+						paper: 'hsl(235, 24%, 19%)',
+						box: 'hsl(235, 21%, 11%)',
+					},
 			  }),
 	},
 	typography: {

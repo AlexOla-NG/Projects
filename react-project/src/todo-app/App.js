@@ -1,13 +1,12 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Stack from '@mui/material/Stack';
 import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useGlobalThemeContext } from './ColorModeProvider';
 import UserInput from './UserInput';
 import TodoList from './TodoList';
-import { ListActionButtons } from './Footer';
+import TodoListActionButtons from './TodoListActionButtons';
 import DesktopDarkImage from './images/bg-desktop-dark.jpg';
 import DesktopLightImage from './images/bg-desktop-light.jpg';
 import MobileDarkImage from './images/bg-mobile-dark.jpg';
@@ -29,13 +28,16 @@ const App = () => {
 				},
 				backgroundSize: '100% 40%',
 				backgroundRepeat: 'no-repeat',
-				minHeight: '100vh',
+				bgcolor: 'background.box',
+				m: '0 auto',
+				maxHeight: '100vh',
 				py: '3em',
 			}}
 		>
-			<Container
+			<Box
 				maxWidth='sm'
 				sx={{
+					m: '0 auto',
 					width: {
 						//dimensions in px
 						sm: 450, // theme.breakpoints.up('sm') 600 - 1199px
@@ -54,18 +56,19 @@ const App = () => {
 						width: '100%',
 					}}
 				>
-					<ListActionButtons />
+					<TodoListActionButtons />
 				</Paper>
 
-				<Stack sx={{ color: 'primary', py: 6, textAlign: 'center' }}>
-					{/* TODO: stopped here
-					change color of caption to same color as btns
-					*/}
-					<Typography variant='caption' component='p'>
+				<Stack sx={{ py: 4, textAlign: 'center' }}>
+					<Typography
+						variant='caption'
+						component='p'
+						sx={{ color: 'completed.contrastText' }}
+					>
 						Drag and drop to reorder list
 					</Typography>
 				</Stack>
-			</Container>
+			</Box>
 		</Box>
 	);
 };
