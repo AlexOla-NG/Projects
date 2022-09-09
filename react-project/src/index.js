@@ -3,25 +3,24 @@ import ReactDOM from 'react-dom/client';
 // import './index.css';
 // import App from './App';
 import './todo-app/index.css';
-import { AppProvider } from './todo-app/Context';
-import { ColorModeProvider } from './todo-app/ColorModeProvider';
-import App from './todo-app/App';
-// import App from './todo-app/App-Todo';
+// import { ColorModeProvider } from './todo-app/ColorModeProvider';
+import { AppProvider } from './url-shortening-api-master/Context';
+import App from './url-shortening-api-master/App';
+// import App from './todo-app/App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<ColorModeProvider>
+		{/* <ColorModeProvider>
 			<AppProvider>
 				<App />
 			</AppProvider>
-		</ColorModeProvider>
+		</ColorModeProvider> */}
 		{/* <App /> */}
-		{/* <AppProvider>
-      <App />
-
-    </AppProvider> */}
+		<AppProvider>
+			<App />
+		</AppProvider>
 	</React.StrictMode>
 );
 
