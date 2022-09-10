@@ -5,11 +5,14 @@ const appTheme = {
 	palette: {
 		primary: {
 			main: 'hsl(180, 66%, 49%)', // cyan
-			// contrastText: 'hsl(235, 19%, 35%)',
 		},
 		secondary: {
+			main: '#fff', // white
+			contrastText: 'hsl(257, 27%, 26%)', // dark violet
+		},
+		violetBg: {
 			main: 'hsl(257, 27%, 26%)', // dark violet
-			// contrastText: 'hsl(257, 27%, 26%)',
+			contrastText: '#fff', // white
 		},
 		neutral: {
 			gray: 'hsl(0, 0%, 75%)',
