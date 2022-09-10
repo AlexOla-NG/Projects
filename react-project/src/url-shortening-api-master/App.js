@@ -1,12 +1,11 @@
 import React from 'react';
+import HomePage from './HomePage';
 
 const App = () => {
 	return (
-		<div>
-			<h1>App</h1>
-			<span>🙋‍♂️</span>
-			<span>🌐</span>
-		</div>
+		<>
+			<HomePage />
+		</>
 	);
 };
 

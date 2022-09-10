@@ -1,6 +1,5 @@
-// STUB: create getDesignTokens function to hold appTheme
+// STUB: create appTheme
 // appTheme contains custom palette, typography, components config
-// getDesignTokens will toggle palette contents depending on mode
 
 const appTheme = {
 	palette: {
@@ -9,12 +8,18 @@ const appTheme = {
 			// contrastText: 'hsl(235, 19%, 35%)',
 		},
 		secondary: {
-			contrastText: 'hsl(257, 27%, 26%)', // dark violet
+			main: 'hsl(257, 27%, 26%)', // dark violet
+			// contrastText: 'hsl(257, 27%, 26%)',
 		},
-		neutral: {},
+		neutral: {
+			gray: 'hsl(0, 0%, 75%)',
+			grayishViolet: 'hsl(257, 7%, 63%)',
+			veryDarkBlue: 'hsl(255, 11%, 22%)',
+			veryDarkViolet: 'hsl(260, 8%, 14%)',
+		},
 	},
 	typography: {
-		fontFamily: "'Josefin Sans', sans-serif",
+		fontFamily: "'Poppins', sans-serif",
 		h4: {
 			fontWeight: 700,
 			letterSpacing: '0.4em',
