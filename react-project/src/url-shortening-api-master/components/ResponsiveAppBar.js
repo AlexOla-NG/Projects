@@ -87,20 +87,29 @@ const ResponsiveAppBar = () => {
 									vertical: 'top',
 									horizontal: 'left',
 								}}
+								PaperProps={{
+									sx: {
+										width: '90%',
+										backgroundColor: 'hsl(257, 27%, 26%)',
+										py: 2,
+									},
+								}}
 								open={Boolean(anchorElNav)}
 								onClose={handleCloseNavMenu}
 								sx={{
-									display: { xs: 'block', md: 'none' },
-									'& .MuiPaper-root': {
-										backgroundColor: 'hsl(257, 27%, 26%)',
-									},
+									display: { xs: 'flex', md: 'none' },
 								}}
 							>
-								{/* TODO: stopped here
-								make menu width fullscreen
-								 */}
 								{pages.map((page) => (
-									<MenuItem key={page} onClick={handleCloseNavMenu}>
+									<MenuItem
+										key={page}
+										onClick={handleCloseNavMenu}
+										sx={{
+											display: 'flex',
+											flexDirection: 'column',
+											justifyContent: 'center',
+										}}
+									>
 										<Typography textAlign='center' color='#fff'>
 											{page}
 										</Typography>
