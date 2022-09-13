@@ -7,17 +7,17 @@ realistic projects.
 
 ## Table of contents
 
--  [Overview](#overview)
-   -  [The challenge](#the-challenge)
-   -  [Screenshot](#screenshot)
-   -  [Links](#links)
--  [My process](#my-process)
-   -  [Built with](#built-with)
-   -  [What I learned](#what-i-learned)
-   -  [Continued development](#continued-development)
-   -  [Useful resources](#useful-resources)
--  [Author](#author)
--  [Acknowledgments](#acknowledgments)
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections
 you keep.**
@@ -28,15 +28,15 @@ you keep.**
 
 Users should be able to:
 
--  View the optimal layout for the app depending on their device's screen size
--  See hover states for all interactive elements on the page
--  Add new todos to the list
--  Mark todos as complete
--  Delete todos from the list
--  Filter by all/active/complete todos
--  Clear all completed todos
--  Toggle light and dark mode
--  **Bonus**: Drag and drop to reorder items on the list
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Add new todos to the list
+- Mark todos as complete
+- Delete todos from the list
+- Filter by all/active/complete todos
+- Clear all completed todos
+- Toggle light and dark mode
+- **Bonus**: Drag and drop to reorder items on the list
 
 ### Screenshot
 
@@ -60,21 +60,21 @@ section.**
 
 ### Links
 
--  Solution URL: [Add solution URL here](https://your-solution-url.com)
--  Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
 ### Built with
 
--  Semantic HTML5 markup
--  CSS custom properties
--  Flexbox
--  CSS Grid
--  Mobile-first workflow
--  [React](https://reactjs.org/) - JS library
--  [Next.js](https://nextjs.org/) - React framework
--  [Styled Components](https://styled-components.com/) - For styles
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
+- [Next.js](https://nextjs.org/) - React framework
+- [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above
 with your own choices**
@@ -99,7 +99,7 @@ To see how you can add code snippets, see below:
 
 ```js
 const proudOfThisFunc = () => {
-	console.log("🎉");
+	console.log('🎉');
 };
 ```
 
@@ -120,23 +120,26 @@ your own plans for continued development.**
 
 ### Useful resources
 
--  [Building a custom checkbox in React](https://blog.logrocket.com/building-custom-checkbox-react/) -
-   This helped me understand how to build a custom checkbox in React. I really
-   liked this pattern and will use it going forward.
--  [add a strikethrough depending on the completed property of the todo item](https://stackoverflow.com/a/60849102) -
-   This helped me easily add a strikethrough effect on completed todos. I really
-   liked this pattern and will use it going forward.
--  [MUI: Display sub-element on hover of parent](https://stackoverflow.com/a/61205104) -
-   This helped me toggle the delete button on each todo item. I really liked
-   this pattern and will use it going forward.
--  [media queries in MUI components](https://stackoverflow.com/a/69221863) -
-   This helped me toggle the background image based off the screen size. I really liked
-   this pattern and will use it going forward.
--  [Example resource 1](https://www.example.com) - This helped me for XYZ
-   reason. I really liked this pattern and will use it going forward.
--  [Example resource 2](https://www.example.com) - This is an amazing article
-   which helped me finally understand XYZ. I'd recommend it to anyone still
-   learning this concept.
+- [Building a custom checkbox in React](https://blog.logrocket.com/building-custom-checkbox-react/) -
+  This helped me understand how to build a custom checkbox in React. I really
+  liked this pattern and will use it going forward.
+- [add a strikethrough depending on the completed property of the todo item](https://stackoverflow.com/a/60849102) -
+  This helped me easily add a strikethrough effect on completed todos. I really
+  liked this pattern and will use it going forward.
+- [MUI: Display sub-element on hover of parent](https://stackoverflow.com/a/61205104) -
+  This helped me toggle the delete button on each todo item. I really liked this
+  pattern and will use it going forward.
+- [media queries in MUI components](https://stackoverflow.com/a/69221863) - This
+  helped me toggle the background image based off the screen size. I really
+  liked this pattern and will use it going forward.
+- [Adding a linear gradient to Material UI icon](https://stackoverflow.com/a/68392523) -
+  This helped me add linear-gradients to MUI icons. I really liked this pattern
+  and will use it going forward.
+- [Example resource 1](https://www.example.com) - This helped me for XYZ reason.
+  I really liked this pattern and will use it going forward.
+- [Example resource 2](https://www.example.com) - This is an amazing article
+  which helped me finally understand XYZ. I'd recommend it to anyone still
+  learning this concept.
 
 **Note: Delete this note and replace the list above with resources that helped
 you during the challenge. These could come in handy for anyone viewing your
@@ -144,10 +147,10 @@ solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
--  Website - [Add your name here](https://www.your-site.com)
--  Frontend Mentor -
-   [@yourusername](https://www.frontendmentor.io/profile/yourusername)
--  Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Add your name here](https://www.your-site.com)
+- Frontend Mentor -
+  [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@yourusername](https://www.twitter.com/yourusername)
 
 **Note: Delete this note and add/remove/edit lines above based on what links
 you'd like to share.**

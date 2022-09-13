@@ -38,11 +38,34 @@ const appTheme = {
 	},
 	components: {
 		// Name of the component ⚛️
-		MuiButtonBase: {
+		// MuiButtonBase: {
+		// 	defaultProps: {
+		// 		// The props to apply
+		// 		disableRipple: true, // No more ripple, on the whole application 💣!
+		// 	},
+		// },
+		MuiButton: {
+			variants: [
+				{
+					props: { variant: "whiteText" },
+					style: {
+						backgroundColor: "hsl(180, 66%, 49%)",
+						color: "#fff",
+					}
+				},
+				{
+					props: { variant: "violetText" },
+					style: {
+						backgroundColor: "#fff",
+						color: "hsl(257, 27%, 26%)",
+					}
+				},
+			],
 			defaultProps: {
-				// The props to apply
-				disableRipple: true, // No more ripple, on the whole application 💣!
-			},
+				disableElevation: true,
+				disableFocusRipple: true,
+				disableRipple: true,
+			}
 		},
 		MuiPaper: {
 			styleOverrides: {

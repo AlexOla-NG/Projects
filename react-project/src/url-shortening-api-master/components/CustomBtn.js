@@ -3,18 +3,28 @@ import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 
 // TODO: stopped here
-// create custombtn that accepts variant & color prop(controls background & text color)
+// create custombtn that accepts variant, border radius & color prop(controls background & text color, onhover & onselected color)
 
 const ColorButton = styled(Button)(({ theme }) => ({
-	color: theme.palette.getContrastText(purple[500]),
-	backgroundColor: purple[500],
+	borderRadius: 6,
 	'&:hover': {
-		backgroundColor: purple[700],
+		backgroundColor: "hsla(180, 66%, 49%, 0.6)",
+		// backgroundColor: purple[700],
+	},
+	'&:selected': {
+		backgroundColor: theme.palette.secondary,
 	},
 }));
+// const ColorButton = styled(Button)(({ theme }) => ({
+// 	color: theme.palette.getContrastText(purple[500]),
+// 	backgroundColor: purple[500],
+// 	'&:hover': {
+// 		backgroundColor: purple[700],
+// 	},
+// }));
 
 const CustomBtn = () => {
-	return <div>CustomBtn</div>;
+	return <ColorButton />;
 };
 
 export default CustomBtn;
