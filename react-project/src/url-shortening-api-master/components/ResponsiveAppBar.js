@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
 import { ReactComponent as Logo } from '../images/logo.svg';
-import CustomBtn from './CustomBtn';
+// import CustomBtn from './CustomBtn';
 
 const pages = ['Features', 'Pricing', 'Resources'];
 
@@ -33,14 +33,14 @@ const ResponsiveAppBar = () => {
 			<Container maxWidth='xl'>
 				<Toolbar disableGutters>
 					{/* desktop screen */ }
-					<IconButton sx={ { display: { xs: 'none', md: 'flex' }, mr: 1 } }>
+					<IconButton sx={ { display: { xs: 'none', sm: 'flex' }, mr: 1 } }>
 						<SvgIcon
 							component={ Logo }
 							viewBox='0 0 121 33'
 							sx={ { width: '100%' } }
 						/>
 					</IconButton>
-					<Box sx={ { flexGrow: 1, display: { xs: 'none', md: 'flex' } } }>
+					<Box sx={ { flexGrow: 1, display: { xs: 'none', sm: 'flex' } } }>
 						{ pages.map((page) => (
 							<Button
 								key={ page }
@@ -51,21 +51,30 @@ const ResponsiveAppBar = () => {
 							</Button>
 						)) }
 					</Box>
+					<Box sx={ { flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end' } }>
+						<Button variant='violetText'>Login</Button>
+						<Button
+							variant='cyanBg'
+							sx={ { borderRadius: 5 } }
+						>
+							SignUp
+						</Button>
+					</Box>
 
 					{/* mobile screen */ }
 					<Stack
 						direction='row'
 						justifyContent='space-between'
-						sx={ { width: '100%' } }
+						sx={ { display: { xs: 'flex', sm: 'none' }, width: '100%' } }
 					>
-						<IconButton sx={ { display: { xs: 'flex', md: 'none' }, mr: 1 } }>
+						<IconButton sx={ { display: { xs: 'flex', sm: 'none' }, mr: 1 } }>
 							<SvgIcon
 								component={ Logo }
 								viewBox='0 0 121 33'
 								sx={ { width: '100%' } }
 							/>
 						</IconButton>
-						<Box sx={ { display: { xs: 'flex', md: 'none' } } }>
+						<Box sx={ { display: { xs: 'flex', sm: 'none' } } }>
 							<IconButton
 								sx={ { fontSize: '2.1rem' } }
 								aria-label='account of current user'
@@ -92,13 +101,15 @@ const ResponsiveAppBar = () => {
 									sx: {
 										width: '90%',
 										backgroundColor: 'hsl(257, 27%, 26%)',
-										py: 2,
+										borderRadius: 3,
+										// py: 2,
+										p: 2,
 									},
 								} }
 								open={ Boolean(anchorElNav) }
 								onClose={ handleCloseNavMenu }
 								sx={ {
-									display: { xs: 'flex', md: 'none' },
+									display: { xs: 'flex', sm: 'none' },
 								} }
 							>
 								{ pages.map((page) => (
@@ -116,8 +127,10 @@ const ResponsiveAppBar = () => {
 										</Typography>
 									</MenuItem>
 								)) }
-								<Divider />
-								{/* TODO: add login&signup buttons wrapped in MenuItem*/ }
+								<Divider sx={ { borderColor: 'neutral.lightGray' } } />
+								{/* TODO: 
+								insert login&signup buttons
+								*/}
 								<MenuItem
 									onClick={ handleCloseNavMenu }
 									sx={ {
@@ -126,8 +139,7 @@ const ResponsiveAppBar = () => {
 										justifyContent: 'center',
 									} }
 								>
-									{/* <CustomBtn variant='whiteText'>SignUp</CustomBtn> */ }
-									<Button variant='whiteText'>SignUp</Button>
+									<Button sx={ { fontSize: '1rem' } }>Login</Button>
 								</MenuItem>
 								<MenuItem
 									onClick={ handleCloseNavMenu }
@@ -137,8 +149,13 @@ const ResponsiveAppBar = () => {
 										justifyContent: 'center',
 									} }
 								>
-									<CustomBtn variant='whiteText'>SignUp</CustomBtn>
-									{/* <Button variant='whiteText'>SignUp</Button> */ }
+									<Button
+										variant='cyanBg'
+										fullWidth
+										sx={ { borderRadius: 5, fontSize: '1rem' } }
+									>
+										SignUp
+									</Button>
 								</MenuItem>
 							</Menu>
 						</Box>

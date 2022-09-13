@@ -23,8 +23,8 @@ const ColorButton = styled(Button)(({ theme }) => ({
 // 	},
 // }));
 
-const CustomBtn = () => {
-	return <ColorButton />;
+const CustomBtn = ({ children }) => {
+	return <ColorButton>{ children }</ColorButton>;
 };
 
 export default CustomBtn;

@@ -15,6 +15,7 @@ const appTheme = {
 			contrastText: '#fff', // white
 		},
 		neutral: {
+			lightGray: 'hsla(0, 0%, 35%, 0.7)',
 			gray: 'hsl(0, 0%, 75%)',
 			grayishViolet: 'hsl(257, 7%, 63%)',
 			veryDarkBlue: 'hsl(255, 11%, 22%)',
@@ -47,7 +48,7 @@ const appTheme = {
 		MuiButton: {
 			variants: [
 				{
-					props: { variant: "whiteText" },
+					props: { variant: "cyanBg" },
 					style: {
 						backgroundColor: "hsl(180, 66%, 49%)",
 						color: "#fff",
@@ -58,6 +59,13 @@ const appTheme = {
 					style: {
 						backgroundColor: "#fff",
 						color: "hsl(257, 27%, 26%)",
+					}
+				},
+				{
+					props: { variant: "text" },
+					style: {
+						// backgroundColor: "#fff",
+						color: "#fff",
 					}
 				},
 			],
