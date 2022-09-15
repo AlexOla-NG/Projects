@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import './index.css';
 // import App from './App';
-import './todo-app/index.css';
 // import { ColorModeProvider } from './todo-app/ColorModeProvider';
 import { AppProvider } from './url-shortening-api-master/Context';
 import App from './url-shortening-api-master/App';

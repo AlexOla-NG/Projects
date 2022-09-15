@@ -120,6 +120,9 @@ your own plans for continued development.**
 - [Control the width of menu component in Material-UI](https://stackoverflow.com/a/72311905) -
   This helped me set the width of the Menu items in MUI's Menu component. I
   really liked this pattern and will use it going forward.
+- [How to use an SVG file in a SvgIcon in Material-UI](https://stackoverflow.com/a/61419387) -
+  This helped me use svg icons in MUI components. I really liked this pattern
+  and will use it going forward.
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason.
   I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article
