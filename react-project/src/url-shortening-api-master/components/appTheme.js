@@ -24,17 +24,17 @@ const appTheme = {
 	},
 	typography: {
 		fontFamily: "'Poppins', sans-serif",
-		h4: {
-			fontWeight: 700,
-			letterSpacing: '0.4em',
-			textTransform: 'uppercase',
+		h1: {
+			fontWeight: 800,
+			letterSpacing: -4,
+			lineHeight: 0.95,
 		},
 		button: {
-			fontSize: '0.7rem',
+			fontSize: '0.9rem',
 			textTransform: 'capitalize',
 		},
-		caption: {
-			fontSize: '0.7rem',
+		body1: {
+			fontSize: '1.45rem',
 		},
 	},
 	components: {
@@ -48,32 +48,32 @@ const appTheme = {
 		MuiButton: {
 			variants: [
 				{
-					props: { variant: "cyanBg" },
+					props: { variant: 'cyanBg' },
 					style: {
-						backgroundColor: "hsl(180, 66%, 49%)",
-						color: "#fff",
-					}
+						backgroundColor: 'hsl(180, 66%, 49%)',
+						color: '#fff',
+					},
 				},
 				{
-					props: { variant: "violetText" },
+					props: { variant: 'violetText' },
 					style: {
-						backgroundColor: "#fff",
-						color: "hsl(257, 27%, 26%)",
-					}
+						backgroundColor: '#fff',
+						color: 'hsl(257, 27%, 26%)',
+					},
 				},
 				{
-					props: { variant: "text" },
+					props: { variant: 'text' },
 					style: {
 						// backgroundColor: "#fff",
-						color: "#fff",
-					}
+						color: '#fff',
+					},
 				},
 			],
 			defaultProps: {
 				disableElevation: true,
 				disableFocusRipple: true,
 				disableRipple: true,
-			}
+			},
 		},
 		MuiPaper: {
 			styleOverrides: {

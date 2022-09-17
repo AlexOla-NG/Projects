@@ -5,7 +5,7 @@ import Hero from './components/Hero';
 
 const HomePage = () => {
 	return (
-		<Box sx={{ px: 3, width: '100%' }}>
+		<Box sx={{ px: { xs: 0, md: 3 }, width: '100%' }}>
 			<ResponsiveAppBar />
 			<Hero />
 		</Box>
