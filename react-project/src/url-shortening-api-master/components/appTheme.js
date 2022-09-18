@@ -26,8 +26,6 @@ const appTheme = {
 		fontFamily: "'Poppins', sans-serif",
 		h1: {
 			fontWeight: 800,
-			letterSpacing: -4,
-			lineHeight: 0.95,
 		},
 		button: {
 			fontSize: '0.9rem',
@@ -52,6 +50,9 @@ const appTheme = {
 					style: {
 						backgroundColor: 'hsl(180, 66%, 49%)',
 						color: '#fff',
+						'&:hover': {
+							backgroundColor: 'hsla(180, 66%, 49%, 0.65)',
+						},
 					},
 				},
 				{
@@ -64,8 +65,12 @@ const appTheme = {
 				{
 					props: { variant: 'text' },
 					style: {
-						// backgroundColor: "#fff",
 						color: '#fff',
+						'&:hover': {
+							color: 'hsl(260, 8%, 14%)',
+							fontWeight: 800,
+							backgroundColor: 'transparent',
+						},
 					},
 				},
 			],

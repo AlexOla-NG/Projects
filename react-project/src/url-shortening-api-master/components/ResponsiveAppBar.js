@@ -29,75 +29,78 @@ const ResponsiveAppBar = () => {
 	};
 
 	return (
-		<AppBar position='static' color='secondary' elevation={ 0 }>
+		<AppBar position='static' color='secondary' elevation={0}>
 			<Container maxWidth='xl'>
 				<Toolbar disableGutters>
-					{/* desktop screen */ }
-					<IconButton sx={ { display: { xs: 'none', sm: 'flex' }, mr: 1 } }>
+					{/* desktop screen */}
+					<IconButton sx={{ display: { xs: 'none', sm: 'flex' }, mr: 2 }}>
 						<SvgIcon
-							component={ Logo }
+							component={Logo}
 							viewBox='0 0 121 33'
-							sx={ { width: '100%' } }
+							sx={{ width: '100%' }}
 						/>
 					</IconButton>
-					<Box sx={ { flexGrow: 1, display: { xs: 'none', sm: 'flex' } } }>
-						{ pages.map((page) => (
+					<Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
+						{pages.map((page) => (
 							<Button
-								key={ page }
-								onClick={ handleCloseNavMenu }
-								sx={ { my: 2, color: 'inherit', display: 'block' } }
+								key={page}
+								onClick={handleCloseNavMenu}
+								sx={{ my: 2, mr: 2, color: 'inherit', display: 'block' }}
 							>
-								{ page }
+								{page}
 							</Button>
-						)) }
+						))}
 					</Box>
-					<Box sx={ { flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: 'flex-end' } }>
-						<Button variant='violetText'>Login</Button>
-						<Button
-							variant='cyanBg'
-							sx={ { borderRadius: 5 } }
-						>
+					<Box
+						sx={{
+							flexGrow: 1,
+							display: { xs: 'none', sm: 'flex' },
+							justifyContent: 'flex-end',
+						}}
+					>
+						<Button sx={{ color: 'inherit', mr: 2 }}>Login</Button>
+						<Button variant='cyanBg' sx={{ borderRadius: 5 }}>
 							SignUp
 						</Button>
 					</Box>
 
-					{/* mobile screen */ }
+					{/* mobile screen */}
 					<Stack
 						direction='row'
 						justifyContent='space-between'
-						sx={ { display: { xs: 'flex', sm: 'none' }, width: '100%' } }
+						sx={{ display: { xs: 'flex', sm: 'none' }, width: '100%' }}
 					>
-						<IconButton sx={ { display: { xs: 'flex', sm: 'none' }, mr: 1 } }>
+						<IconButton sx={{ display: { xs: 'flex', sm: 'none' }, mr: 1 }}>
 							<SvgIcon
-								component={ Logo }
+								component={Logo}
 								viewBox='0 0 121 33'
-								sx={ { width: '100%' } }
+								sx={{ width: '100%' }}
 							/>
 						</IconButton>
-						<Box sx={ { display: { xs: 'flex', sm: 'none' } } }>
+						<Box sx={{ display: { xs: 'flex', sm: 'none' } }}>
 							<IconButton
-								sx={ { fontSize: '2.1rem' } }
+								sx={{ fontSize: '2.1rem' }}
 								aria-label='account of current user'
 								aria-controls='menu-appbar'
 								aria-haspopup='true'
-								onClick={ handleOpenNavMenu }
+								onClick={handleOpenNavMenu}
 								color='inherit'
 							>
 								<MenuIcon />
 							</IconButton>
 							<Menu
 								id='menu-appbar'
-								anchorEl={ anchorElNav }
-								anchorOrigin={ {
+								anchorEl={anchorElNav}
+								anchorOrigin={{
 									vertical: 'bottom',
 									horizontal: 'left',
-								} }
+								}}
 								keepMounted
-								transformOrigin={ {
+								transformOrigin={{
 									vertical: 'top',
 									horizontal: 'left',
-								} }
-								PaperProps={ {
+								}}
+								PaperProps={{
 									sx: {
 										width: '90%',
 										backgroundColor: 'hsl(257, 27%, 26%)',
@@ -105,54 +108,54 @@ const ResponsiveAppBar = () => {
 										// py: 2,
 										p: 2,
 									},
-								} }
-								open={ Boolean(anchorElNav) }
-								onClose={ handleCloseNavMenu }
-								sx={ {
+								}}
+								open={Boolean(anchorElNav)}
+								onClose={handleCloseNavMenu}
+								sx={{
 									display: { xs: 'flex', sm: 'none' },
-								} }
+								}}
 							>
-								{ pages.map((page) => (
+								{pages.map((page) => (
 									<MenuItem
-										key={ page }
-										onClick={ handleCloseNavMenu }
-										sx={ {
+										key={page}
+										onClick={handleCloseNavMenu}
+										sx={{
 											display: 'flex',
 											flexDirection: 'column',
 											justifyContent: 'center',
-										} }
+										}}
 									>
 										<Typography textAlign='center' color='#fff'>
-											{ page }
+											{page}
 										</Typography>
 									</MenuItem>
-								)) }
-								<Divider sx={ { borderColor: 'neutral.lightGray' } } />
+								))}
+								<Divider sx={{ borderColor: 'neutral.lightGray' }} />
 								{/* TODO: 
 								insert login&signup buttons
 								*/}
 								<MenuItem
-									onClick={ handleCloseNavMenu }
-									sx={ {
+									onClick={handleCloseNavMenu}
+									sx={{
 										display: 'flex',
 										flexDirection: 'column',
 										justifyContent: 'center',
-									} }
+									}}
 								>
-									<Button sx={ { fontSize: '1rem' } }>Login</Button>
+									<Button sx={{ fontSize: '1rem' }}>Login</Button>
 								</MenuItem>
 								<MenuItem
-									onClick={ handleCloseNavMenu }
-									sx={ {
+									onClick={handleCloseNavMenu}
+									sx={{
 										display: 'flex',
 										flexDirection: 'column',
 										justifyContent: 'center',
-									} }
+									}}
 								>
 									<Button
 										variant='cyanBg'
 										fullWidth
-										sx={ { borderRadius: 5, fontSize: '1rem' } }
+										sx={{ borderRadius: 5, fontSize: '1rem' }}
 									>
 										SignUp
 									</Button>
