@@ -90,13 +90,13 @@ To see how you can add code snippets, see below:
 
 ```css
 .proud-of-this-css {
-	color: papayawhip;
+  color: papayawhip;
 }
 ```
 
 ```js
 const proudOfThisFunc = () => {
-	console.log('🎉');
+  console.log("🎉");
 };
 ```
 
@@ -152,4 +152,3 @@ else's solution. This is the perfect place to give them some credit.
 **Note: Delete this note and edit this section's content as necessary. If you
 completed this challenge by yourself, feel free to delete this section
 entirely.**
-
