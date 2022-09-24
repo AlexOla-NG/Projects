@@ -123,6 +123,8 @@ your own plans for continued development.**
 - [How to use an SVG file in a SvgIcon in Material-UI](https://stackoverflow.com/a/61419387) -
   This helped me use svg icons in MUI components. I really liked this pattern
   and will use it going forward.
+- [flex-basis](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis) -
+  This helped toggle the layout of a component without using media query. I really liked this pattern and will use it going forward.
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason.
   I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article

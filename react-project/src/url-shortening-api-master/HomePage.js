@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import Hero from "./components/Hero";
-import CustomBox from "./components/CustomBox";
+import LinkForm from "./components/form/LinkForm";
 
 // TODO: stopped here
 // build custom icon component
@@ -12,8 +12,7 @@ const HomePage = () => {
     <Box sx={{ px: { xs: 0, md: 3 }, width: "100%" }}>
       <ResponsiveAppBar />
       <Hero />
-
-      <CustomBox />
+      <LinkForm />
     </Box>
   );
 };

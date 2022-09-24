@@ -6,17 +6,12 @@ import ChartSvg from "../images/icon-brand-recognition.svg";
 // icon, title & body
 // we will render multiple CustomIcon components by using an array that holds different values for the specified props
 
-// TODO: stopped here
-// display different papers depending on diplay breakpoint prop
-// fix desktop view paper displaying on small screens even when set to none in sm line 64
-
 const CustomBox = () => {
   return (
     <>
       <Paper
         sx={{
-          border: "solid",
-          display: { sm: "flex", md: "none" },
+          display: { xs: "flex", md: "none" },
           maxWidth: "clamp(14.6em, 30vw, 40vw)", // toggles size of Paper depending on screen width
           p: 4,
           position: "relative",
@@ -60,8 +55,7 @@ const CustomBox = () => {
       {/* desktop view */}
       <Paper
         sx={{
-          border: "solid",
-          display: { sm: "none", md: "flex" },
+          display: { xs: "none", md: "flex" },
           maxWidth: "clamp(14.6em, 30vw, 40vw)", // toggles size of Paper depending on screen width
           p: 4,
           position: "relative",
