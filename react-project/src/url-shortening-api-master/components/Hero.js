@@ -72,7 +72,7 @@ const Hero = () => {
         spacing={2}
         sx={{
           display: { xs: "none", md: "flex" },
-          px: 16,
+          px: 1.5,
           py: 8,
           mx: "auto",
         }}
@@ -106,9 +106,10 @@ const Hero = () => {
             variant="cyanBg"
             sx={{
               borderRadius: 8,
-              p: 1.3,
+              px: 1.3,
+              py: 2,
               fontSize: "1.15rem",
-              width: "20%",
+              width: "25%",
               fontWeight: 600,
             }}
           >

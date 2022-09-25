@@ -1,5 +1,5 @@
 import React from "react";
-import Box from "@mui/material/Box";
+import { Box, Container } from "@mui/material";
 import ResponsiveAppBar from "./components/ResponsiveAppBar";
 import Hero from "./components/Hero";
 import LinkForm from "./components/form/LinkForm";
@@ -9,11 +9,14 @@ import LinkForm from "./components/form/LinkForm";
 
 const HomePage = () => {
   return (
-    <Box sx={{ px: { xs: 0, md: 3 }, width: "100%" }}>
+    <Container maxWidth="xl">
       <ResponsiveAppBar />
       <Hero />
-      <LinkForm />
-    </Box>
+
+      <Box sx={{ mx: "auto", px: 1.5 }}>
+        <LinkForm />
+      </Box>
+    </Container>
   );
 };
 
