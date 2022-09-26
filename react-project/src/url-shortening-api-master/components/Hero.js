@@ -78,7 +78,7 @@ const Hero = () => {
         }}
       >
         <Grid item md={7}>
-          <Box sx={{ my: 5, maxWidth: "75%" }}>
+          <Box sx={{ my: 5, maxWidth: "85%" }}>
             <Typography
               variant="h1"
               component="h1"
@@ -86,7 +86,7 @@ const Hero = () => {
                 color: "neutral.veryDarkViolet",
                 mb: 1.5,
                 letterSpacing: -3,
-                lineHeight: 1,
+                lineHeight: 0.9,
               }}
             >
               More than just shorter links

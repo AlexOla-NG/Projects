@@ -53,6 +53,9 @@ const appTheme = {
             "&:hover": {
               backgroundColor: "hsla(180, 66%, 49%, 0.65)",
             },
+            "&:focus": {
+              backgroundColor: "hsl(257, 27%, 26%)",
+            },
           },
         },
         {
@@ -87,6 +90,13 @@ const appTheme = {
           // Some CSS
           backgroundImage: "none", // remove box-shadow in dark-mode
           // backgroundColor: '#121212'
+        },
+      },
+    },
+    MuiListItemText: {
+      styleOverrides: {
+        primary: {
+          fontSize: "0.9rem",
         },
       },
     },

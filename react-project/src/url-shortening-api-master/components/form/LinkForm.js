@@ -48,7 +48,7 @@ const LinkForm = () => {
     justifyContent: "space-between",
     alignItems: "center",
     maxWidth: "100%",
-    px: 8,
+    px: 6,
     py: 4,
   };
 
