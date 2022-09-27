@@ -1,10 +1,8 @@
 import React from "react";
 import {
   Button,
-  Divider,
   List,
   ListItem,
-  ListItemButton,
   ListItemText,
   Paper,
   Stack,
@@ -14,25 +12,33 @@ import {
 // TODO: stopped here
 // style SingleOutput component
 
-const style = {
+const mobileStyle = {
   width: "100%",
-  bgcolor: "background.paper",
-  // border: "solid blue",
+  display: { xs: "block", sm: "none" },
+};
+const desktopStyle = {
+  display: { xs: "none", sm: "flex" },
+  flexDirection: "row",
+  alignItems: "center",
+  justifyContent: "space-between",
+  p: 2,
+  width: "100%",
 };
 
-const SingleOutput = () => {
+const SingleOutput = (props) => {
   return (
     <Paper sx={{ mt: 2 }}>
-      <List sx={style}>
+      {/* mobile view */}
+      <List sx={mobileStyle}>
         <ListItem divider>
           <ListItemText
-            primary="http://www.frontendmentor.io"
+            primary={props.original_link}
             sx={{ color: "neutral.veryDarkViolet" }}
           />
         </ListItem>
         <ListItem>
           <ListItemText
-            primary="https://rel.link/k4lKyk"
+            primary={props.full_short_link}
             sx={{ color: "primary.main" }}
           />
         </ListItem>
@@ -42,24 +48,37 @@ const SingleOutput = () => {
           </Button>
         </ListItem>
       </List>
+
+      {/* Desktop view */}
+      <Stack sx={desktopStyle}>
+        <Typography
+          variant="body2"
+          component="p"
+          sx={{ color: "neutral.veryDarkViolet", fontSize: "1rem" }}
+        >
+          {props.original_link}
+        </Typography>
+
+        <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
+          <Typography
+            variant="body2"
+            component="p"
+            sx={{ color: "primary.main", fontSize: "1rem" }}
+          >
+            {props.full_short_link}
+          </Typography>
+          <Button variant="cyanBg" fullWidth>
+            Copy || Copied
+          </Button>
+        </Stack>
+      </Stack>
     </Paper>
-
-    // Desktop view
-    // <Paper sx={{ mt: 2, p: 2 }}>
-    //   <Stack divider={<Divider />}>
-    //     <Typography variant="body2" component="p">
-    //       http://www.frontendmentor.io
-    //     </Typography>
-
-    //     <Stack>
-    //       <Typography variant="body2" component="p">
-    //         https://rel.link/k4lKyk
-    //       </Typography>
-    //       <Button>Copy || Copied</Button>
-    //     </Stack>
-    //   </Stack>
-    // </Paper>
   );
 };
 
 export default SingleOutput;
+
+SingleOutput.defaultProps = {
+  original_link: "http://www.frontendmentor.io",
+  full_short_link: "https://rel.link/k4lKyk",
+};

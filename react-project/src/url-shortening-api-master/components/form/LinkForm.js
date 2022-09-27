@@ -4,17 +4,18 @@ import { Button, Stack, TextField } from "@mui/material";
 import { LinkSchema } from "./Schema";
 import mobileBackgroundShorten from "../../images/bg-shorten-mobile.svg";
 import desktopBackgroundShorten from "../../images/bg-shorten-desktop.svg";
+import { useGlobalContext } from "../../Context";
 
 const LinkForm = () => {
+  const { setQueryUrl } = useGlobalContext();
+
   const formik = useFormik({
     initialValues: {
       link: "",
     },
     validationSchema: LinkSchema,
     onSubmit: (values, actions) => {
-      console.log("submitting...");
-      console.log(values);
-      console.log(actions);
+      setQueryUrl(values.link);
       setTimeout(() => {
         console.log("submited!!");
         actions.resetForm();
