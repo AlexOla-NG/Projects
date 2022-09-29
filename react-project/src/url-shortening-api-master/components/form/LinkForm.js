@@ -1,13 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Form, FormikProvider, useFormik } from "formik";
 import { Button, Stack, TextField } from "@mui/material";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 import { LinkSchema } from "./Schema";
 import mobileBackgroundShorten from "../../images/bg-shorten-mobile.svg";
 import desktopBackgroundShorten from "../../images/bg-shorten-desktop.svg";
-import { useGlobalContext } from "../../Context";
 
 const LinkForm = () => {
-  const { setQueryUrl } = useGlobalContext();
+  const API_URL = "https://api.shrtco.de/v2/shorten?url";
+
+  const [formValue, setFormValue] = useState(null);
+  const [shortLink, setShortLink] = useState("");
+  const [snackbar, setSnackbar] = useState(null);
+
+  const handleCloseSnackbar = () => setSnackbar(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      if (formValue) {
+        const response = await fetch(`${API_URL}=${formValue}`);
+        const data = await response.json();
+        console.log(data);
+
+        if (data.ok) {
+          // STUB: get shortlink from response
+          const { full_short_link } = data.result;
+
+          setShortLink(full_short_link);
+        } else {
+          setSnackbar({
+            children: `${data.error}\nReason: ${data.disallowed_reason}`,
+            severity: "error",
+          });
+        }
+      }
+    };
+
+    getData();
+  }, [formValue]);
 
   const formik = useFormik({
     initialValues: {
@@ -15,11 +46,18 @@ const LinkForm = () => {
     },
     validationSchema: LinkSchema,
     onSubmit: (values, actions) => {
-      setQueryUrl(values.link);
-      setTimeout(() => {
-        console.log("submited!!");
-        actions.resetForm();
-      }, 2000);
+      // console.log(values);
+
+      const { link } = values;
+      setFormValue(link);
+
+      // STUB: popup successful msg on screen
+      setSnackbar({
+        children: "Your shortlink is ready",
+        severity: "success",
+      });
+
+      actions.resetForm();
     },
   });
 
@@ -88,6 +126,16 @@ const LinkForm = () => {
           </Button>
         </Stack>
       </Form>
+      {!!snackbar && (
+        <Snackbar
+          open
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          onClose={handleCloseSnackbar}
+          autoHideDuration={10000}
+        >
+          <Alert {...snackbar} onClose={handleCloseSnackbar} />
+        </Snackbar>
+      )}
     </FormikProvider>
   );
 };

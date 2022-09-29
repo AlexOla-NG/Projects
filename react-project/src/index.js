@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 // import './index.css';
 // import App from './App';
 // import { ColorModeProvider } from './todo-app/ColorModeProvider';
-import { AppProvider } from "./url-shortening-api-master/Context";
+// import { AppProvider } from "./url-shortening-api-master/Context";
 import App from "./url-shortening-api-master/App";
 // import App from './todo-app/App';
 import reportWebVitals from "./reportWebVitals";
@@ -16,10 +16,8 @@ root.render(
 				<App />
 			</AppProvider>
 		</ColorModeProvider> */}
-    {/* <App /> */}
-    <AppProvider>
-      <App />
-    </AppProvider>
+
+    <App />
   </React.StrictMode>
 );
 

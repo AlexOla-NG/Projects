@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 
 // TODO: stopped here
-// style SingleOutput component
+// how do we share info between unrelated components without using context?
 
 const mobileStyle = {
   width: "100%",
