@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   List,
@@ -8,9 +8,6 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
-
-// TODO: stopped here
-// how do we share info between unrelated components without using context?
 
 const mobileStyle = {
   width: "100%",
@@ -26,6 +23,26 @@ const desktopStyle = {
 };
 
 const SingleOutput = (props) => {
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  // TODO: stopped here
+  // fix copySuccess bug
+  // copied should only persist for 5secs
+  const handleClick = () => {
+    navigator.clipboard.writeText(props.full_short_link);
+    setTimeout(() => {
+      setCopySuccess(true);
+    }, 500);
+  };
+
+  const generateButton = () => {
+    return (
+      <Button variant="cyanBg" fullWidth onClick={handleClick}>
+        {copySuccess ? "copied!" : "copy"}
+      </Button>
+    );
+  };
+
   return (
     <Paper sx={{ mt: 2 }}>
       {/* mobile view */}
@@ -42,11 +59,7 @@ const SingleOutput = (props) => {
             sx={{ color: "primary.main" }}
           />
         </ListItem>
-        <ListItem sx={{ pt: 0 }}>
-          <Button variant="cyanBg" fullWidth>
-            copy || copied
-          </Button>
-        </ListItem>
+        <ListItem sx={{ pt: 0 }}>{generateButton()}</ListItem>
       </List>
 
       {/* Desktop view */}
@@ -67,9 +80,7 @@ const SingleOutput = (props) => {
           >
             {props.full_short_link}
           </Typography>
-          <Button variant="cyanBg" fullWidth>
-            Copy || Copied
-          </Button>
+          {generateButton()}
         </Stack>
       </Stack>
     </Paper>
