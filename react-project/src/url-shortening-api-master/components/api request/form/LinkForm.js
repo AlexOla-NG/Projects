@@ -2,8 +2,8 @@ import React from "react";
 import { Form, FormikProvider, useFormik } from "formik";
 import { Button, Stack, TextField } from "@mui/material";
 import { LinkSchema } from "./Schema";
-import mobileBackgroundShorten from "../../images/bg-shorten-mobile.svg";
-import desktopBackgroundShorten from "../../images/bg-shorten-desktop.svg";
+import mobileBackgroundShorten from "../../../images/bg-shorten-mobile.svg";
+import desktopBackgroundShorten from "../../../images/bg-shorten-desktop.svg";
 
 const LinkForm = ({ onFormValueChange, onSnackbarSuccess }) => {
   const formik = useFormik({

@@ -25,14 +25,13 @@ const desktopStyle = {
 const SingleOutput = (props) => {
   const [copySuccess, setCopySuccess] = useState(false);
 
-  // TODO: stopped here
-  // fix copySuccess bug
-  // copied should only persist for 5secs
   const handleClick = () => {
     navigator.clipboard.writeText(props.full_short_link);
+    setCopySuccess(true);
+
     setTimeout(() => {
-      setCopySuccess(true);
-    }, 500);
+      setCopySuccess(false);
+    }, 5000);
   };
 
   const generateButton = () => {

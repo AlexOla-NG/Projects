@@ -3,8 +3,8 @@
 import React, { useState, useEffect } from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
-import LinkForm from "../form/LinkForm";
-import LinkList from "../output/LinkList";
+import LinkForm from "../api request/form/LinkForm";
+import LinkList from "../api request/output/LinkList";
 
 const LinkParent = () => {
   const API_URL = "https://api.shrtco.de/v2/shorten?url";

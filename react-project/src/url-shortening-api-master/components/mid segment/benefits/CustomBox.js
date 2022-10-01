@@ -1,12 +1,12 @@
 import React from "react";
 import { Box, Avatar, Paper, Typography } from "@mui/material";
-import ChartSvg from "../images/icon-brand-recognition.svg";
+import ChartSvg from "../../../images/icon-brand-recognition.svg";
 
 // STUB: The CustomIcon component will accept three props:
 // icon, title & body
 // we will render multiple CustomIcon components by using an array that holds different values for the specified props
 
-const CustomBox = () => {
+const CustomBox = (props) => {
   return (
     <>
       <Paper
@@ -20,7 +20,7 @@ const CustomBox = () => {
       >
         <Avatar
           sx={{
-            bgcolor: "neutral.veryDarkViolet",
+            bgcolor: "violetBg.main",
             height: "clamp(3.9em, 8vh, 5vh)",
             width: "clamp(3.9em, 5.5vw, 3.5vw)",
             position: "absolute",
@@ -28,7 +28,7 @@ const CustomBox = () => {
             left: "5.9em",
           }}
         >
-          <img src={ChartSvg} alt="" role="presentation" />
+          <img src={props.icon} alt="" role="presentation" />
         </Avatar>
 
         <Box sx={{ mt: 3 }}>
@@ -36,7 +36,7 @@ const CustomBox = () => {
             variant="h5"
             sx={{ color: "neutral.veryDarkViolet", fontWeight: 800, mb: 1.5 }}
           >
-            Brand Recognition
+            {props.title}
           </Typography>
           <Typography
             variant="body2"
@@ -46,8 +46,7 @@ const CustomBox = () => {
               fontSize: "1.1rem",
             }}
           >
-            Boost your brand recognition with each click. Generic links don't
-            mean a thing. Branded links help instil confidence in your content.
+            {props.content}
           </Typography>
         </Box>
       </Paper>
@@ -63,7 +62,7 @@ const CustomBox = () => {
       >
         <Avatar
           sx={{
-            bgcolor: "neutral.veryDarkViolet",
+            bgcolor: "violetBg.main",
             height: "clamp(3.9em, 8vh, 5vh)",
             width: "clamp(3.9em, 5.5vw, 3.5vw)",
             position: "absolute",
@@ -71,7 +70,7 @@ const CustomBox = () => {
             left: "1.9em",
           }}
         >
-          <img src={ChartSvg} alt="" role="presentation" />
+          <img src={props.icon} alt="" role="presentation" />
         </Avatar>
 
         <Box sx={{ mt: 3 }}>
@@ -79,7 +78,7 @@ const CustomBox = () => {
             variant="h5"
             sx={{ color: "neutral.veryDarkViolet", fontWeight: 800, mb: 1.5 }}
           >
-            Brand Recognition
+            {props.title}
           </Typography>
           <Typography
             variant="body2"
@@ -89,8 +88,7 @@ const CustomBox = () => {
               fontSize: "1.1rem",
             }}
           >
-            Boost your brand recognition with each click. Generic links don't
-            mean a thing. Branded links help instil confidence in your content.
+            {props.content}
           </Typography>
         </Box>
       </Paper>
@@ -99,3 +97,10 @@ const CustomBox = () => {
 };
 
 export default CustomBox;
+
+CustomBox.defaultProps = {
+  title: "Brand Recognition",
+  content: `Boost your brand recognition with each click. Generic links don't
+            mean a thing. Branded links help instil confidence in your content.`,
+  icon: ChartSvg,
+};

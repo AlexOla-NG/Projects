@@ -127,6 +127,8 @@ your own plans for continued development.**
   This helped toggle the layout of a component without using media query. I really liked this pattern and will use it going forward.
 - [Lifting State Up](https://reactjs.org/docs/lifting-state-up.html) -
   This helped manage flow between two different components. I really liked this pattern and will use it going forward.
+- [How to change button text in ReactJS](https://stackoverflow.com/a/53685236) -
+  This helped toggle button text using setTimeout(). I really liked this pattern and will use it going forward.
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason.
   I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article
