@@ -19,21 +19,28 @@ const LinkParent = () => {
   useEffect(() => {
     const getData = async () => {
       if (formValue) {
-        const response = await fetch(`${API_URL}=${formValue}`);
-        const data = await response.json();
-        console.log(data);
+        try {
+          const response = await fetch(`${API_URL}=${formValue}`);
+          const data = await response.json();
+          console.log(data);
 
-        if (data.ok) {
-          // STUB: save response to apiLinks array
-          const { code, full_short_link, original_link } = data.result;
+          if (data.ok) {
+            // STUB: save response to apiLinks array
+            const { code, full_short_link, original_link } = data.result;
 
-          setResponseList((prevValue) => [
-            ...prevValue,
-            { code, full_short_link, original_link },
-          ]);
-        } else {
+            setResponseList((prevValue) => [
+              ...prevValue,
+              { code, full_short_link, original_link },
+            ]);
+          } else {
+            setSnackbar({
+              children: `${data.error}\nReason: ${data.disallowed_reason}`,
+              severity: "error",
+            });
+          }
+        } catch (error) {
           setSnackbar({
-            children: `${data.error}\nReason: ${data.disallowed_reason}`,
+            children: `${error.message}\nReason: Disconnected internet`,
             severity: "error",
           });
         }

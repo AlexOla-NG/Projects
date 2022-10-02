@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import CustomBox from "./CustomBox";
 import ChartSvg from "../../../images/icon-brand-recognition.svg";
 import RecordsSvg from "../../../images/icon-detailed-records.svg";
@@ -23,15 +23,19 @@ const contentList = [
   },
 ];
 
+const style = {
+  flexDirection: { xs: "column", md: "row" },
+  alignItems: "center",
+  justifyContent: "center",
+  mt: { md: "5em" },
+};
+
 // TODO: stopped here
 // style benefits stack, add divider prop
 
 const Benefits = () => {
   return (
-    <Stack
-      direction={{ xs: "column", md: "row" }}
-      spacing={{ xs: 4, sm: 2, md: 3 }}
-    >
+    <Stack sx={style}>
       {contentList.map((benefit, index) => {
         return <CustomBox key={index} {...benefit} />;
       })}

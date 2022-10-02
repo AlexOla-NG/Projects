@@ -9,11 +9,13 @@ import ChartSvg from "../../../images/icon-brand-recognition.svg";
 const CustomBox = (props) => {
   return (
     <>
+      {/* mobile view */}
       <Paper
         sx={{
           display: { xs: "flex", md: "none" },
           maxWidth: "clamp(14.6em, 30vw, 40vw)", // toggles size of Paper depending on screen width
           p: 4,
+          mt: "3em",
           position: "relative",
           textAlign: "center",
         }}
@@ -25,7 +27,8 @@ const CustomBox = (props) => {
             width: "clamp(3.9em, 5.5vw, 3.5vw)",
             position: "absolute",
             top: "-40px",
-            left: "5.9em",
+            right: "50%",
+            transform: "translate(50%)",
           }}
         >
           <img src={props.icon} alt="" role="presentation" />
@@ -43,7 +46,7 @@ const CustomBox = (props) => {
             component="p"
             sx={{
               color: "neutral.grayishViolet",
-              fontSize: "1.1rem",
+              lineHeight: 1.8,
             }}
           >
             {props.content}
@@ -55,8 +58,9 @@ const CustomBox = (props) => {
       <Paper
         sx={{
           display: { xs: "none", md: "flex" },
-          maxWidth: "clamp(14.6em, 30vw, 40vw)", // toggles size of Paper depending on screen width
+          maxWidth: "14.6em", // toggles size of Paper depending on screen width
           p: 4,
+          mr: 4,
           position: "relative",
         }}
       >
@@ -85,7 +89,7 @@ const CustomBox = (props) => {
             component="p"
             sx={{
               color: "neutral.grayishViolet",
-              fontSize: "1.1rem",
+              lineHeight: 1.8,
             }}
           >
             {props.content}

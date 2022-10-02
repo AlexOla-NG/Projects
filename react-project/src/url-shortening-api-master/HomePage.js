@@ -5,9 +5,6 @@ import Hero from "./components/Hero";
 import LinkParent from "./components/api request/LinkParent";
 import MidSegment from "./components/mid segment/MidSegment";
 
-// TODO: stopped here
-// build custom icon component
-
 const HomePage = () => {
   return (
     <Container maxWidth="xl">

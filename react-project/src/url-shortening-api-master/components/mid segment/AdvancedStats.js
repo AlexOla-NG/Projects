@@ -12,6 +12,7 @@ const desktopStyle = {
     xs: "none",
     md: "block",
   },
+  mt: "5em",
 };
 
 const AdvancedStats = () => {
@@ -53,7 +54,7 @@ const AdvancedStats = () => {
             my: 1.5,
             lineHeight: 1,
             fontWeight: 800,
-            fontSize: "2.4rem",
+            fontSize: "2.1rem",
           }}
         >
           Advanced Statistics
@@ -64,7 +65,7 @@ const AdvancedStats = () => {
           sx={{
             color: "neutral.grayishViolet",
             lineHeight: 1.73,
-            fontSize: "1.3rem",
+            fontSize: "1rem",
           }}
         >
           Track how your links are performing across the web with our advanced
