@@ -7,11 +7,11 @@ import MidSegment from "./components/mid segment/MidSegment";
 
 const HomePage = () => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" sx={{ pr: 0 }}>
       <ResponsiveAppBar />
       <Hero />
 
-      <Box sx={{ mx: "auto", px: 1.5 }}>
+      <Box sx={{ mx: "auto", px: 6 }}>
         <LinkParent />
         <MidSegment />
       </Box>

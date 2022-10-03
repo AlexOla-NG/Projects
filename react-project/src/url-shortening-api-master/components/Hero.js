@@ -69,12 +69,12 @@ const Hero = () => {
       <Grid
         container
         direction="row"
-        spacing={2}
         sx={{
           display: { xs: "none", md: "flex" },
-          px: 1.5,
+          px: 6,
           py: 8,
           mx: "auto",
+          overflow: "hidden",
         }}
       >
         <Grid item md={7}>

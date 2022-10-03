@@ -1,41 +1,58 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
-import mobileBackgroundShorten from "../../images/bg-shorten-mobile.svg";
-import desktopBackgroundShorten from "../../images/bg-shorten-desktop.svg";
+import { Box, Button, Typography } from "@mui/material";
+import mobileBackgroundBoost from "../../images/bg-boost-mobile.svg";
+import desktopBackgroundBoost from "../../images/bg-boost-desktop.svg";
 
 // TODO: stopped here
 // style BoostBox in mobile & desktop view
 
-const style = {
+const boxStyle = {
   // border: "3px solid",
   backgroundImage: {
-    xs: `url(${mobileBackgroundShorten})`,
-    sm: `url(${desktopBackgroundShorten})`,
+    xs: `url(${mobileBackgroundBoost})`,
+    sm: `url(${desktopBackgroundBoost})`,
   },
-  backgroundSize: {
-    xs: "70% auto",
-    sm: "cover",
-  },
+  backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundPosition: {
-    xs: "right top",
+    xs: "center ",
     sm: "bottom",
   },
   bgcolor: "violetBg.main",
-  borderRadius: 1,
-  flexDirection: "row",
-  flexWrap: "wrap",
-  justifyContent: "space-between",
-  alignItems: "center",
+  borderRadius: 0,
   maxWidth: "100%",
   px: 6,
-  py: 4,
+  py: {
+    xs: 6,
+    md: 8,
+  },
+  textAlign: "center",
+};
+
+const textStyle = {
+  color: "secondary.main",
+  fontWeight: 900,
+};
+
+const buttonStyle = {
+  borderRadius: 8,
+  px: 1.3,
+  py: { xs: 1, md: 2 },
+  fontSize: "1.15rem",
+  fontWeight: 600,
+  mt: { xs: 1.5, md: 2 },
+  width: "clamp(10em, 20%, 11em )",
 };
 
 const BoostBox = () => {
   return (
-    <Box sx={style}>
-      <Typography variant="h3">Boost your links today</Typography>
+    <Box sx={boxStyle}>
+      <Typography variant="h5" component="h3" sx={textStyle}>
+        Boost your links today
+      </Typography>
+      <Button variant="cyanBg" sx={buttonStyle}>
+        Get Started
+      </Button>
     </Box>
   );
 };

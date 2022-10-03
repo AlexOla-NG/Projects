@@ -129,6 +129,10 @@ your own plans for continued development.**
   This helped manage flow between two different components. I really liked this pattern and will use it going forward.
 - [How to change button text in ReactJS](https://stackoverflow.com/a/53685236) -
   This helped toggle button text using setTimeout(). I really liked this pattern and will use it going forward.
+- [How to Crop image at the edge of the screen](https://stackoverflow.com/a/35702570) -
+  This helped us crop an image when its width overlaps its parent container. We can set >>overflow:hidden<< to crop off an overlapping image. I really liked this pattern and will use it going forward.
+- [Overflow CSS MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) -
+  This is the documentation for the CSS prop Overflow.
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason.
   I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article
