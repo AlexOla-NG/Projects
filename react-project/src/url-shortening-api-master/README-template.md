@@ -133,6 +133,8 @@ your own plans for continued development.**
   This helped us crop an image when its width overlaps its parent container. We can set >>overflow:hidden<< to crop off an overlapping image. I really liked this pattern and will use it going forward.
 - [Overflow CSS MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/overflow) -
   This is the documentation for the CSS prop Overflow.
+- [How do I add color to my svg image in react](https://stackoverflow.com/a/62532186) -
+  This helped us set the color on a svg component. I really liked this pattern and will use it going forward.
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason.
   I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article

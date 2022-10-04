@@ -25,7 +25,7 @@ const contentList = [
 
 const style = {
   flexDirection: { xs: "column", md: "row" },
-  alignItems: "center",
+  alignItems: { xs: "center", md: "inherit" },
   justifyContent: "center",
   mt: { md: "5em" },
 };
