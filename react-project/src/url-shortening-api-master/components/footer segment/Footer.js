@@ -1,16 +1,12 @@
 // STUB: contains footer nav links
 import React from "react";
-import { Avatar, Box, Stack } from "@mui/material";
+import { Avatar, Box, IconButton, Stack } from "@mui/material";
 import FooterLinkList from "./FooterLinkList";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { ReactComponent as FacebookLogo } from "../../images/icon-facebook.svg";
 import { ReactComponent as TwitterLogo } from "../../images/icon-twitter.svg";
 import { ReactComponent as PinterestLogo } from "../../images/icon-pinterest.svg";
 import { ReactComponent as InstagramLogo } from "../../images/icon-instagram.svg";
-
-// TODO: stopped here
-// add footer navlinks
-// style background for mobile & desktop screens
 
 const textLinks = [
   {
@@ -31,16 +27,35 @@ const iconLinks = [FacebookLogo, TwitterLogo, PinterestLogo, InstagramLogo];
 
 const containerStyles = {
   backgroundColor: "neutral.veryDarkViolet",
-  flexDirection: { xs: "column" },
+  flexDirection: { xs: "column", md: "row" },
+  justifyContent: "space-around",
   py: 6,
   px: 5,
-  textAlign: { xs: "center" },
+  textAlign: { xs: "center", md: "left" },
+};
+
+const textListStyles = {
+  display: { md: "flex" },
 };
 
 const iconListStyles = {
   flexDirection: "row",
   justifyContent: "center",
-  py: 3,
+  alignItems: "flex-start",
+  py: { xs: 3, md: "5px" },
+};
+
+const iconButtonStyles = {
+  p: 0,
+};
+
+const avatarStyles = {
+  backgroundColor: "revert",
+  mx: 0.8,
+  transform: "scale(1.1)",
+  "&:hover": {
+    fill: "hsl(180, 66%, 49%)",
+  },
 };
 
 const Footer = () => {
@@ -49,24 +64,24 @@ const Footer = () => {
       <Box>
         <Logo fill="white" />
       </Box>
-      <Box>
+
+      <Box sx={textListStyles}>
         {textLinks.map((item, index) => {
           return <FooterLinkList key={index} content={item} />;
         })}
       </Box>
-      {/* TODO: stopped here
-      set each icon to have the same dimensions
-      */}
+
       <Stack sx={iconListStyles}>
         {iconLinks.map((item, index) => {
           return (
-            <Avatar
-              key={index}
-              component={item}
-              fill="white"
-              variant="square"
-              sx={{ backgroundColor: "revert" }}
-            />
+            <IconButton key={index} sx={iconButtonStyles}>
+              <Avatar
+                component={item}
+                fill="white"
+                variant="square"
+                sx={avatarStyles}
+              />
+            </IconButton>
           );
         })}
       </Stack>

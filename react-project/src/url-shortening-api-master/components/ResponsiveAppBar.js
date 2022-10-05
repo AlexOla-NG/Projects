@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import SvgIcon from "@mui/material/SvgIcon";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -13,7 +12,6 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 import { ReactComponent as Logo } from "../images/logo.svg";
-// import CustomBtn from './CustomBtn';
 
 const pages = ["Features", "Pricing", "Resources"];
 
@@ -34,11 +32,7 @@ const ResponsiveAppBar = () => {
         <Toolbar disableGutters>
           {/* desktop screen */}
           <IconButton sx={{ display: { xs: "none", sm: "flex" }, mr: 2 }}>
-            <SvgIcon
-              component={Logo}
-              viewBox="0 0 121 33"
-              sx={{ width: "100%" }}
-            />
+            <Logo fill="hsl(260, 8%, 14%)" />
           </IconButton>
           <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
             {pages.map((page) => (
@@ -68,18 +62,14 @@ const ResponsiveAppBar = () => {
           <Stack
             direction="row"
             justifyContent="space-between"
-            sx={{ display: { xs: "flex", sm: "none" }, width: "100%" }}
+            sx={{ display: { xs: "flex", sm: "none" }, pt: 2, width: "100%" }}
           >
             <IconButton sx={{ display: { xs: "flex", sm: "none" }, mr: 1 }}>
-              <SvgIcon
-                component={Logo}
-                viewBox="0 0 121 33"
-                sx={{ width: "100%" }}
-              />
+              <Logo fill="hsl(260, 8%, 14%)" />
             </IconButton>
             <Box sx={{ display: { xs: "flex", sm: "none" } }}>
               <IconButton
-                sx={{ fontSize: "2.1rem" }}
+                sx={{ fontSize: "2.1rem", p: 0 }}
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"

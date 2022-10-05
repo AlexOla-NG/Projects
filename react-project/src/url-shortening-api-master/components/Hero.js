@@ -84,6 +84,7 @@ const Hero = () => {
               component="h1"
               sx={{
                 color: "neutral.veryDarkViolet",
+                fontSize: "5rem",
                 mb: 1.5,
                 letterSpacing: -3,
                 lineHeight: 0.9,

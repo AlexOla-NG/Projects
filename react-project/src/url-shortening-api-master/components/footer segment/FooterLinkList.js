@@ -2,13 +2,24 @@ import React from "react";
 import { Stack, Typography } from "@mui/material";
 import FooterLink from "./FooterLink";
 
-// TODO: render list of FooterLinks here
-// define defaultProps
-
 const FooterLinkList = ({ content }) => {
   return (
-    <Stack sx={{ flexDirection: "column" }}>
-      <Typography variant="h6" sx={{ color: "secondary.main", py: 2 }}>
+    <Stack
+      sx={{
+        flexDirection: "column",
+        alignItems: { xs: "center", md: "flex-start" },
+        px: 3,
+      }}
+    >
+      <Typography
+        variant="h6"
+        sx={{
+          color: "secondary.main",
+          fontSize: "1rem",
+          py: { xs: 2, md: 0 },
+          pb: { xs: 0, md: 2 },
+        }}
+      >
         {content.title}
       </Typography>
       {content.bodyText.map((item) => (

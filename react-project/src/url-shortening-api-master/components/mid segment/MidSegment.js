@@ -1,4 +1,4 @@
-// STUB: contains advanced statistics section
+// STUB: contains advanced statistics & benefits section
 import React from "react";
 import { Box } from "@mui/material";
 import AdvancedStats from "./AdvancedStats";

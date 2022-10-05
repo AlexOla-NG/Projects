@@ -27,11 +27,8 @@ const style = {
   flexDirection: { xs: "column", md: "row" },
   alignItems: { xs: "center", md: "inherit" },
   justifyContent: "center",
-  mt: { md: "5em" },
+  my: { md: "5em" },
 };
-
-// TODO: stopped here
-// style benefits stack, add divider prop
 
 const Benefits = () => {
   return (

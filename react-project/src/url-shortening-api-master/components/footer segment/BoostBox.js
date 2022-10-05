@@ -3,11 +3,7 @@ import { Box, Button, Typography } from "@mui/material";
 import mobileBackgroundBoost from "../../images/bg-boost-mobile.svg";
 import desktopBackgroundBoost from "../../images/bg-boost-desktop.svg";
 
-// TODO: stopped here
-// style BoostBox in mobile & desktop view
-
 const boxStyle = {
-  // border: "3px solid",
   backgroundImage: {
     xs: `url(${mobileBackgroundBoost})`,
     sm: `url(${desktopBackgroundBoost})`,

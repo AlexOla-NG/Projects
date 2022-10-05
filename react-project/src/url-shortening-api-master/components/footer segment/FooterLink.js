@@ -1,20 +1,23 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
 
 const FooterLink = ({ bodyText }) => {
   console.log(bodyText);
   return (
-    <Typography
-      variant="body2"
-      component="p"
+    <Button
       sx={{
-        color: "neutral.grayishViolet",
-        lineHeight: 1.8,
-        py: 0.7,
+        color: "neutral.gray",
+        minWidth: 0,
+        px: 0,
+        "&:hover": {
+          color: "hsl(180, 66%, 49%)",
+          fontWeight: 400,
+          backgroundColor: "transparent",
+        },
       }}
     >
       {bodyText}
-    </Typography>
+    </Button>
   );
 };
 

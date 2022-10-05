@@ -7,6 +7,7 @@ const mobileStyle = {
     md: "none",
   },
 };
+
 const desktopStyle = {
   display: {
     xs: "none",
