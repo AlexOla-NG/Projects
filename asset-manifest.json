@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.js": "/Projects/url-shortening-api-landing-page/static/js/main.07556246.js",
+    "static/js/787.a2bf511c.chunk.js": "/Projects/url-shortening-api-landing-page/static/js/787.a2bf511c.chunk.js",
+    "static/media/illustration-working.svg": "/Projects/url-shortening-api-landing-page/static/media/illustration-working.c9b5ef5452363d8be3df709375d50bd0.svg",
+    "static/media/logo.svg": "/Projects/url-shortening-api-landing-page/static/media/logo.59aabf73c5cc3ac5864684bca0c48ac0.svg",
+    "static/media/icon-fully-customizable.svg": "/Projects/url-shortening-api-landing-page/static/media/icon-fully-customizable.a1532a74fa781f6fde327313bd5ffce3.svg",
+    "static/media/icon-brand-recognition.svg": "/Projects/url-shortening-api-landing-page/static/media/icon-brand-recognition.c349d3b69f7442e5ac3552e4138e72e7.svg",
+    "static/media/bg-boost-desktop.svg": "/Projects/url-shortening-api-landing-page/static/media/bg-boost-desktop.772154c9b0e451733f5ef5a737ffe720.svg",
+    "static/media/icon-detailed-records.svg": "/Projects/url-shortening-api-landing-page/static/media/icon-detailed-records.265c8aea77b546e08ba3575f6a8a9f70.svg",
+    "static/media/icon-instagram.svg": "/Projects/url-shortening-api-landing-page/static/media/icon-instagram.eb79d7a1df8901d1deb6a46a861ea26c.svg",
+    "index.html": "/Projects/url-shortening-api-landing-page/index.html",
+    "static/media/icon-pinterest.svg": "/Projects/url-shortening-api-landing-page/static/media/icon-pinterest.93bd147fa0eee7e685ceed8cd3d3c67f.svg",
+    "static/media/bg-boost-mobile.svg": "/Projects/url-shortening-api-landing-page/static/media/bg-boost-mobile.4b04bd89ea775da3deff8991b15aff8c.svg",
+    "static/media/bg-shorten-desktop.svg": "/Projects/url-shortening-api-landing-page/static/media/bg-shorten-desktop.0d9742f433f4b0d8752b40ccf28727af.svg",
+    "static/media/icon-twitter.svg": "/Projects/url-shortening-api-landing-page/static/media/icon-twitter.9c32ea388ffe353fc83cc9cea39298a0.svg",
+    "static/media/icon-facebook.svg": "/Projects/url-shortening-api-landing-page/static/media/icon-facebook.75c9b6823abf750990fd094f29fa3f07.svg",
+    "static/media/bg-shorten-mobile.svg": "/Projects/url-shortening-api-landing-page/static/media/bg-shorten-mobile.41c34b33a14a3077e506acb101113013.svg",
+    "main.07556246.js.map": "/Projects/url-shortening-api-landing-page/static/js/main.07556246.js.map",
+    "787.a2bf511c.chunk.js.map": "/Projects/url-shortening-api-landing-page/static/js/787.a2bf511c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.07556246.js"
+  ]
+}
