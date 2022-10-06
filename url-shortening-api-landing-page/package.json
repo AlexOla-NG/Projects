@@ -2,6 +2,7 @@
   "name": "react-project",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alexola-ng.github.io/Projects/url-shortening-api-landing-page/",
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
@@ -24,6 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -51,6 +54,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.28.0"
+    "eslint-plugin-react": "^7.28.0",
+    "gh-pages": "^4.0.0"
   }
 }
