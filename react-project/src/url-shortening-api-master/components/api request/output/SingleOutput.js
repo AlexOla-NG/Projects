@@ -75,7 +75,11 @@ const SingleOutput = (props) => {
           <Typography
             variant="body2"
             component="p"
-            sx={{ color: "primary.main", fontSize: "1rem" }}
+            sx={{
+              color: "primary.main",
+              fontSize: "1rem",
+              whiteSpace: "nowrap",
+            }}
           >
             {props.full_short_link}
           </Typography>

@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "@mui/material";
 
 const FooterLink = ({ bodyText }) => {
-  console.log(bodyText);
   return (
     <Button
       sx={{

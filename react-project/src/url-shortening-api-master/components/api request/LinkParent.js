@@ -10,7 +10,9 @@ const LinkParent = () => {
   const API_URL = "https://api.shrtco.de/v2/shorten?url";
 
   const [formValue, setFormValue] = useState(null);
-  const [responseList, setResponseList] = useState([]);
+  const [responseList, setResponseList] = useState(
+    JSON.parse(localStorage.getItem("apiResponseList")) || []
+  ); // set to saved responseList from localstorage, else set to empty array
   const [snackbar, setSnackbar] = useState(null);
 
   const handleCloseSnackbar = () => setSnackbar(null);
@@ -25,13 +27,20 @@ const LinkParent = () => {
           console.log(data);
 
           if (data.ok) {
-            // STUB: save response to apiLinks array
+            // STUB: save response to responseList state
             const { code, full_short_link, original_link } = data.result;
 
-            setResponseList((prevValue) => [
-              ...prevValue,
-              { code, full_short_link, original_link },
-            ]);
+            setResponseList((prevValue) => {
+              let newValue = [
+                ...prevValue,
+                { code, full_short_link, original_link },
+              ];
+
+              // STUB: track responseList with localstorage
+              localStorage.setItem("apiResponseList", JSON.stringify(newValue));
+
+              return newValue;
+            });
           } else {
             setSnackbar({
               children: `${data.error}\nReason: ${data.disallowed_reason}`,
@@ -48,6 +57,8 @@ const LinkParent = () => {
     };
 
     getData();
+
+    // eslint-disable-next-line
   }, [formValue]);
 
   // STUB: grab formValue from LinkForm onSubmit

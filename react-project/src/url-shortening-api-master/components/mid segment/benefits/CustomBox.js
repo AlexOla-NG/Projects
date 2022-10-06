@@ -23,8 +23,8 @@ const CustomBox = (props) => {
         <Avatar
           sx={{
             bgcolor: "violetBg.main",
-            height: "clamp(3.9em, 8vh, 5vh)",
-            width: "clamp(3.9em, 5.5vw, 3.5vw)",
+            height: "3.9em",
+            width: "3.9em",
             position: "absolute",
             top: "-40px",
             right: "50%",
@@ -67,8 +67,8 @@ const CustomBox = (props) => {
         <Avatar
           sx={{
             bgcolor: "violetBg.main",
-            height: "clamp(3.9em, 8vh, 5vh)",
-            width: "clamp(3.9em, 5.5vw, 3.5vw)",
+            height: "3.9em",
+            width: "3.9em",
             position: "absolute",
             top: "-40px",
             left: "1.9em",
