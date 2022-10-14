@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: var(--fw-800);
+  padding: 2em 4em;
+  text-transform: uppercase;
+}
+
+.header-text {
+  font-size: var(--fs-btn);
+  letter-spacing: 0.2em;
+  padding-left: 0.5em;
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
+}
+
+/* TODO: the navlink will be horizontal on desktop screen & vertical on mobile screen */
+.navlinks-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+}
+
+@media (min-width: 40em) {
+  .navlinks-list {
+    flex-direction: row;
+  }
+}
+
+.navlinks-list li {
+  font-size: var(--fs-btn);
+}
+
+.navlinks-list li a {
+  color: var(--ash);
+  padding: 1.6rem 2rem;
+  text-decoration: none;
+}
+
+.navlinks-list li a:focus {
+  color: var(--yellow);
+}

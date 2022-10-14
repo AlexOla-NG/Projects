@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./portfolio-page/index.css";
 // import './index.css';
 // import App from './App';
 // import { ColorModeProvider } from './todo-app/ColorModeProvider';
 // import { AppProvider } from "./url-shortening-api-master/Context";
-import App from "./url-shortening-api-master/App";
+import App from "./portfolio-page/components/App";
 // import App from './todo-app/App';
 import reportWebVitals from "./reportWebVitals";
 

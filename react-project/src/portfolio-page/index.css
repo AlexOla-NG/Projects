@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
+
+/* set default values for color, font size, font weight and border radius*/
+:root {
+  --dark-blue: hsl(233, 26%, 24%);
+  --white: hsl(0, 0%, 98%);
+  --black: hsl(0, 0%, 7%);
+  --ash: hsl(0, 0%, 20%);
+  --yellow: hsl(52, 95%, 50%);
+
+  --fs-h1: 4.5rem;
+  --fs-h2: 4rem;
+  --fs-h3: 2.4rem;
+  --fs-h4: 2.2rem;
+  --fs-btn: 1.2rem;
+  --fs-body1: 2rem;
+  --fs-body2: 1.8rem;
+  --fs-p: 1.8rem;
+
+  --fw-700: 700;
+  --fw-800: 800;
+
+  --br-300: 5px;
+}
+
+/* webview - set default values for font size */
+@media (min-width: 40em) {
+  :root {
+    --fs-h1: 6rem;
+    --fs-h2: 4rem;
+    --fs-h3: 2.8rem;
+    --fs-h4: 2.2rem;
+    --fs-btn: 1.2rem;
+    --fs-body1: 2.2rem;
+    --fs-body2: 2rem;
+    --fs-p: 1.8rem;
+  }
+}
+
+/* set box-sizing of all elements to border-box; helps absorb extra width */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  color: var(--ash);
+}
