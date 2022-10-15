@@ -24,7 +24,7 @@
 }
 
 /* webview - set default values for font size */
-@media (min-width: 40em) {
+@media (min-width: 48em) {
   :root {
     --fs-h1: 6rem;
     --fs-h2: 4rem;

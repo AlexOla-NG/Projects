@@ -18,7 +18,18 @@
   align-items: center;
 }
 
-/* TODO: the navlink will be horizontal on desktop screen & vertical on mobile screen */
+.navlinks-list-desktop {
+  display: none;
+}
+
+.navlinks-list-mobile .navlinks-list {
+  display: none;
+}
+
+.navlinks-list-mobile:focus-within .navlinks-list {
+  display: flex;
+}
+
 .navlinks-list {
   display: flex;
   flex-direction: column;
@@ -27,7 +38,15 @@
   list-style: none;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 50em) {
+  .navlinks-list-mobile {
+    display: none;
+  }
+
+  .navlinks-list-desktop {
+    display: block;
+  }
+
   .navlinks-list {
     flex-direction: row;
   }

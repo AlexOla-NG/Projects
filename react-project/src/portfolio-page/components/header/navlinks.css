@@ -1,0 +1,147 @@
+/* TODO: stopped here
+clean up css, remove the unneccesary
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: #ee6352;
+  --clr-dark: #333;
+  --clr-neutral: #ddd;
+  --clr-light: #fff;
+}
+
+body {
+  font-family: basic-sans, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125em;
+  line-height: 1.6;
+  color: var(--clr-body);
+  background: var(--clr-neutral);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--clr-primary);
+}
+
+.nav {
+  background: var(--clr-light);
+  position: absolute;
+  right: 0;
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 300ms cubic-bezier(0.5, 0, 0.5, 1);
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 6em 6em 3em 6em;
+  text-align: center;
+  transform: translateX(50%);
+  opacity: 0;
+  transition: transform 350ms ease-in-out 100ms, opacity 550ms linear 300ms;
+}
+
+.nav__item {
+  margin-bottom: 1.5em;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+.nav__link:hover {
+  text-decoration: underline;
+  color: var(--clr-primary);
+}
+
+.nav__toggle {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  width: 3em;
+  height: 3em;
+  transform: translateX(-150%);
+  background: var(--clr-light);
+  border: 0;
+  border-radius: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 350ms ease-in-out, left 350ms linear,
+    background 150ms linear;
+  z-index: 10;
+  padding: 0;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  width: 1.5em;
+  height: 3px;
+  background: var(--clr-dark);
+  transition: transform 350ms ease-in-out, opacity 200ms linear;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  bottom: 6px;
+}
+.hamburger::after {
+  top: 6px;
+}
+
+/* Navigation open styles */
+
+.nav-open .nav {
+  transform: translateX(0);
+}
+
+/* Change this stuff below */
+
+.nav-open .hamburger {
+  transform: rotate(45deg);
+}
+
+.nav-open .hamburger::before {
+  opacity: 0;
+}
+
+.nav-open .hamburger::after {
+  transform: rotate(90deg) translate(-6px);
+}
+
+.nav-open .nav__toggle {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-open .nav__list {
+  transform: translateX(0);
+  opacity: 1;
+}
