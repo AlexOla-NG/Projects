@@ -9,6 +9,7 @@ const NavLinks = () => {
   const toggleHamburger = () => {
     document.body.classList.toggle("nav-open");
   };
+
   return (
     <div>
       {/* desktop screen */}
@@ -30,11 +31,11 @@ const NavLinks = () => {
       </div>
 
       {/* mobile screen */}
-      <div className="navlinks-list-mobile nav">
+      <div className="nav">
         <button className="nav__toggle" onClick={toggleHamburger}>
           <span className="hamburger"></span>
         </button>
-        <ul className="nav__list">
+        <ul className="navlinks-list nav__list">
           <li className="nav__item">
             <a href="./" className="nav__link">
               home
