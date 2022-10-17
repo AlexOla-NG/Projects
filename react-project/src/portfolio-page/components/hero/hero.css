@@ -1,0 +1,27 @@
+.hero-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+      to right,
+      rgba(245, 245, 245, 0.8),
+      rgba(245, 245, 245, 0.8)
+    ),
+    url(https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg);
+  background-position: center;
+  height: 100vh;
+}
+
+.article {
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.article h1 {
+  color: var(--black);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-800);
+  padding-bottom: 2rem;
+  text-transform: uppercase;
+}

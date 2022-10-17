@@ -1,9 +1,6 @@
 import React from "react";
 import "./navlinks.css";
 
-// TODO: stopped here
-// add hamburger and toggle based on screen size
-
 const NavLinks = () => {
   // STUB: pop out drawer onclick
   const toggleHamburger = () => {
@@ -58,25 +55,6 @@ const NavLinks = () => {
           </li>
         </ul>
       </div>
-      {/* <div className="navlinks-list-mobile">
-        <button type="button" class="hamburger">
-          Menu
-        </button>
-        <ul className="navlinks-list ">
-          <li>
-            <a href="./">home</a>
-          </li>
-          <li>
-            <a href="#about">about</a>
-          </li>
-          <li>
-            <a href="#projects">projects</a>
-          </li>
-          <li>
-            <a href="#contact">contact</a>
-          </li>
-        </ul>
-      </div> */}
     </div>
   );
 };

@@ -8,7 +8,7 @@
   --ash: hsl(0, 0%, 20%);
   --yellow: hsl(52, 95%, 50%);
 
-  --fs-h1: 4.5rem;
+  --fs-h1: 2.5rem;
   --fs-h2: 4rem;
   --fs-h3: 2.4rem;
   --fs-h4: 2.2rem;
@@ -24,9 +24,9 @@
 }
 
 /* webview - set default values for font size */
-@media (min-width: 48em) {
+@media (min-width: 50em) {
   :root {
-    --fs-h1: 6rem;
+    --fs-h1: 4rem;
     --fs-h2: 4rem;
     --fs-h3: 2.8rem;
     --fs-h4: 2.2rem;
