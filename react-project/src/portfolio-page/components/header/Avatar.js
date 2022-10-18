@@ -8,7 +8,7 @@ const Avatar = () => {
       <span role="presentation" aria-labelledby="bearded man icon">
         🧔
       </span>
-      <p className="header-text">alexander oweka</p>
+      <p className="heading header-text">alexander oweka</p>
     </div>
   );
 };

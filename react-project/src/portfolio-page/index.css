@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 /* set default values for color, font size, font weight and border radius*/
 :root {
   --dark-blue: hsl(233, 26%, 24%);
@@ -8,14 +8,14 @@
   --ash: hsl(0, 0%, 20%);
   --yellow: hsl(52, 95%, 50%);
 
-  --fs-h1: 2.5rem;
-  --fs-h2: 4rem;
+  --fs-h1: 3rem;
+  --fs-h2: 2.2rem;
   --fs-h3: 2.4rem;
   --fs-h4: 2.2rem;
-  --fs-btn: 1.2rem;
+  --fs-btn: 1rem;
   --fs-body1: 2rem;
   --fs-body2: 1.8rem;
-  --fs-p: 1.8rem;
+  --fs-p: 1.1rem;
 
   --fw-700: 700;
   --fw-800: 800;
@@ -27,13 +27,13 @@
 @media (min-width: 50em) {
   :root {
     --fs-h1: 4rem;
-    --fs-h2: 4rem;
+    --fs-h2: 3rem;
     --fs-h3: 2.8rem;
     --fs-h4: 2.2rem;
     --fs-btn: 1.2rem;
     --fs-body1: 2.2rem;
     --fs-body2: 2rem;
-    --fs-p: 1.8rem;
+    --fs-p: 1.4rem;
   }
 }
 
@@ -51,4 +51,45 @@ body {
   font-size: 16px;
   color: var(--ash);
   overflow-x: hidden;
+}
+
+a {
+  color: var(--ash);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--black);
+  font-family: "Righteous", cursive;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.btn {
+  background-color: var(--yellow);
+  border: none;
+  border-radius: var(--br-300);
+  box-shadow: 0px 5px 13px -4px #9b9753;
+  color: var(--ash);
+  font-size: var(--fs-btn);
+  font-weight: bold;
+  padding: 1.2rem 2.8rem;
+  text-transform: uppercase;
+}
+
+.header-paragraph {
+  text-align: center;
+}
+
+.header-paragraph h2 {
+  font-size: var(--fs-h2);
+}
+
+.header-paragraph emoji {
+  font-size: var(--fs-body1);
 }

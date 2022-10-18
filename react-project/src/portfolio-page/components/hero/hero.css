@@ -14,14 +14,20 @@
 }
 
 .article {
-  padding-bottom: 2rem;
+  padding: 0 1rem 3rem;
   text-align: center;
 }
 
 .article h1 {
-  color: var(--black);
   font-size: var(--fs-h1);
-  font-weight: var(--fw-800);
-  padding-bottom: 2rem;
-  text-transform: uppercase;
+  padding-bottom: 2.5rem;
+}
+
+.article p {
+  font-size: var(--fs-p);
+  line-height: 1.6;
+}
+
+.hero-section-wrapper button {
+  max-width: 60%;
 }
