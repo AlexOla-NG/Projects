@@ -1,0 +1,29 @@
+.about-section-wrapper {
+  background: var(--light-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+
+.about-section-wrapper > div {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.more-info-wrapper h3 {
+  font-size: var(--fs-h3);
+}
+
+.more-info-wrapper p {
+  color: var(--gray-40);
+  font-size: var(--fs-body2);
+}
+
+.more-info-wrapper a {
+  color: var(--yellow);
+  text-decoration: underline;
+}

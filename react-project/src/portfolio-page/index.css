@@ -2,25 +2,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 /* set default values for color, font size, font weight and border radius*/
 :root {
-  --dark-blue: hsl(233, 26%, 24%);
-  --white: hsl(0, 0%, 98%);
-  --black: hsl(0, 0%, 7%);
   --ash: hsl(0, 0%, 20%);
+  --black: hsl(0, 0%, 7%);
+  --dark-blue: hsl(233, 26%, 24%);
+  --davy-gray: hsl(0, 0%, 33%);
+  --gray-40: hsl(0, 0%, 40%);
+  --light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
   --yellow: hsl(52, 95%, 50%);
 
   --fs-h1: 3rem;
   --fs-h2: 2.2rem;
-  --fs-h3: 2.4rem;
+  --fs-h3: 1.8rem;
   --fs-h4: 2.2rem;
   --fs-btn: 1rem;
-  --fs-body1: 2rem;
-  --fs-body2: 1.8rem;
+  --fs-body1: 1rem;
+  --fs-body2: 0.9rem;
   --fs-p: 1.1rem;
 
   --fw-700: 700;
   --fw-800: 800;
 
   --br-300: 5px;
+
+  scroll-behavior: smooth;
 }
 
 /* webview - set default values for font size */
@@ -28,11 +33,11 @@
   :root {
     --fs-h1: 4rem;
     --fs-h2: 3rem;
-    --fs-h3: 2.8rem;
+    --fs-h3: 2rem;
     --fs-h4: 2.2rem;
     --fs-btn: 1.2rem;
-    --fs-body1: 2.2rem;
-    --fs-body2: 2rem;
+    --fs-body1: 1.2rem;
+    --fs-body2: 1.1rem;
     --fs-p: 1.4rem;
   }
 }
@@ -70,6 +75,17 @@ h6 {
   text-transform: uppercase;
 }
 
+h3,
+h4,
+h5,
+h6 {
+  text-transform: capitalize;
+}
+
+p {
+  line-height: 1.6;
+}
+
 .btn {
   background-color: var(--yellow);
   border: none;
@@ -83,13 +99,22 @@ h6 {
 }
 
 .header-paragraph {
+  padding: 0 1rem 3rem;
   text-align: center;
 }
 
 .header-paragraph h2 {
   font-size: var(--fs-h2);
+  padding-bottom: 1.5rem;
 }
 
-.header-paragraph emoji {
+.header-paragraph span {
   font-size: var(--fs-body1);
+}
+
+.header-paragraph p {
+  color: var(--davy-gray);
+  font-size: var(--fs-body1);
+  max-width: 50rem;
+  padding-top: 1.5rem;
 }

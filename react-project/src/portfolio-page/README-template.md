@@ -101,6 +101,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Hamburger Menu - Base File](https://codepen.io/Homunculus84/pen/gOOqmvY) - This is the codepen link to the hamburger menu design. I really liked this pattern and will use it going forward.
 - [Best way to translate an element off-screen?](https://stackoverflow.com/a/73366968) - This helped us fix an issue with the hamburger. The menu list was displaying offscreen. However, setting the position to 'fixed' from 'absolute' solved the problem . I really liked this pattern and will use it going forward.
 - [ikr7/random-emoji.js](https://gist.github.com/ikr7/c72843556ef3a12014c3) - This helped us create a function that returns random emojis. I really liked this pattern and will use it going forward.
+- [scroll-behavior](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior) - This helped me create an automatic scrolling behavior when navigating between anchor tags. I really liked this pattern and will use it going forward.
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 

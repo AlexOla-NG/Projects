@@ -1,12 +1,18 @@
 import React from "react";
+import "./about.css";
 import HeaderParagaph from "./HeaderParagaph";
+import MoreInfo from "./MoreInfo";
+import Skills from "./Skills";
 
 const About = () => {
   return (
-    <div>
+    <section className="about-section-wrapper" id="about">
       <HeaderParagaph />
-      About
-    </div>
+      <div>
+        <MoreInfo />
+        <Skills />
+      </div>
+    </section>
   );
 };
 
