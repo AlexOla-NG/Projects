@@ -1,16 +1,20 @@
 import React from "react";
 import "./about.css";
-import HeaderParagaph from "./HeaderParagaph";
+import ReusableHeader from "./ReusableHeader";
 import MoreInfo from "./MoreInfo";
-import Skills from "./Skills";
+import MySkills from "./MySkills";
+
+// TODO: stopped here
+// set div display to grid
+// adjust layout accordingly
 
 const About = () => {
   return (
     <section className="about-section-wrapper" id="about">
-      <HeaderParagaph />
+      <ReusableHeader />
       <div>
         <MoreInfo />
-        <Skills />
+        <MySkills />
       </div>
     </section>
   );

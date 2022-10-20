@@ -29,5 +29,6 @@
 }
 
 .hero-section-wrapper button {
+  width: 20rem;
   max-width: 60%;
 }

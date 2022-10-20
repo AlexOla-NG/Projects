@@ -15,7 +15,7 @@
   --fs-h2: 2.2rem;
   --fs-h3: 1.8rem;
   --fs-h4: 2.2rem;
-  --fs-btn: 1rem;
+  --fs-btn: 0.9rem;
   --fs-body1: 1rem;
   --fs-body2: 0.9rem;
   --fs-p: 1.1rem;
@@ -35,7 +35,7 @@
     --fs-h2: 3rem;
     --fs-h3: 2rem;
     --fs-h4: 2.2rem;
-    --fs-btn: 1.2rem;
+    --fs-btn: 1.15rem;
     --fs-body1: 1.2rem;
     --fs-body2: 1.1rem;
     --fs-p: 1.4rem;
@@ -51,6 +51,7 @@
   padding: 0;
 }
 
+/* set global styles */
 body {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 16px;
@@ -92,27 +93,29 @@ p {
   border-radius: var(--br-300);
   box-shadow: 0px 5px 13px -4px #9b9753;
   color: var(--ash);
+  cursor: pointer;
   font-size: var(--fs-btn);
   font-weight: bold;
-  padding: 1.2rem 2.8rem;
+  padding: 1.05rem 2.8rem;
   text-transform: uppercase;
 }
 
-.header-paragraph {
+/* set styles for reusable component */
+.reusable-header {
   padding: 0 1rem 3rem;
   text-align: center;
 }
 
-.header-paragraph h2 {
+.reusable-header h2 {
   font-size: var(--fs-h2);
   padding-bottom: 1.5rem;
 }
 
-.header-paragraph span {
+.reusable-header span {
   font-size: var(--fs-body1);
 }
 
-.header-paragraph p {
+.reusable-header p {
   color: var(--davy-gray);
   font-size: var(--fs-body1);
   max-width: 50rem;

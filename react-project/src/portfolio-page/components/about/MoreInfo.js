@@ -1,8 +1,5 @@
 import React from "react";
 
-// TODO: stopped here
-// finish styling MoreInfo component
-
 const MoreInfo = () => {
   return (
     <article className="more-info-wrapper">
@@ -16,11 +13,22 @@ const MoreInfo = () => {
         content related to the stuff that I have learned over the years in{" "}
         <b>Web Development</b>. I do this to help other people in the Dev
         Community. Feel free to Connect or Follow me on my{" "}
-        <a href="https://www.linkedin.com/in/alexander-oweka-6bb086166/">
+        <a
+          href="https://www.linkedin.com/in/alexander-oweka-6bb086166/"
+          target="_blank"
+          rel="noreferrer"
+        >
           Linkedin
         </a>{" "}
         where I post useful content related to Web Development and Programming;
-        here's my <a href="https://twitter.com/OwekaAlexander">Twitter</a>
+        here's my{" "}
+        <a
+          href="https://twitter.com/OwekaAlexander"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Twitter
+        </a>
         , in case you like memes 😜.
         <br />
         <br />
@@ -28,6 +36,9 @@ const MoreInfo = () => {
         grow. If you have a good opportunity that matches my skills and
         experience, please don't hesitate to <b>contact</b> me.
       </p>
+      <button className="btn">
+        <a href="#contact">contact</a>
+      </button>
     </article>
   );
 };

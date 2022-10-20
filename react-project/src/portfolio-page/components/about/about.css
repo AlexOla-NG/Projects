@@ -9,21 +9,38 @@
 
 .about-section-wrapper > div {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
 .more-info-wrapper h3 {
   font-size: var(--fs-h3);
+  padding: 0 0 24px;
 }
 
 .more-info-wrapper p {
   color: var(--gray-40);
   font-size: var(--fs-body2);
+  padding: 0 0 24px;
 }
 
-.more-info-wrapper a {
+.more-info-wrapper p > a {
   color: var(--yellow);
+  font-weight: 600;
   text-decoration: underline;
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills-wrapper span {
+  background-color: pink;
+  border-radius: var(--br-300);
+  margin: auto 0.9rem 0.9rem 0;
+  padding: 0.8rem 1rem;
 }

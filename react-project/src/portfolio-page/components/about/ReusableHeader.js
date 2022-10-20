@@ -3,9 +3,9 @@ import getEmoji from "../../helpers";
 
 // STUB: reusable component to hold header & paragraph text
 
-const HeaderParagaph = (props) => {
+const ReusableHeader = (props) => {
   return (
-    <article className="header-paragraph">
+    <article className="reusable-header">
       <h2>{props.header}</h2>
       <span>{getEmoji()}</span>
       <p>{props.paragraph}</p>
@@ -13,9 +13,9 @@ const HeaderParagaph = (props) => {
   );
 };
 
-export default HeaderParagaph;
+export default ReusableHeader;
 
-HeaderParagaph.defaultProps = {
+ReusableHeader.defaultProps = {
   header: "about me",
   paragraph:
     "Here you will find more information about me, what I do, and my current skills mostly in terms of programming & technology",
