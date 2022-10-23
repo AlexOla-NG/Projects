@@ -22,7 +22,7 @@ const MySkills = () => {
 
   return (
     <article className="more-info-wrapper">
-      <h3>MySkills</h3>
+      <h3>My Skills</h3>
       <div className="skills-wrapper">{getSkills()}</div>
     </article>
   );

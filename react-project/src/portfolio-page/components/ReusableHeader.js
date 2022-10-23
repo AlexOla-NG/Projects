@@ -1,5 +1,5 @@
 import React from "react";
-import getEmoji from "../../helpers";
+import getEmoji from "../helpers";
 
 // STUB: reusable component to hold header & paragraph text
 

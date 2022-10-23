@@ -8,21 +8,21 @@
 }
 
 .about-section-wrapper > div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  gap: 3.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 40px;
 }
 
 .more-info-wrapper h3 {
   font-size: var(--fs-h3);
-  padding: 0 0 24px;
+  padding: 0 0 40px;
 }
 
 .more-info-wrapper p {
   color: var(--gray-40);
   font-size: var(--fs-body2);
-  padding: 0 0 24px;
+  padding: 0 0 40px;
 }
 
 .more-info-wrapper p > a {
@@ -34,12 +34,10 @@
 .skills-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .skills-wrapper span {
-  background-color: pink;
+  background-color: var(--dusty-gray);
   border-radius: var(--br-300);
   margin: auto 0.9rem 0.9rem 0;
   padding: 0.8rem 1rem;
