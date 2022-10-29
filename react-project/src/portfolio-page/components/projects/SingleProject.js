@@ -3,7 +3,8 @@ import shortlyScreenshot from "../../assests/shortlyScreenshot.png";
 import Tag from "../about/Tag";
 
 // TODO: stopped here
-// import Tag component, render skills array
+// style buttons
+// i think they're too big. maybe we can reduce the font-size and padding?
 
 const SingleProject = (props) => {
   const getSkills = () => {
@@ -14,9 +15,11 @@ const SingleProject = (props) => {
 
   return (
     <article className="single-project-wrapper">
+      <img src={props.img} alt={props.title} />
       <div>
         <h3>{props.title}</h3>
         <p>{props.description}</p>
+        <p>{props.source}</p>
         <div className="skills-wrapper">{getSkills()}</div>
         <div>
           <button className="btn">
@@ -31,7 +34,6 @@ const SingleProject = (props) => {
           </button>
         </div>
       </div>
-      <img src={props.img} alt={props.title} />
     </article>
   );
 };
@@ -40,8 +42,8 @@ export default SingleProject;
 
 SingleProject.defaultProps = {
   title: "URL Shortening API Landing Page",
-  description:
-    "For when you need to shorten url links. This project is a coding challenge from frontendmentor.io",
+  description: `For when you need to shorten url links. This project is a coding challenge from frontendmentor.io`,
+  source: `This project is a coding challenge from frontendmentor.io`,
   img: shortlyScreenshot,
   liveDemo: "https://u6vmnn.csb.app/",
   githubRepo:

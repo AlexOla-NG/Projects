@@ -1,24 +1,43 @@
+.projects-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+
+@media (min-width: 50em) {
+  .projects-section-wrapper {
+    padding: 3rem 6rem;
+  }
+}
+
+.projects-section-wrapper > div {
+  display: grid;
+  gap: 3.5rem;
+  margin: 40px auto;
+  width: 100%;
+}
+
 .single-project-wrapper {
   display: grid;
-  justify-items: center;
-  align-items: center;
-  gap: 3.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  place-items: center;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 }
 
 .single-project-wrapper h3 {
   font-size: var(--fs-h3);
-  padding: 0 0 40px;
+  padding: 0 0 1.5rem;
 }
 
 .single-project-wrapper p {
   color: var(--gray-40);
   font-size: var(--fs-body2);
-  padding: 0 0 40px;
 }
 
 .single-project-wrapper .skills-wrapper {
-  padding: 0 0 20px;
+  padding: 1.5rem 0;
 }
 
 .single-project-wrapper button {
@@ -29,6 +48,6 @@
 }
 
 .single-project-wrapper > img {
-  width: clamp(15rem, 30%, 40vw);
+  width: 100%;
   height: auto;
 }

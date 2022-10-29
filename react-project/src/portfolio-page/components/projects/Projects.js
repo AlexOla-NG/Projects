@@ -3,14 +3,13 @@ import "../about/about.css";
 import "./projects.css";
 import ReusableHeader from "../ReusableHeader";
 import SingleProject from "./SingleProject";
-import shortlyScreenshot from "../../assests/shortlyScreenshot.png";
-import randomAdviceScreenshot from "../../assests/randomAdviceScreenshot.png";
+import shortlyScreenshot from "../../assests/shortlyDesktopPreview.jpg";
+import randomAdviceScreenshot from "../../assests/adviceGenDesktopPreview.jpg";
 
 // TODO: for project description
 // add screenshot of project
 // reference skills used
 // short description
-// add resume link to about section
 
 // TODO: stopped here
 // style Projects component
@@ -25,8 +24,7 @@ const Projects = () => {
   const projectContentProps = [
     {
       title: "URL Shortening API Landing Page",
-      description:
-        "For when you need to shorten url links. This project is a coding challenge from frontendmentor.io",
+      description: "For when you need to shorten url links.",
       img: shortlyScreenshot,
       liveDemo: "https://u6vmnn.csb.app/",
       githubRepo:
@@ -35,8 +33,7 @@ const Projects = () => {
     },
     {
       title: "Advice Generator",
-      description:
-        "Roll the die, get a random advice. This project is a coding challenge from frontendmentor.io",
+      description: "Roll the die, get a random advice.",
       img: randomAdviceScreenshot,
       liveDemo:
         "https://alexola-ng.github.io/Projects/advice-generator-app-main/index.html",
@@ -53,7 +50,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="about-section-wrapper" id="projects">
+    <section className="projects-section-wrapper" id="projects">
       <ReusableHeader {...projectHeaderProps} />
       <div>{getProject()}</div>
     </section>
