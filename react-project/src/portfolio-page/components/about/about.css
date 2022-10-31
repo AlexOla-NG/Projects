@@ -4,13 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem 2rem;
-}
-
-@media (min-width: 50em) {
-  .about-section-wrapper {
-    padding: 3rem 6rem;
-  }
 }
 
 .about-section-wrapper > div {
@@ -27,7 +20,7 @@
 
 .more-info-wrapper p {
   color: var(--gray-40);
-  font-size: var(--fs-body2);
+  font-size: var(--fs-body1);
   padding: 0 0 40px;
 }
 

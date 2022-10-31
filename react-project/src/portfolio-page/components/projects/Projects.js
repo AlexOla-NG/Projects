@@ -29,7 +29,7 @@ const Projects = () => {
       liveDemo: "https://u6vmnn.csb.app/",
       githubRepo:
         "https://github.com/AlexOla-NG/React-Project-URL-API-Landing-Page",
-      skills: ["React JS", "Material UI", "CSS", "RESTful API"],
+      skills: ["React JS", "Material UI", "CSS", "API"],
     },
     {
       title: "Advice Generator",
@@ -39,7 +39,7 @@ const Projects = () => {
         "https://alexola-ng.github.io/Projects/advice-generator-app-main/index.html",
       githubRepo:
         "https://github.com/AlexOla-NG/Projects/tree/main/advice-generator-app-main",
-      skills: ["HTML", "CSS", "Javascript", "RESTful API"],
+      skills: ["HTML", "CSS", "Javascript", "API"],
     },
   ];
 

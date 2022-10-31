@@ -2,10 +2,6 @@ import React from "react";
 import shortlyScreenshot from "../../assests/shortlyScreenshot.png";
 import Tag from "../about/Tag";
 
-// TODO: stopped here
-// style buttons
-// i think they're too big. maybe we can reduce the font-size and padding?
-
 const SingleProject = (props) => {
   const getSkills = () => {
     return props.skills.map((skill) => {
@@ -21,7 +17,7 @@ const SingleProject = (props) => {
         <p>{props.description}</p>
         <p>{props.source}</p>
         <div className="skills-wrapper">{getSkills()}</div>
-        <div>
+        <div className="btn-wrapper">
           <button className="btn">
             <a href={props.liveDemo} target="_blank" rel="noreferrer">
               Live Demo
