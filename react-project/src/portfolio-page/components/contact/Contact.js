@@ -1,6 +1,7 @@
 import React from "react";
 import "./contact.css";
 import ReusableHeader from "../ReusableHeader";
+import ContactForm from "./ContactForm";
 
 // TODO: stopped here
 // build form layout
@@ -16,6 +17,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact-section-wrapper">
       <ReusableHeader {...contactHeaderProps} />
+      <ContactForm />
     </section>
   );
 };
