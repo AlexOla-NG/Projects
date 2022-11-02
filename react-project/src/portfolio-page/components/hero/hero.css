@@ -14,17 +14,17 @@
   padding: 0;
 }
 
-.article {
+.hero-section-wrapper .article {
   padding: 0 1rem 3rem;
   text-align: center;
 }
 
-.article h1 {
+.hero-section-wrapper .article h1 {
   font-size: var(--fs-h1);
   padding-bottom: 2.5rem;
 }
 
-.article p {
+.hero-section-wrapper .article p {
   font-size: var(--fs-p);
   line-height: 1.6;
 }

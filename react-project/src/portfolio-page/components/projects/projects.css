@@ -16,7 +16,7 @@
   display: grid;
   place-items: center;
   gap: 2.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 }
 
 .single-project-wrapper h3 {
@@ -35,7 +35,7 @@
 
 .single-project-wrapper .btn-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .single-project-wrapper .btn {

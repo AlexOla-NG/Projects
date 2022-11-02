@@ -1,0 +1,14 @@
+.footer-section-wrapper {
+  background-color: var(--black);
+  color: var(--light-gray);
+}
+
+.footer-section-wrapper .article h1 {
+  font-size: var(--fs-h5);
+  padding-bottom: 1rem;
+}
+
+.footer-section-wrapper .article p {
+  font-size: var(--fs-p);
+  line-height: 1.6;
+}

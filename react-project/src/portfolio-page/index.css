@@ -16,9 +16,11 @@
   --fs-h2: 2.2rem;
   --fs-h3: 1.5rem;
   --fs-h4: 2.2rem;
+  --fs-h5: 1.3rem;
   --fs-btn: 0.9rem;
   --fs-body1: 1rem;
   --fs-body2: 0.9rem;
+  --fs-caption: 0.7rem;
   --fs-p: 1.1rem;
 
   --fw-700: 700;
@@ -36,9 +38,11 @@
     --fs-h2: 3rem;
     --fs-h3: 2rem;
     --fs-h4: 2.2rem;
+    --fs-h5: 1.8rem;
     --fs-btn: 1.15rem;
     --fs-body1: 1.3rem;
     --fs-body2: 1.15rem;
+    --fs-caption: 0.9rem;
     --fs-p: 1.4rem;
   }
 }
