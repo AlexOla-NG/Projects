@@ -105,6 +105,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Contact Us Form - frontend](https://codepen.io/JonLehman/pen/yOdbOG) - This offered me inspiration for the contact form design. I really liked this pattern and will use it going forward.
 - [:valid](https://developer.mozilla.org/en-US/docs/Web/CSS/:valid) - This is the documentation for the valid pseudo-class. It is used to apply styles to form element that validate successfully . I really liked this pattern and will use it going forward.
 - [General sibling combinator](https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator) - This is the documentation for the general sibling combinator. It is used to match all iterations of the second element . I really liked this pattern and will use it going forward.
+- [Link not clickable because ::Before and ::After [duplicate]](https://stackoverflow.com/a/49487195) - This helped me make anchor elements nested in pseudo-elements clickable. I really liked this pattern and will use it going forward.
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 

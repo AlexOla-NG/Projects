@@ -1,4 +1,5 @@
 import React from "react";
+import SocialMediaList from "./SocialMediaList";
 import "./footer.css";
 
 // TODO: stopped here
@@ -10,14 +11,11 @@ const Footer = () => {
       <div className="article">
         <h1>alexander oweka</h1>
         <p>
-          A Front End Developer with an eye for design and deep understanding of
+          Front End Developer with an eye for design and deep understanding of
           usability goals.
         </p>
       </div>
-      {/* <div>
-        <MoreInfo />
-        <MySkills />
-      </div> */}
+      <SocialMediaList />
     </section>
   );
 };

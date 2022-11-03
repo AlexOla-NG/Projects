@@ -9,7 +9,7 @@ import ContactForm from "./ContactForm";
 
 const Contact = () => {
   const contactHeaderProps = {
-    header: "contact",
+    header: "contact me",
     paragraph:
       "Feel free to contact me by submitting the form below, and I'll get back to you as soon as possible",
   };
