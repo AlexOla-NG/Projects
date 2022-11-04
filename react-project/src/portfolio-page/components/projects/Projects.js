@@ -1,18 +1,13 @@
 import React from "react";
+
 import "../about/about.css";
 import "./projects.css";
+
 import ReusableHeader from "../ReusableHeader";
 import SingleProject from "./SingleProject";
+
 import shortlyScreenshot from "../../assests/shortlyDesktopPreview.jpg";
 import randomAdviceScreenshot from "../../assests/adviceGenDesktopPreview.jpg";
-
-// TODO: for project description
-// add screenshot of project
-// reference skills used
-// short description
-
-// TODO: stopped here
-// style Projects component
 
 const Projects = () => {
   const projectHeaderProps = {

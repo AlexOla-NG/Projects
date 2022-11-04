@@ -110,7 +110,6 @@ textarea {
 
 @media (min-width: 50em) {
   .form-btn {
-    /* transform: translateX(50%); */
     max-width: 20rem;
   }
 

@@ -1,7 +1,5 @@
 import React from "react";
 
-// TODO: avatar will contain picture and full name
-
 const Avatar = () => {
   return (
     <div className="avatar-container">

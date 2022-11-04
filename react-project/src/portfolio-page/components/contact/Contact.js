@@ -1,11 +1,8 @@
 import React from "react";
+
 import "./contact.css";
 import ReusableHeader from "../ReusableHeader";
 import ContactForm from "./ContactForm";
-
-// TODO: stopped here
-// build form layout
-// connect form response to EmailJS service
 
 const Contact = () => {
   const contactHeaderProps = {

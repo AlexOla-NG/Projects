@@ -11,6 +11,7 @@
   --light-gray: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
   --yellow: hsl(52, 95%, 50%);
+  --dark-yellow: hsl(52, 95%, 30%);
 
   --fs-h1: 3rem;
   --fs-h2: 2.2rem;
@@ -107,13 +108,25 @@ p {
   background-color: var(--yellow);
   border: none;
   border-radius: var(--br-300);
-  box-shadow: 0px 5px 13px -4px #9b9753;
+  box-shadow: 0 10px 0 var(--dark-yellow);
   color: var(--ash);
   cursor: pointer;
   font-size: var(--fs-btn);
   font-weight: bold;
   padding: 1.05rem 2.8rem;
   text-transform: uppercase;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--white);
+  box-shadow: 0 10px 0 var(--dusty-gray);
+}
+
+.btn:active {
+  box-shadow: 0 5px 0 var(--dark-yellow);
+  transform: translateY(5px);
 }
 
 .tag {

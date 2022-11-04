@@ -29,19 +29,22 @@
   font-size: var(--fs-body1);
 }
 
+.single-project-wrapper p > a {
+  color: var(--gray-40);
+  font-size: var(--fs-body1);
+}
+
 .single-project-wrapper .skills-wrapper {
   padding: 1.5rem 0;
 }
 
 .single-project-wrapper .btn-wrapper {
   display: flex;
-  justify-content: space-evenly;
+  gap: 1em;
 }
 
 .single-project-wrapper .btn {
   font-size: 0.8rem;
-  /* max-width: 70%; */
-  /* margin-bottom: 1rem; */
   padding: 1rem 1.2rem;
   white-space: nowrap;
 }

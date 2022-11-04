@@ -13,16 +13,24 @@ const NavLinks = () => {
       <div className="navlinks-list-desktop">
         <ul className="navlinks-list ">
           <li>
-            <a href="./">home</a>
+            <a href="./" className="nav__link">
+              home
+            </a>
           </li>
           <li>
-            <a href="#about">about</a>
+            <a href="#about" className="nav__link">
+              about
+            </a>
           </li>
           <li>
-            <a href="#projects">projects</a>
+            <a href="#projects" className="nav__link">
+              projects
+            </a>
           </li>
           <li>
-            <a href="#contact">contact</a>
+            <a href="#contact" className="nav__link">
+              contact
+            </a>
           </li>
         </ul>
       </div>

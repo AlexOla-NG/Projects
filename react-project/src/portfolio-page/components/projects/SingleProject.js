@@ -15,7 +15,16 @@ const SingleProject = (props) => {
       <div>
         <h3>{props.title}</h3>
         <p>{props.description}</p>
-        <p>{props.source}</p>
+        <p>
+          This project is a coding challenge from{" "}
+          <a
+            href="https://frontendmentor.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {props.source}
+          </a>
+        </p>
         <div className="skills-wrapper">{getSkills()}</div>
         <div className="btn-wrapper">
           <button className="btn">
@@ -39,7 +48,7 @@ export default SingleProject;
 SingleProject.defaultProps = {
   title: "URL Shortening API Landing Page",
   description: `For when you need to shorten url links. This project is a coding challenge from frontendmentor.io`,
-  source: `This project is a coding challenge from frontendmentor.io`,
+  source: `frontendmentor.io`,
   img: shortlyScreenshot,
   liveDemo: "https://u6vmnn.csb.app/",
   githubRepo:

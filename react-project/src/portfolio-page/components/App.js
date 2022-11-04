@@ -6,9 +6,6 @@ import Projects from "./projects/Projects";
 import Contact from "./contact/Contact";
 import Footer from "./footer/Footer";
 
-// TODO: stopped here
-// add effects (hover, focus) to: clickable elements, buttons,
-
 const App = () => {
   return (
     <div>
